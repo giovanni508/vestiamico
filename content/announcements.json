@@ -1,0 +1,20 @@
+{
+  "_help": "Avvisi temporanei mostrati in cima al sito. Ogni avviso compare solo tra 'start' e 'end' (inclusi, ora di Roma) e sparisce da solo alla scadenza. 'tone': 'info' | 'chiusura'. Le chiusure vanno anche in site.json > hours.closures per aggiornare l'indicatore Aperto/Chiuso.",
+  "items": [
+    {
+      "id": "ferie-agosto-2026",
+      "text": "Chiusi per ferie dal 17 al 22 agosto.",
+      "start": "2026-08-10",
+      "end": "2026-08-22",
+      "tone": "chiusura"
+    },
+    {
+      "id": "domeniche-dicembre-2026",
+      "text": "A dicembre siamo aperti tutte le domeniche, 10:00–13:00 e 16:00–20:00.",
+      "start": "2026-11-25",
+      "end": "2026-12-31",
+      "tone": "info",
+      "href": "/contatti"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Il punto vendita a Palermo",
+    "description": "Il punto vendita Vestiamico in Via dell’Orsa Minore 69 a Palermo: due piani di abbigliamento, donna al piano terra e uomo al primo piano. Orari e indicazioni."
+  },
+  "intro": {
+    "title": "Il punto vendita",
+    "subtitle": "Benvenuti da Vestiamico",
+    "heading": "Il vostro stile, in due piani di eleganza",
+    "lead": "Un punto vendita pensato per chi ama vestirsi con personalità e cerca un abbigliamento uomo e donna che unisce eleganza, qualità e convenienza.",
+    "body": "Su due piani — il piano terra dedicato alla donna, il primo piano all’uomo — abbiamo creato uno spazio in cui la luce, i volumi e l’arredo dialogano con i capi, per offrirvi non solo una scelta di moda, ma un’esperienza di stile.",
+    "video": "negozio-ingresso",
+    "image": "mg-1800"
+  },
+  "floors": [
+    {
+      "id": "piano-terra",
+      "label": "Piano terra",
+      "title": "Donna",
+      "text": "Una selezione curata di capi d’abbigliamento donna: dalla proposta quotidiana alle occasioni speciali.",
+      "image": "punto-vendita-interni"
+    },
+    {
+      "id": "primo-piano",
+      "label": "Primo piano",
+      "title": "Uomo",
+      "text": "Una proposta maschile di tendenza: abiti, giacche e accessori per un look completo e raffinato.",
+      "image": "img-1667"
+    },
+    {
+      "id": "accessori",
+      "label": "In ogni reparto",
+      "title": "Accessori",
+      "text": "Scarpe, borse, gioielli: i dettagli che completano il vostro outfit.",
+      "image": "mg-1738"
+    }
+  ],
+  "gallery": [
+    { "key": "mg-1773", "alt": "La reception del negozio con il monogramma Vestiamico in oro" },
+    { "key": "mg-1777", "alt": "La scala sospesa che porta al primo piano" },
+    { "key": "mg-1775", "alt": "Parete verde con piante e luci sospese all’ingresso" },
+    { "key": "foto1", "alt": "Vetrine con accessori e manichini affacciati sulla strada" },
+    { "key": "mg-1784", "alt": "Manichino con cappotto blu nel reparto uomo" },
+    { "key": "mg-1756", "alt": "Binari in ottone con camicie e abiti nei toni del bordeaux" },
+    { "key": "img-1803", "alt": "La facciata del negozio all’angolo, con le vetrine illuminate" },
+    { "key": "mg-1743", "alt": "Espositore di cinture e foulard" }
+  ],
+  "goal": {
+    "title": "Il nostro obiettivo?",
+    "heading": "Farvi sentire bene, ed esprimere la vostra unicità attraverso la moda.",
+    "text": "Il nostro team è a vostra disposizione per consigli personalizzati: che cerchiate un capo per un evento speciale o vogliate rinnovare il guardaroba con gusto, siamo qui per accompagnarvi nella scelta."
+  },
+  "directions": {
+    "title": "Come arrivare",
+    "text": "Ci trovate in Via dell’Orsa Minore 69, a Palermo. Premete “Portami lì” e Google Maps vi accompagna fino alla porta.",
+    "video": "negozio-esterno"
+  }
+}

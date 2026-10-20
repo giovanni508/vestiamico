@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Vestiamico | Abbigliamento uomo e donna a Palermo dal 1960",
+    "description": "Boutique di abbigliamento uomo e donna a Palermo dal 1960: dall’abito più conveniente al capo firmato, abiti da cerimonia e taglie dalla 38 alla 60. Via dell’Orsa Minore 69."
+  },
+  "hero": {
+    "titleLines": ["Dalle passerelle", "al tuo armadio"],
+    "subtitle": "Dall’abito più conveniente al capo firmato",
+    "body": "Abbigliamento uomo e donna a Palermo, dal 1960.",
+    "videos": ["passerella", "abito-blu", "smoking-blu"],
+    "mobileVideo": "passerella",
+    "ctaPrimary": { "label": "Scopri le collezioni", "href": "/collezioni" },
+    "ctaWhatsapp": { "label": "Scrivici su WhatsApp", "message": "Ciao Vestiamico! Vi scrivo dal sito, vorrei qualche informazione." }
+  },
+  "since": {
+    "from": 1960,
+    "to": 2026,
+    "caption": "anni di famiglia, tre generazioni",
+    "statement": "Dal 1960 vestiamo la Sicilia",
+    "body": "Facciamo tutto questo da generazioni: dal 1960 vestiamo la Sicilia e, con le nostre spedizioni, raggiungiamo tutta l’Europa.",
+    "milestones": [
+      {
+        "label": "1960",
+        "title": "Il primo filo",
+        "text": "A Palermo la famiglia comincia a vestire la città. Da qui parte un filo che non si è mai spezzato."
+      },
+      {
+        "label": "Tre generazioni",
+        "title": "Di mano in mano",
+        "text": "La passione passa da una generazione all’altra: cambiano le mode, resta la cura per chi entra in negozio."
+      },
+      {
+        "label": "Via dell’Orsa Minore 69",
+        "title": "Due piani di stile",
+        "text": "Al piano terra la donna, al primo piano l’uomo: luce, volumi e arredi pensati per far parlare i capi."
+      },
+      {
+        "label": "Tutta Europa",
+        "title": "Oltre lo Stretto",
+        "text": "Con le nostre spedizioni i capi Vestiamico raggiungono clienti in tutta Europa."
+      },
+      {
+        "label": "Oggi",
+        "title": "Lo stesso filo",
+        "text": "Dal capo di tutti i giorni a quello da cerimonia dei migliori brand, senza mai trascurare la qualità. E a prezzi piccoli piccoli."
+      }
+    ]
+  },
+  "split": {
+    "donna": {
+      "title": "Donna",
+      "heading": "Eleganza al femminile",
+      "text": "Linee raffinate, tessuti ricercati e dettagli che fanno la differenza: capi contemporanei e versatili, per accompagnarti in ogni momento della giornata con naturalezza e personalità.",
+      "image": "casual-donna-3",
+      "href": "/collezioni#donna",
+      "cta": "Collezione donna"
+    },
+    "uomo": {
+      "title": "Uomo",
+      "heading": "Stile senza compromessi",
+      "text": "Eleganza e funzionalità: capi versatili, dettagli curati e materiali di qualità per ogni occasione, dal lavoro al tempo libero.",
+      "image": "abbigliamento-vestiamico-9",
+      "href": "/collezioni#uomo",
+      "cta": "Collezione uomo"
+    }
+  },
+  "sizes": {
+    "from": 38,
+    "to": 60,
+    "statement": "Ogni silhouette ha il suo capo",
+    "body": "Dalla 38 alla 60, per valorizzare ogni stile e ogni fisicità. E per la cerimonia arriviamo fino alla 7XL, anche per taglie comode e conformate."
+  },
+  "cerimonia": {
+    "title": "Il giorno più importante, vestito bene",
+    "body": "Matrimoni, battesimi, comunioni, cresime, eventi formali: due piani di abiti da cerimonia per lei e per lui, e qualcuno che ti aiuta a scegliere il taglio giusto.",
+    "images": [
+      { "key": "abbigliamento-vestiamico-13", "alt": "Abito da cerimonia lungo in tulle azzurro a balze" },
+      { "key": "cerimonia-vestiamico-2", "alt": "Coppia in abiti da cerimonia: abito lungo blu in raso e completo blu" },
+      { "key": "abbigliamento-vestiamico-6", "alt": "Smoking blu notte con revers in raso e papillon" },
+      { "key": "cerimonia-7", "alt": "Abito rosso a balze su manichino in boutique" },
+      { "key": "img-1671", "alt": "Smoking nero con revers a scialle esposto in negozio" },
+      { "key": "abbigliamento-vestiamico-2", "alt": "Abito lungo rosso monospalla" },
+      { "key": "mg-1696", "alt": "Giacca da cerimonia in velluto verde con revers in raso" }
+    ],
+    "cta": {
+      "label": "Prenota una consulenza",
+      "message": "Ciao Vestiamico! Vorrei prenotare una consulenza per un abito da cerimonia. Occasione: … Per: donna / uomo. Taglia indicativa: …"
+    }
+  },
+  "brands": {
+    "title": "Le firme che trovi da noi"
+  },
+  "reviews": {
+    "title": "Cosa dicono di noi"
+  },
+  "visit": {
+    "title": "Vieni a trovarci",
+    "body": "Ogni collezione prende vita nel nostro punto vendita: un luogo dove incontrare lo stile, ricevere una consulenza personalizzata e toccare con mano la qualità dei capi.",
+    "image": "mg-1800"
+  }
+}

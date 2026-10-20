@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "I nostri brand",
+    "description": "I brand di abbigliamento uomo e donna da Vestiamico a Palermo: Barbarella, Laura Biagiotti, Romeo Gigli, Navigare, Il Granchio, Effebi, Malagrida."
+  },
+  "intro": {
+    "title": "I nostri brand",
+    "subtitle": "Stile, qualità e personalità",
+    "lead": "Una selezione curata dei migliori marchi di abbigliamento uomo e donna, scelti per rappresentare l’essenza della nostra boutique.",
+    "paragraphs": [
+      "Crediamo che ogni brand racconti una storia, un modo di intendere lo stile e la quotidianità.",
+      "Per questo la nostra selezione nasce da una ricerca attenta: marchi italiani che uniscono design, qualità dei materiali e vestibilità impeccabile.",
+      "In negozio trovate un mix di brand affermati e nuove proposte emergenti, scelti per rispondere a ogni esigenza: dal look casual di tutti i giorni all’outfit elegante per un’occasione speciale."
+    ]
+  },
+  "groups": [
+    {
+      "id": "donna",
+      "title": "Moda donna",
+      "subtitle": "Eleganza, personalità e comfort.",
+      "text": "Nel reparto donna trovate collezioni che spaziano dal classico al contemporaneo: abiti fluidi, giacche sartoriali, capispalla raffinati, accessori che completano ogni look con gusto. Ogni brand è stato scelto per valorizzare la femminilità con linee moderne e materiali di alta qualità.",
+      "brands": [
+        { "name": "Barbarella", "logo": "barbarella", "note": "Milano, made in Italy" },
+        { "name": "Laura Biagiotti", "logo": "laura-biagiotti", "note": "Firma italiana per la donna" },
+        { "name": "Romeo Gigli", "logo": "romeo-gigli", "note": "Firma italiana per la donna" }
+      ]
+    },
+    {
+      "id": "uomo",
+      "title": "Moda uomo",
+      "subtitle": "Ricercatezza e versatilità, per uno stile che non passa inosservato.",
+      "text": "La proposta uomo è pensata per chi desidera abbigliamento curato nei dettagli, dal casual elegante al total look formale. Dai jeans al blazer, dalle camicie ai capispalla, ogni brand riflette la filosofia del vestire con gusto e semplicità.",
+      "brands": [
+        { "name": "Navigare", "logo": "navigare", "note": "Sportswear and leisure, dal 1961" },
+        { "name": "Il Granchio", "logo": "il-granchio", "note": "Collection" },
+        { "name": "Effebi", "logo": "fb-effebi", "note": "Dal 1970" },
+        { "name": "Malagrida", "logo": "malagrida", "note": "Abbigliamento uomo" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source": "Recensioni pubblicate sul sito vestiamico.it (valutazione 5 su 5). Testo originale; rimosse solo le emoji e corretto un refuso evidente (\"Ls\" → \"La\").",
+  "rating": 5,
+  "items": [
+    {
+      "author": "Miriam Cusimano",
+      "rating": 5,
+      "highlight": "Il negozio è super elegante e ha uno stile giovanile che rispecchia perfettamente i miei gusti.",
+      "text": "Mi sono trovata benissimo! Il negozio è super elegante e ha uno stile giovanile che rispecchia perfettamente i miei gusti. L’ambiente è accogliente, ben curato e il personale è gentile e disponibile. Ho trovato capi davvero belli, alla moda e di qualità. Sicuramente tornerò per i prossimi acquisti. Consigliatissimo!"
+    },
+    {
+      "author": "Loredana Carrozza",
+      "rating": 5,
+      "highlight": "Si percepisce la passione e la cura per i dettagli.",
+      "text": "Negozio davvero bellissimo! I capi sono eleganti, di ottima qualità e sempre al passo con le ultime tendenze. Ogni volta che entro trovo qualcosa di nuovo e originale. Il personale è qualificato, gentile e sempre disponibile a consigliare al meglio. Si percepisce la passione e la cura per i dettagli. Consigliatissimo!"
+    },
+    {
+      "author": "Giusy Rizzo",
+      "rating": 5,
+      "highlight": "La qualità degli abiti è ottima e i prezzi davvero ragionevoli.",
+      "text": "Ho scoperto questo negozio e sono assolutamente entusiasta! La qualità degli abiti è ottima e i prezzi davvero ragionevoli. Personale gentile e super disponibile. Consiglio vivamente a tutti di andare a visionare personalmente!"
+    }
+  ]
+}

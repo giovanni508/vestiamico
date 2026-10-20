@@ -1,0 +1,110 @@
+{
+  "name": "Vestiamico",
+  "legalName": "Ingromoda s.r.l.",
+  "vat": "03761640824",
+  "rea": "PA – 160643",
+  "url": "https://vestiamico.it",
+  "since": 1960,
+  "generations": 3,
+  "tagline": "Abbigliamento uomo e donna a Palermo, dal 1960",
+  "description": "Boutique di abbigliamento uomo e donna a Palermo dal 1960: capi firmati e capi convenienti, abiti da cerimonia, taglie dalla 38 alla 60. Via dell'Orsa Minore 69.",
+  "address": {
+    "street": "Via dell'Orsa Minore 69",
+    "postalCode": "90124",
+    "city": "Palermo",
+    "region": "PA",
+    "country": "IT",
+    "geo": {
+      "lat": 38.0925,
+      "lng": 13.366,
+      "precision": "via (OpenStreetMap), numero civico da confermare"
+    },
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Vestiamico%2C+Via+dell%27Orsa+Minore+69%2C+Palermo",
+    "district": "Falsomiele"
+  },
+  "phones": [
+    {
+      "label": "Negozio",
+      "display": "+39 091 839 3004",
+      "href": "tel:+390918393004"
+    },
+    {
+      "label": "Cellulare e WhatsApp",
+      "display": "+39 392 519 8312",
+      "href": "tel:+393925198312"
+    }
+  ],
+  "whatsapp": {
+    "number": "393925198312",
+    "display": "+39 392 519 8312",
+    "defaultMessage": "Ciao Vestiamico! Vi scrivo dal sito, vorrei qualche informazione."
+  },
+  "email": "info@vestiamico.it",
+  "social": [
+    {
+      "name": "Instagram",
+      "handle": "@vestiamico",
+      "href": "https://www.instagram.com/vestiamico/"
+    },
+    {
+      "name": "Facebook",
+      "handle": "VESTIAMICO",
+      "href": "https://www.facebook.com/VESTIAMICO/"
+    }
+  ],
+  "hours": {
+    "timezone": "Europe/Rome",
+    "weekly": [
+      {
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "label": "Lunedì – Sabato",
+        "slots": [
+          [
+            "08:30",
+            "13:00"
+          ],
+          [
+            "15:30",
+            "20:00"
+          ]
+        ]
+      }
+    ],
+    "firstSundayOfMonth": {
+      "open": true,
+      "label": "Aperti la prima domenica del mese",
+      "slots": null
+    },
+    "seasonal": [
+      {
+        "label": "A dicembre aperti tutte le domeniche",
+        "month": 12,
+        "days": [
+          0
+        ],
+        "slots": [
+          [
+            "10:00",
+            "13:00"
+          ],
+          [
+            "16:00",
+            "20:00"
+          ]
+        ]
+      }
+    ],
+    "closures": []
+  },
+  "payments": {
+    "klarna": "Paga in 3 rate con Klarna, senza interessi né commissioni."
+  },
+  "shipping": "Spediamo in tutta Europa."
+}

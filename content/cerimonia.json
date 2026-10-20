@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Abiti da cerimonia a Palermo, donna e uomo",
+    "description": "Abiti da cerimonia a Palermo per donna e uomo: matrimoni, battesimi, comunioni, cresime ed eventi formali. Consulenza personalizzata e taglie fino alla 7XL da Vestiamico."
+  },
+  "intro": {
+    "title": "Abiti da cerimonia a Palermo",
+    "subtitle": "Donna e uomo",
+    "lead": "Cerchi un abito da cerimonia a Palermo? Da Vestiamico trovi una selezione completa di outfit eleganti per matrimoni, battesimi, comunioni, eventi formali e occasioni speciali.",
+    "body": "Nei nostri due piani espositivi ti aspettano collezioni da cerimonia esclusive, pensate per valorizzare ogni stile e ogni fisicità, con taglie disponibili fino alla 7XL.",
+    "video": "abito-verde",
+    "image": "cerimonia-vestiamico-2"
+  },
+  "chapters": [
+    {
+      "id": "donna",
+      "title": "Abiti da cerimonia donna",
+      "subtitle": "Eleganza per ogni occasione",
+      "quote": "Non serve la passerella per sentirsi modella: basta entrare da Vestiamico!",
+      "paragraphs": [
+        "Nel reparto donna trovi un’ampia proposta di abiti lunghi eleganti, modelli corti moderni, tailleur raffinati e soluzioni perfette per matrimoni, cresime o serate importanti.",
+        "Le nostre consulenti ti guidano nella scelta del vestito ideale, aiutandoti a trovare tessuti, colori e linee che esaltano la tua figura.",
+        "In negozio puoi completare il look con accessori abbinati: borse, scarpe, coprispalle e gioielli. Tutto quello che serve per un outfit impeccabile."
+      ],
+      "images": [
+        { "key": "abiti-cerimonia-donna-vestiamico-3", "alt": "Abito lungo a balze con stampa floreale rossa e nera" },
+        { "key": "cerimonia-vestiamico-1", "alt": "Abito lungo blu in raso con scollo gioiello, seduta in poltrona" },
+        { "key": "abito-rosso-vestiamico-1", "alt": "Abito lungo rosso in raso con spacco, in boutique" },
+        { "key": "cerimonia-vestiamico6-2", "alt": "Tubino nero di paillettes con fiocco sulle spalle" },
+        { "key": "abiti-cerimonia-donna-vestiamico-5", "alt": "Abito lungo plissé dai toni pastello in un giardino" }
+      ]
+    },
+    {
+      "id": "uomo",
+      "title": "Abiti da cerimonia uomo",
+      "subtitle": "Stile e tagli impeccabili",
+      "quote": "Il taglio giusto, la tonalità giusta, il dettaglio che fa la differenza.",
+      "paragraphs": [
+        "Anche l’uomo trova da Vestiamico la soluzione perfetta per la sua cerimonia.",
+        "Completi classici, abiti sartoriali, smoking e soluzioni moda fino alla taglia 7XL, adatti a matrimoni, eventi formali e celebrazioni speciali.",
+        "Il nostro staff ti aiuta a scegliere il taglio, la tonalità e i dettagli, per una vestibilità impeccabile e un comfort pensato anche per taglie comode e conformate."
+      ],
+      "images": [
+        { "key": "abbigliamento-vestiamico-6", "alt": "Smoking blu notte con revers in raso e papillon" },
+        { "key": "cerimonia-6", "alt": "Completo blu gessato con t-shirt bianca" },
+        { "key": "mg-1694", "alt": "Smoking con revers a lancia in raso, esposto in negozio" },
+        { "key": "cerimonia-vestiamico-5", "alt": "Completo doppiopetto nero in una via del centro" },
+        { "key": "mg-1696", "alt": "Giacca in velluto verde con revers in raso" }
+      ]
+    }
+  ],
+  "reasons": {
+    "title": "Perché scegliere Vestiamico per la tua cerimonia",
+    "items": [
+      "Ampia scelta di modelli donna e uomo",
+      "Taglie dalla standard alla 7XL",
+      "Consulenza personalizzata in negozio",
+      "Accessori abbinati per completare il look",
+      "Due piani espositivi dedicati alla cerimonia",
+      "Qualità, stile e attenzione al cliente da oltre 60 anni"
+    ]
+  },
+  "steps": {
+    "title": "Come funziona la consulenza",
+    "items": [
+      {
+        "title": "Raccontaci l’occasione",
+        "text": "Scrivici su WhatsApp o chiamaci: dicci di che cerimonia si tratta, per chi è l’abito e, se vuoi, la taglia indicativa."
+      },
+      {
+        "title": "Fissiamo il tuo momento",
+        "text": "Concordiamo insieme giorno e orario, così quando arrivi in negozio abbiamo già pensato a qualche proposta per te."
+      },
+      {
+        "title": "Provi, scegli, completi il look",
+        "text": "Provi i modelli con calma, ti consigliamo taglio e colore e completiamo con scarpe, borse e accessori abbinati."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Vivi la tua cerimonia con sicurezza ed eleganza",
+    "text": "Vieni a scoprire in negozio le nuove collezioni cerimonia, oppure scrivici: ti prepariamo una consulenza su misura.",
+    "ctaWhatsapp": "Prenota su WhatsApp",
+    "ctaPhone": "Chiama il negozio",
+    "message": "Ciao Vestiamico! Vorrei prenotare una consulenza per un abito da cerimonia. Occasione: … Per: donna / uomo. Taglia indicativa: …"
+  }
+}

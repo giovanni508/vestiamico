@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Contatti",
+    "description": "Contatta Vestiamico a Palermo: WhatsApp +39 392 519 8312, telefono +39 091 839 3004, Via dell’Orsa Minore 69. Orari di apertura e modulo di contatto."
+  },
+  "intro": {
+    "title": "Contattaci",
+    "subtitle": "Siamo qui per te",
+    "lead": "Dubbi, curiosità o semplicemente voglia di scoprire di più sul nostro punto vendita? Scrivici, chiamaci o passa a trovarci: ti risponderemo con piacere.",
+    "body": "Crediamo che ogni cliente meriti attenzione, ascolto e un consiglio sincero. Informazioni sui prodotti, disponibilità delle taglie, promozioni o collaborazioni: scegli il modo che preferisci."
+  },
+  "form": {
+    "title": "Scrivici un messaggio",
+    "lead": "Compila il modulo: ti risponderemo il prima possibile, di solito entro 24 ore lavorative.",
+    "fields": {
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefono (facoltativo)",
+      "message": "Messaggio",
+      "consent": "Ho letto l’informativa sulla privacy e acconsento al trattamento dei miei dati personali per ricevere una risposta."
+    },
+    "submit": "Invia messaggio",
+    "sending": "Invio in corso…",
+    "success": "Messaggio inviato. Grazie! Ti rispondiamo al più presto, di solito entro 24 ore lavorative.",
+    "errors": {
+      "name": "Scrivi il tuo nome.",
+      "emailEmpty": "Scrivi la tua email, così possiamo risponderti.",
+      "emailInvalid": "Questa email non sembra corretta: controlla che contenga @ e un dominio (es. nome@email.it).",
+      "message": "Scrivi un messaggio di almeno 10 caratteri.",
+      "consent": "Per inviare il messaggio serve il consenso al trattamento dei dati.",
+      "server": "Il messaggio non è partito per un problema tecnico. Riprova tra poco oppure scrivici su WhatsApp.",
+      "rate": "Hai inviato diversi messaggi in poco tempo. Riprova tra qualche minuto oppure scrivici su WhatsApp."
+    }
+  }
+}

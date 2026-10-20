@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "Collezioni uomo e donna",
+    "description": "Le collezioni Vestiamico a Palermo: abbigliamento e accessori donna e uomo, dal quotidiano all’elegante fino alla cerimonia. Taglie dalla 38 alla 60."
+  },
+  "intro": {
+    "title": "Collezioni uomo donna",
+    "lead": "Scopri il meglio della nostra selezione: collezioni pensate per ogni stile, da provare in negozio o da chiederci su WhatsApp.",
+    "video": "tailleur-giallo"
+  },
+  "sections": [
+    {
+      "id": "donna",
+      "title": "Abbigliamento e accessori donna",
+      "subtitle": "Stile, fascino e libertà",
+      "quote": "Non serve la passerella per sentirsi modella: basta entrare da Vestiamico!",
+      "text": "Eleganza e personalità in ogni dettaglio. Lasciati ispirare da capi versatili e contemporanei, ideali per esprimere il tuo stile in ogni occasione.",
+      "categories": ["Quotidiano", "Elegante", "Cerimonia", "Accessori"],
+      "items": [
+        { "key": "vestiamico-donna-16", "category": "Elegante", "alt": "Abito nero con scollo a V e gonna con spacco, sullo sfondo il mare" },
+        { "key": "casual-donna-3", "category": "Quotidiano", "alt": "Abito rosa cipria con arricciatura in vita, in una via lastricata" },
+        { "key": "abbigliamento-vestiamico-13", "category": "Cerimonia", "alt": "Abito lungo in tulle azzurro a balze sulla scalinata di un teatro" },
+        { "key": "vestiamico-donna-15", "category": "Quotidiano", "alt": "Abito chemisier a fiori viola e verdi con cappello di paglia" },
+        { "key": "mg-1737", "category": "Accessori", "alt": "Collane di perle e catene esposte in negozio" },
+        { "key": "abbigliamento-vestiamico-4", "category": "Elegante", "alt": "Completo giacca e pantalone rosa cipria" },
+        { "key": "vestiamico-donna-4", "category": "Elegante", "alt": "Abito rosso a fascia con applicazioni a rosa" },
+        { "key": "casual-donna-6", "category": "Quotidiano", "alt": "Camicia stampata maculata con jeans chiari" },
+        { "key": "abbigliamento-vestiamico-2", "category": "Cerimonia", "alt": "Abito lungo rosso monospalla con spacco" },
+        { "key": "mg-1729", "category": "Accessori", "alt": "Borsa a mezzaluna in camoscio e stola con strass" },
+        { "key": "vestiamico-donna-12", "category": "Elegante", "alt": "Abito lungo rosa con spalline sottili davanti a un palazzo storico" },
+        { "key": "casual-donna-2", "category": "Quotidiano", "alt": "Completo fluido con pantaloni a palazzo stampati" },
+        { "key": "cerimonia-vestiamico-4", "category": "Cerimonia", "alt": "Abito lungo blu in raso con scollo gioiello in un salone" },
+        { "key": "mg-1681", "category": "Accessori", "alt": "Pochette in tessuto lurex color oro con drappeggio" },
+        { "key": "vestiamico-donna-2", "category": "Quotidiano", "alt": "Polo in maglia bianca con jeans a gamba dritta e borsa gialla" },
+        { "key": "abbigliamento-vestiamico-11", "category": "Elegante", "alt": "Dettaglio di blazer rosa con spilla di piume" }
+      ]
+    },
+    {
+      "id": "uomo",
+      "title": "Abbigliamento e accessori uomo",
+      "subtitle": "Eleganza quotidiana",
+      "quote": "Dal jeans al blazer, dalla camicia al capospalla: il capo giusto per ogni momento.",
+      "text": "Stile, comfort e qualità si incontrano in ogni capo. Dalle linee casual ai look più eleganti, scopri la collezione pensata per valorizzare ogni momento della giornata.",
+      "categories": ["Camicie e maglie", "Abiti e giacche", "Cerimonia", "Capispalla"],
+      "items": [
+        { "key": "abbigliamento-vestiamico-9", "category": "Abiti e giacche", "alt": "Completo marrone con camicia scura, in strada davanti a una vetrina" },
+        { "key": "uomo-vestiamico-4", "category": "Camicie e maglie", "alt": "Camicia blu notte slim con pantaloni scuri" },
+        { "key": "img-1671", "category": "Cerimonia", "alt": "Smoking nero con revers a scialle esposto in negozio" },
+        { "key": "mg-1690", "category": "Abiti e giacche", "alt": "Giacca a quadri blu e grigia con pochette, esposta in negozio" },
+        { "key": "abbigliamento-uomo-vestiamicouomo-2", "category": "Camicie e maglie", "alt": "T-shirt blu con pantaloni chino beige" },
+        { "key": "mg-1711", "category": "Capispalla", "alt": "Cappotto blu notte monopetto su gruccia" },
+        { "key": "abbigliamento-vestiamico-12", "category": "Abiti e giacche", "alt": "Completo verde bosco con t-shirt bianca" },
+        { "key": "abbigliamento-vestiamico-6", "category": "Cerimonia", "alt": "Smoking blu notte con revers in raso e papillon" },
+        { "key": "uomo-vestiamico-5", "category": "Camicie e maglie", "alt": "Camicia verde bottiglia" },
+        { "key": "mg-1708", "category": "Capispalla", "alt": "Giacca-camicia grigia con tasche a toppa" },
+        { "key": "uomo-vestiamico-7", "category": "Abiti e giacche", "alt": "Completo blu elettrico in passerella" },
+        { "key": "mg-1694", "category": "Cerimonia", "alt": "Smoking con revers a lancia in raso e papillon" },
+        { "key": "uomo-vestiamico2", "category": "Camicie e maglie", "alt": "Camicia azzurra con maniche arrotolate" },
+        { "key": "mg-1693", "category": "Abiti e giacche", "alt": "Blazer in lana grigio perla con spilla" }
+      ]
+    }
+  ],
+  "closing": {
+    "title": "Scopri il tuo stile unico",
+    "text": "Hai bisogno di un consiglio o vuoi sapere se abbiamo la tua taglia? Scrivici: ti aiutiamo a trovare il look perfetto.",
+    "cta": "Chiedici un consiglio"
+  }
+}
