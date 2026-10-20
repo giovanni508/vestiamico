@@ -1095,7 +1095,7 @@ html.js.intro-done .hero-foot {
 .home-thread {
   position: absolute;
   z-index: 1;
-  left: calc(var(--spacing-gutter) / 2 - 10px);
+  left: max(2px, calc(var(--spacing-gutter) / 2 - 10px));
   width: 20px;
   pointer-events: none;
 }
@@ -1122,6 +1122,18 @@ html.js.intro-done .hero-foot {
 }
 .home-thread-knot.is-tied {
   transform: none;
+}
+@media (max-width: 39.99rem) {
+  .home-thread-knot {
+    left: 5px;
+    width: 10px;
+    height: 10px;
+  }
+  .home-thread-knot::before,
+  .home-thread-knot::after {
+    width: 10px;
+    margin-left: -5px;
+  }
 }
 .home-thread-knot::before,
 .home-thread-knot::after {

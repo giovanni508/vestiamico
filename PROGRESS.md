@@ -1,20 +1,23 @@
 # Avanzamento
 
-Per riprendere il lavoro dopo un'interruzione: leggere questo file e DECISIONS.md, poi continuare dalla fase "in corso".
+Per riprendere: leggere questo file e DECISIONS.md.
 
-| Fase | Stato | Note |
-|------|-------|------|
-| 1. Audit ed estrazione contenuti | ✅ completata | AUDIT.md, content/*.json, content/legal/*.md, media ottimizzati in public/media, mappa OSM |
-| 2. Direzione creativa e design system | ⏳ in corso | |
-| 3. Motion layer globale | ⬜ da fare | |
-| 4. Home (8 scene) | ⬜ da fare | |
-| 5. Pagine interne | ⬜ da fare | |
-| 6. SEO locale e tecnica | ⬜ da fare | |
-| 7. Ciclo di verifica | ⬜ da fare | |
-| 8. Consegna | ⬜ da fare | |
+| Fase | Stato |
+|------|-------|
+| 1. Audit ed estrazione contenuti | ✅ |
+| 2. Direzione creativa e design system | ✅ (DESIGN.md, /styleguide) |
+| 3. Motion layer globale | ✅ |
+| 4. Home (8 scene) | ✅ |
+| 5. Pagine interne | ✅ |
+| 6. SEO locale e tecnica | ✅ |
+| 7. Ciclo di verifica | ✅ 3 cicli + revisione indipendente in 3 giri (CRITIQUE.md) |
+| 8. Consegna | ✅ README, PRESENTAZIONE, TODO-cliente |
 
-## Fase 1 — dettaglio
+## Ultime misure (build di produzione, Lighthouse mobile, throttling simulato)
 
-- Pagine estratte: home, collezioni, abiti-da-cerimonia, punto-vendita, brand, contatti, privacy-policy, cookie-policy-ue.
-- Media: 141 immagini → `public/media/img/` (max 1600 px, JPEG progressivo) con dimensioni e blur in `content/media.json`; 7 video → `public/media/video/` (MP4 + WebM + poster).
-- Script: `scripts/process-media.mjs` (media), `scripts/build-map.mjs` (mappa), `scripts/check-content.mjs` (verifica riferimenti).
+Home 95 · Collezioni 95 · Cerimonia 96 · Punto vendita 95 · Brand 96 · Contatti 96 · Privacy 97. Accessibilità, Best Practices, SEO: 100 ovunque. CLS 0. LCP simulato 2,5–2,9 s; con throttling reale DevTools 1,9–2,0 s.
+
+## Aperto
+
+- Revisione indipendente: ultimo rilievo (nodo del filo tagliato a 390 px) corretto nel CSS dopo l'ultima cattura; da riverificare con `node scripts/screenshots.mjs 390`.
+- Dati da confermare col cliente: content/TODO-cliente.md.
