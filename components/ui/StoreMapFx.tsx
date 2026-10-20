@@ -14,7 +14,7 @@ export function StoreMapFx({ children }: { children: ReactNode }) {
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         const street = el.querySelectorAll('[data-map-street] path');
         const pin = el.querySelector('[data-map-pin]');
-        gsap.set(street, { strokeDasharray: 1, strokeDashoffset: 1 });
+        gsap.set(street, { strokeDasharray: 1000, strokeDashoffset: 1000 });
         gsap
           .timeline({ scrollTrigger: { trigger: el, start: 'top 75%', once: true } })
           .from(el.querySelectorAll('.map-major path, .map-minor path'), { opacity: 0, duration: 1, stagger: 0.002, ease: 'none' })

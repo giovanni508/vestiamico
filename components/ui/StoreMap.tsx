@@ -25,7 +25,7 @@ export function StoreMap({ className = '' }: { className?: string }) {
           </g>
           <g className="map-street" data-map-street>
             {map.highlight.map((d, i) => (
-              <path key={i} d={d} pathLength={1} />
+              <path key={i} d={d} pathLength={1000} />
             ))}
           </g>
           <g className="map-pin" transform={`translate(${pin.x} ${pin.y})`} data-map-pin>

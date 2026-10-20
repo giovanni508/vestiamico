@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { WhatsappLogoIcon, PhoneIcon, InstagramLogoIcon, FacebookLogoIcon, XIcon } from '@phosphor-icons/react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
 import { getLenis } from '@/lib/lenis';
-import { nav, site, whatsappHref } from '@/lib/content';
+import { nav, site, whatsappHref } from '@/lib/site';
 import { TLink } from '@/components/motion/PageTransition';
 import { Logo } from '@/components/ui/Logo';
 

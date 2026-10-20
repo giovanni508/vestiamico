@@ -56,7 +56,7 @@ export function Since() {
           <svg className="timeline-thread" viewBox={`0 0 ${thread.w} 120`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
             <defs>
               <mask id="tl-mask" maskUnits="userSpaceOnUse" x="0" y="0" width={thread.w} height="120">
-                <path data-tl-reveal d={thread.d} pathLength={1} fill="none" stroke="#fff" strokeWidth="60" />
+                <path data-tl-reveal d={thread.d} pathLength={1000} fill="none" stroke="#fff" strokeWidth="60" />
               </mask>
             </defs>
             <path d={thread.d} className="timeline-thread-path" mask="url(#tl-mask)" vectorEffect="non-scaling-stroke" />
@@ -64,7 +64,7 @@ export function Since() {
           <svg className="timeline-vthread" viewBox="0 0 20 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
             <defs>
               <mask id="tl-vmask" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="1000">
-                <path data-tl-vreveal d="M10 0V1000" pathLength={1} fill="none" stroke="#fff" strokeWidth="20" />
+                <path data-tl-vreveal d="M10 0V1000" pathLength={1000} fill="none" stroke="#fff" strokeWidth="20" />
               </mask>
             </defs>
             <path d="M10 0V1000" className="timeline-thread-path" mask="url(#tl-vmask)" vectorEffect="non-scaling-stroke" />

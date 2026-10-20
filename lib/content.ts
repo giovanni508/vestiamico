@@ -1,6 +1,5 @@
 // Punto unico di accesso ai contenuti. Oggi legge i file locali in content/;
 // domani può leggere la REST API di WordPress mantenendo le stesse forme (vedi README).
-import site from '@/content/site.json';
 import home from '@/content/home.json';
 import collezioni from '@/content/collezioni.json';
 import cerimonia from '@/content/cerimonia.json';
@@ -12,9 +11,8 @@ import announcements from '@/content/announcements.json';
 import media from '@/content/media.json';
 import map from '@/content/map.json';
 
-export { site, home, collezioni, cerimonia, puntoVendita, brand, contatti, reviews, announcements, map };
+export { home, collezioni, cerimonia, puntoVendita, brand, contatti, reviews, announcements, map };
 
-export type Site = typeof site;
 export type ImageAsset = { src: string; width: number; height: number; blur: string };
 export type VideoAsset = { mp4: string; webm: string; poster: string; width: number; height: number };
 
@@ -33,17 +31,4 @@ export function video(key: string): VideoAsset {
   return asset;
 }
 
-export function whatsappHref(message: string = site.whatsapp.defaultMessage): string {
-  return `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(message)}`;
-}
-
-export const nav = [
-  { href: '/', label: 'Home' },
-  { href: '/collezioni', label: 'Collezioni' },
-  { href: '/abiti-da-cerimonia', label: 'Cerimonia' },
-  { href: '/punto-vendita', label: 'Punto vendita' },
-  { href: '/brand', label: 'Brand' },
-  { href: '/contatti', label: 'Contatti' },
-] as const;
-
-export const fullAddress = `${site.address.street}, ${site.address.postalCode} ${site.address.city}`;
+export { site, whatsappHref, nav, fullAddress, type Site } from '@/lib/site';

@@ -28,7 +28,7 @@ export function TimelineFx({ children }: { children: ReactNode }) {
           const gutter = parseFloat(getComputedStyle(track).paddingLeft) || 0;
           return Math.min(1, Math.max(0, (el.clientWidth * 0.56 - gutter) / w));
         };
-        gsap.set(reveal, { strokeDasharray: 1 });
+        gsap.set(reveal, { strokeDasharray: 1000 });
         const tl = gsap.timeline({
           defaults: { ease: 'none' },
           scrollTrigger: {
@@ -41,7 +41,7 @@ export function TimelineFx({ children }: { children: ReactNode }) {
             anticipatePin: 1,
           },
         });
-        tl.to(track, { x: () => -distance(), duration: 1 }, 0).fromTo(reveal, { strokeDashoffset: () => 1 - lead() }, { strokeDashoffset: 0, duration: 1 }, 0);
+        tl.to(track, { x: () => -distance(), duration: 1 }, 0).fromTo(reveal, { strokeDashoffset: () => 1000 * (1 - lead()) }, { strokeDashoffset: 0, duration: 1 }, 0);
         items.forEach((item) => {
           // le tappe già visibili quando la sezione si ferma entrano con lo scroll verticale
           const visibleAtStart = item.offsetLeft < el.clientWidth * 0.72;
@@ -66,7 +66,7 @@ export function TimelineFx({ children }: { children: ReactNode }) {
       mm.add('(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)', () => {
         const vReveal = el.querySelector<SVGPathElement>('[data-tl-vreveal]');
         if (vReveal) {
-          gsap.set(vReveal, { strokeDasharray: 1, strokeDashoffset: 1 });
+          gsap.set(vReveal, { strokeDasharray: 1000, strokeDashoffset: 1000 });
           gsap.to(vReveal, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: track, start: 'top 70%', end: 'bottom 60%', scrub: 0.6 } });
         }
         items.forEach((item) => {

@@ -10,8 +10,8 @@
     {
       "name": "vestiamico-prod",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "start", "--", "-p", "3100"],
-      "port": 3100
+      "runtimeArgs": ["run", "start", "--", "-p", "3210"],
+      "port": 3210
     }
   ]
 }

@@ -12,6 +12,7 @@ if (typeof window !== 'undefined' && !registered) {
   CustomEase.create('uscita', '0.7, 0, 0.84, 0');
   gsap.defaults({ ease: 'sartoria', duration: 0.8 });
   ScrollTrigger.config({ ignoreMobileResize: true });
+  if (process.env.NODE_ENV !== 'production') (window as unknown as { __ST?: typeof ScrollTrigger }).__ST = ScrollTrigger;
   registered = true;
 }
 

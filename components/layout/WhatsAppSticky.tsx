@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { WhatsappLogoIcon } from '@phosphor-icons/react';
 import { ScrollTrigger } from '@/lib/gsap';
-import { whatsappHref } from '@/lib/content';
+import { whatsappHref } from '@/lib/site';
 
 export function WhatsAppSticky() {
   const ref = useRef<HTMLAnchorElement>(null);

@@ -46,7 +46,7 @@ export function Thread({
       if (!reveal) return;
       const mm = gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.set(reveal, { strokeDasharray: 1, strokeDashoffset: 1 });
+        gsap.set(reveal, { strokeDasharray: 1000, strokeDashoffset: 1000 });
         gsap.to(reveal, {
           strokeDashoffset: 0,
           ease: 'none',
@@ -62,7 +62,7 @@ export function Thread({
     <svg ref={ref} viewBox={viewBox} preserveAspectRatio={preserveAspectRatio} className={`pointer-events-none ${className}`} aria-hidden="true" focusable="false">
       <defs>
         <mask id={`m${id}`} maskUnits="userSpaceOnUse">
-          <path data-reveal d={d} pathLength={1} fill="none" stroke="#fff" strokeWidth={revealWidth} strokeLinecap="butt" />
+          <path data-reveal d={d} pathLength={1000} fill="none" stroke="#fff" strokeWidth={revealWidth} strokeLinecap="butt" />
         </mask>
       </defs>
       <path

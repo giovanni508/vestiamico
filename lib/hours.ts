@@ -1,5 +1,5 @@
 // Orari di apertura e stato "Aperto ora", calcolati sull'ora di Roma.
-import { site } from '@/lib/content';
+import { site } from '@/lib/site';
 
 type Slot = [string, string];
 type Closure = { from: string; to: string; label?: string };
