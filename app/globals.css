@@ -1,0 +1,337 @@
+@import 'tailwindcss';
+@import './components.css';
+@import './sections.css';
+
+/* ------------------------------------------------------------------
+   Vestiamico — design tokens
+   Mondo: l'interno di una giacca. Fodera blu notte, camiceria avorio,
+   un filo d'oro che cuce le scene. Vedi DESIGN.md.
+   ------------------------------------------------------------------ */
+
+@theme static {
+  /* colore */
+  --color-notte: #0d1730; /* fodera blu notte: campi dominanti */
+  --color-notte-2: #15223f; /* fodera rialzata */
+  --color-notte-3: #23345a; /* impunture e linee su notte */
+  --color-avorio: #f2eee5; /* camiceria: pause chiare */
+  --color-avorio-2: #e7e1d4; /* avorio in ombra */
+  --color-oro: #d9b66a; /* filo d'oro su notte */
+  --color-oro-chiaro: #ecd6a0;
+  --color-oro-scuro: #7a5713; /* filo d'oro su avorio (testo AA) */
+  --color-ardesia: #4a5468; /* testo secondario su avorio */
+  --color-nebbia: #aeb6c8; /* testo secondario su notte */
+  --color-errore: #a3261e;
+  --color-errore-chiaro: #f2a099;
+
+  /* tipografia */
+  --font-display: var(--font-bodoni), 'Bodoni 72', 'Didot', Georgia, serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  --text-mega: clamp(3.3rem, 12.2vw, 14rem);
+  --text-display: clamp(2.7rem, 7.4vw, 8rem);
+  --text-h2: clamp(2.15rem, 4.8vw, 5rem);
+  --text-h3: clamp(1.5rem, 2.5vw, 2.5rem);
+  --text-lead: clamp(1.125rem, 1.35vw, 1.4rem);
+  --text-body: 1.0625rem;
+  --text-small: 0.9rem;
+  --text-micro: 0.8rem;
+
+  /* motion */
+  --ease-sartoria: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-uscita: cubic-bezier(0.7, 0, 0.84, 0);
+  --duration-rapida: 0.4s;
+  --duration-media: 0.8s;
+  --duration-lenta: 1.2s;
+
+  /* layout */
+  --spacing-gutter: clamp(1rem, 4vw, 3.5rem);
+  --spacing-section: clamp(6rem, 13vw, 12.5rem);
+  --breakpoint-xs: 26rem;
+}
+
+/* temi di sezione: ogni sezione dichiara il proprio tessuto */
+.theme-notte {
+  --bg: var(--color-notte);
+  --fg: var(--color-avorio);
+  --fg-muted: var(--color-nebbia);
+  --accent: var(--color-oro);
+  --line: var(--color-notte-3);
+  --focus: var(--color-oro);
+  background-color: var(--bg);
+  color: var(--fg);
+}
+.theme-avorio {
+  --bg: var(--color-avorio);
+  --fg: var(--color-notte);
+  --fg-muted: var(--color-ardesia);
+  --accent: var(--color-oro-scuro);
+  --line: #cfc6b3;
+  --focus: var(--color-oro-scuro);
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+/* ------------------------------------------------------------------ base */
+@layer base {
+  :root {
+    --header-h: 4.25rem;
+    color-scheme: light;
+    --bg: var(--color-notte);
+    --fg: var(--color-avorio);
+    --accent: var(--color-oro);
+    --focus: var(--color-oro);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-notte);
+    scrollbar-color: var(--color-oro) var(--color-notte);
+    scrollbar-width: thin;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    background: var(--color-notte);
+    color: var(--color-avorio);
+    font-variation-settings: 'wdth' 100;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-oro);
+    color: var(--color-notte);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus, var(--color-oro));
+    outline-offset: 4px;
+    border-radius: 1px;
+  }
+
+  input,
+  textarea {
+    caret-color: var(--accent);
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-notte);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-oro);
+    border: 3px solid var(--color-notte);
+    border-radius: 6px;
+  }
+}
+
+/* ------------------------------------------------------------------ componenti */
+@layer components {
+  .wrap {
+    width: 100%;
+    padding-inline: var(--spacing-gutter);
+    margin-inline: auto;
+    max-width: 1680px;
+  }
+
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: clamp(0.75rem, 2vw, 1.75rem);
+  }
+  @media (min-width: 48rem) {
+    .grid-12 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 0.92;
+  }
+
+  /* Archivo condensato: misure, cartellini, numeri del metro */
+  .font-misura {
+    font-family: var(--font-sans);
+    font-variation-settings: 'wdth' 72;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+    letter-spacing: 0.01em;
+  }
+
+  .t-mega {
+    font-size: var(--text-mega);
+  }
+  .t-display {
+    font-size: var(--text-display);
+  }
+  .t-h2 {
+    font-size: var(--text-h2);
+    line-height: 0.98;
+  }
+  .t-h3 {
+    font-size: var(--text-h3);
+    line-height: 1.08;
+  }
+  .t-lead {
+    font-size: var(--text-lead);
+    line-height: 1.5;
+  }
+  .t-small {
+    font-size: var(--text-small);
+    line-height: 1.55;
+  }
+  .t-micro {
+    font-size: var(--text-micro);
+    line-height: 1.4;
+  }
+
+  .measure {
+    max-width: 62ch;
+  }
+
+  .muted {
+    color: var(--fg-muted);
+  }
+  .accent {
+    color: var(--accent);
+  }
+
+  /* impuntura: linea tratteggiata come una cucitura */
+  .stitch-x {
+    background-image: linear-gradient(to right, currentColor 55%, transparent 0);
+    background-size: 9px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  }
+  .stitch-y {
+    background-image: linear-gradient(to bottom, currentColor 55%, transparent 0);
+    background-size: 1px 9px;
+    background-repeat: repeat-y;
+    width: 1px;
+  }
+
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url('/media/grana.svg');
+    background-size: 220px 220px;
+    opacity: 0.09;
+    mix-blend-mode: soft-light;
+    z-index: 1;
+  }
+
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 200;
+    padding: 0.75rem 1.1rem;
+    background: var(--color-oro);
+    color: var(--color-notte);
+    font-weight: 600;
+    transform: translateY(-160%);
+    transition: transform var(--duration-rapida) var(--ease-sartoria);
+  }
+  .skip-link:focus-visible {
+    transform: none;
+    outline-color: var(--color-avorio);
+  }
+
+  .sr-only-focusable:not(:focus):not(:focus-within) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* maschera per le righe rivelate (SplitText) */
+  .line-mask {
+    overflow: clip;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+}
+
+/* ------------------------------------------------------------------ transizioni di pagina */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: vt-dim 0.7s var(--ease-sartoria) both;
+  }
+  ::view-transition-new(root) {
+    animation: vt-sipario 0.9s var(--ease-expo) both;
+  }
+}
+@keyframes vt-dim {
+  to {
+    opacity: 0.35;
+    transform: scale(0.985);
+  }
+}
+@keyframes vt-sipario {
+  from {
+    clip-path: inset(0 50% 0 50%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

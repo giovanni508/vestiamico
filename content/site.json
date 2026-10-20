@@ -2,7 +2,7 @@
   "name": "Vestiamico",
   "legalName": "Ingromoda s.r.l.",
   "vat": "03761640824",
-  "rea": "PA – 160643",
+  "rea": "PA-160643",
   "url": "https://vestiamico.it",
   "since": 1960,
   "generations": 3,
@@ -64,7 +64,7 @@
           5,
           6
         ],
-        "label": "Lunedì – Sabato",
+        "label": "Dal lunedì al sabato",
         "slots": [
           [
             "08:30",

@@ -121,7 +121,7 @@ async function brand() {
   await pad(512, path.join(ROOT, 'app/icon.png'));
   await pad(180, path.join(ROOT, 'app/apple-icon.png'));
   await pad(64, path.join(SRC, 'fav64.png'));
-  ff(['-i', path.join(SRC, 'fav64.png'), '-vf', 'scale=48:48', path.join(ROOT, 'app/favicon.ico')]);
+  // favicon.ico: generato come ICO con PNG incorporati (vedi DECISIONS.md)
   console.log('brand: ok');
 }
 
