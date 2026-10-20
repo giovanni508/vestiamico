@@ -3,7 +3,7 @@ import { nav, site, whatsappHref, fullAddress } from '@/lib/content';
 import { hoursRows } from '@/lib/hours';
 import { TLink } from '@/components/motion/PageTransition';
 import { Logo } from '@/components/ui/Logo';
-import { CookieSettingsButton } from '@/components/layout/CookieBanner';
+import { CookieSettingsButton } from '@/components/layout/CookieSettingsButton';
 import { WovenLabel } from '@/components/ui/WovenLabel';
 
 export function Footer() {

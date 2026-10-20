@@ -2,10 +2,9 @@
 // Cartellino WhatsApp discreto: compare dopo la prima scena e resta a portata di pollice.
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { WhatsappLogoIcon } from '@phosphor-icons/react';
 import { whatsappHref } from '@/lib/site';
 
-export function WhatsAppSticky() {
+export function WhatsAppSticky({ icon }: { icon: React.ReactNode }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const pathname = usePathname();
 
@@ -45,7 +44,7 @@ export function WhatsAppSticky() {
 
   return (
     <a ref={ref} href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="wa-sticky" data-visible="false" data-cursor="Scrivici">
-      <WhatsappLogoIcon size={22} weight="regular" aria-hidden="true" />
+      {icon}
       <span className="wa-sticky-label">Scrivici</span>
       <span className="sr-only"> su WhatsApp (si apre in una nuova scheda)</span>
     </a>

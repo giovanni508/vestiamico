@@ -11,8 +11,19 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { WhatsAppSticky } from '@/components/layout/WhatsAppSticky';
-import { CookieBanner } from '@/components/layout/CookieBanner';
+import { CookieBannerLazy } from '@/components/layout/CookieBannerLazy';
 import { StoreJsonLd } from '@/components/seo/JsonLd';
+import { WhatsappLogoIcon, PhoneIcon, InstagramLogoIcon, FacebookLogoIcon, XIcon } from '@phosphor-icons/react/dist/ssr';
+
+// icone renderizzate sul server e passate ai componenti client
+const headerIcons = {
+  wa: <WhatsappLogoIcon size={18} aria-hidden="true" />,
+  waLarge: <WhatsappLogoIcon size={26} aria-hidden="true" />,
+  phone: <PhoneIcon size={20} aria-hidden="true" />,
+  instagram: <InstagramLogoIcon size={22} aria-hidden="true" />,
+  facebook: <FacebookLogoIcon size={22} aria-hidden="true" />,
+  close: <XIcon size={20} aria-hidden="true" />,
+};
 
 // Font self-hosted e ridotti ai soli caratteri del sito (scripts/subset-fonts.mjs, licenza SIL OFL):
 // Bodoni Moda (asse ottico, peso 500) per i titoli, come il wordmark Didone del logo; Archivo per il testo.
@@ -85,15 +96,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Preloader />
         <TransitionProvider>
           <SmoothScroll />
-          <Header>
+          <Header icons={headerIcons}>
             <AnnouncementBar />
           </Header>
           <main id="contenuto" tabIndex={-1} className="outline-none">
             {children}
           </main>
           <Footer />
-          <WhatsAppSticky />
-          <CookieBanner />
+          <WhatsAppSticky icon={<WhatsappLogoIcon size={22} aria-hidden="true" />} />
+          <CookieBannerLazy />
           <Cursor />
         </TransitionProvider>
         <StoreJsonLd />

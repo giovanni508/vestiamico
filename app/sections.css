@@ -1107,7 +1107,7 @@ html.js.intro-done .hero-foot {
 }
 .home-thread-path {
   fill: none;
-  stroke: #b8903f; /* oro medio: leggibile sia sulla fodera blu sia sull'avorio */
+  stroke: #b8903f; /* oro medio, decorativo: visibile sulla fodera blu e, più tenue, sull'avorio */
   stroke-width: 1.5;
   stroke-dasharray: 8 6;
   stroke-linecap: round;

@@ -2,13 +2,12 @@
 // Modulo contatti: validazione al blur e all'invio, errori chiari in italiano sotto ai campi,
 // honeypot anti-spam, stati di invio animati (il filo si cuce mentre il messaggio parte).
 import { useRef, useState, type FormEvent } from 'react';
-import { WhatsappLogoIcon } from '@phosphor-icons/react';
 import { validateContact, LIMITS, type ContactErrors, type ContactInput } from '@/lib/contact-validation';
 import { whatsappHref } from '@/lib/site';
 type Copy = (typeof import('@/content/contatti.json'))['form'];
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
-export function ContactForm({ copy }: { copy: Copy }) {
+export function ContactForm({ copy, waIcon }: { copy: Copy; waIcon: React.ReactNode }) {
   const [values, setValues] = useState<ContactInput>({ name: '', email: '', phone: '', message: '', consent: false });
   const [errors, setErrors] = useState<ContactErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
@@ -153,7 +152,7 @@ export function ContactForm({ copy }: { copy: Copy }) {
         <div className="form-alert" role="alert">
           <p>{serverError}</p>
           <a href={whatsappHref(values.message ? `Ciao Vestiamico! ${values.message}` : undefined)} target="_blank" rel="noopener noreferrer" className="stitch-link">
-            <WhatsappLogoIcon size={18} aria-hidden="true" />
+            {waIcon}
             <span className="stitch-link-text">Scrivici su WhatsApp</span>
           </a>
         </div>

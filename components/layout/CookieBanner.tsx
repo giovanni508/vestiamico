@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 const KEY = 'vestiamico-consent';
-const OPEN_EVENT = 'vestiamico:cookie-open';
+import { COOKIE_OPEN_EVENT as OPEN_EVENT } from './cookie-events';
 const MAX_AGE = 365 * 24 * 60 * 60 * 1000;
 
 export type Consent = { v: 1; date: number; statistics: boolean; marketing: boolean };
@@ -83,7 +83,7 @@ export function CookieBanner() {
       </h2>
       <p className="t-small">
         Usiamo solo strumenti tecnici, necessari a far funzionare il sito. Statistiche e marketing restano spenti finché non scegli tu. Dettagli nella{' '}
-        <Link href="/cookie-policy-ue" className="underline underline-offset-2">
+        <Link href="/cookie-policy-ue" prefetch={false} className="underline underline-offset-2">
           Cookie Policy
         </Link>
         .
@@ -134,14 +134,5 @@ export function CookieBanner() {
         )}
       </div>
     </div>
-  );
-}
-
-/** Pulsante del footer per riaprire le preferenze. */
-export function CookieSettingsButton({ className = '' }: { className?: string }) {
-  return (
-    <button type="button" className={className} onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}>
-      Gestisci cookie
-    </button>
   );
 }

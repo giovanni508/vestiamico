@@ -65,7 +65,7 @@ export default function StyleguidePage() {
       <section className="theme-notte sg-section">
         <div className="wrap">
           <h2 className="font-display t-h2">Tipografia</h2>
-          <p className="muted measure">Bodoni Moda (titoli, come il wordmark del logo) e Archivo (testo; larghezza condensata per misure e cartellini). Scala fluida con clamp().</p>
+          <p className="muted measure">Bodoni Moda (titoli, come il wordmark del logo) e Archivo (testo; cifre tabellari per misure e cartellini). Scala fluida con clamp().</p>
           <div className="sg-type">
             {TYPE.map(([cls, name, val]) => (
               <div key={cls}>

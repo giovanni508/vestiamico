@@ -93,7 +93,7 @@ export default function ContattiPage() {
               <StoreMap />
             </div>
           </div>
-          <ContactForm copy={form} />
+          <ContactForm copy={form} waIcon={<WhatsappLogoIcon size={18} aria-hidden="true" />} />
         </div>
       </section>
       <BreadcrumbJsonLd items={[{ name: 'Contatti', path: '/contatti' }]} />

@@ -61,5 +61,13 @@ Registro delle scelte importanti, in ordine cronologico, con il perché.
 - **Font ridotti ai caratteri del sito** (`scripts/subset-fonts.mjs`): da 324 KB a 40 KB al primo caricamento. Da rilanciare se si aggiungono testi con caratteri nuovi.
 - **Motion layer in differita**: GSAP e Lenis arrivano dopo il load o alla prima interazione. Tutto ciò che è già sullo schermo quando arrivano resta visibile (nessun "lampo").
 - **Titoli e poster dipinti al primo frame**: le animazioni d'ingresso non nascondono più l'elemento principale (si "assesta" invece di uscire da una maschera); i sipari sono pannelli sovrapposti, non ritagli.
-- **Misure Lighthouse**: sono state fatte in locale con il throttling simulato standard (Lantern). In locale ogni risorsa termina quasi istantaneamente, quindi il modello conta come "prima dell'LCP" anche JS e font che su una rete vera arriverebbero dopo: l'LCP simulato (2,5-2,8 s) è più pessimista dell'LCP misurato con limitazione reale della rete (1,9-2,0 s). Riportati entrambi.
+- **Misure Lighthouse**: sono state fatte in locale con il throttling simulato standard (Lantern). In locale ogni risorsa termina quasi istantaneamente, quindi il modello conta come "prima dell'LCP" anche JS e font che su una rete vera arriverebbero dopo: l'LCP simulato (2,7-3,0 s nell'ultima misura) è più pessimista dell'LCP misurato con limitazione reale della rete (2,0-2,1 s). Riportati entrambi in PROGRESS.md.
 - **Porta 3100 occupata** da un'altra applicazione locale dell'utente: le verifiche usano la porta 3210 (non è stato toccato nulla dell'altra applicazione).
+
+## Revisione finale
+
+- **Filo unico nel margine** invece di tratti separati per scena: è l'unica forma che "non si spezza" davvero lungo una pagina con scene agganciate. Colore `#b8903f` (oro medio): un solo tono che resta visibile sulla fodera blu e, più tenue, sull'avorio. È decorativo (2,55:1 sull'avorio), non porta informazioni.
+- **Dimensionamento ottico del Bodoni fissato** (44 titoli, 60 hero e contatore, 24 numeri del metro) invece di "auto": a 1x i filetti a ottica 96 sparivano e le parole sembravano spezzate.
+- **Grana senza `isolation`**: altrimenti ogni sezione diventava un contesto di impilamento e le scene agganciate non potevano coprire il filo.
+- **Icone renderizzate sul server** e passate come proprietà ai componenti client (header, WhatsApp, modulo): nessun codice icona nel JS del browser. **Banner cookie** caricato come modulo a parte dopo l'idratazione.
+- **Limite residuo dell'LCP simulato**: in locale l'LCP reale è ~170 ms; la stima simulata (2,7-3,0 s) conta come "prima dell'LCP" anche i ~120 KB del runtime React/Next, che terminano in pochi millisecondi su localhost ma non sono eliminabili. Con limitazione di rete reale (DevTools) l'LCP è 2,0-2,1 s.

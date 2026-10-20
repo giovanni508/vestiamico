@@ -13,11 +13,17 @@ Per riprendere: leggere questo file e DECISIONS.md.
 | 7. Ciclo di verifica | ✅ 3 cicli + revisione indipendente in 3 giri (CRITIQUE.md) |
 | 8. Consegna | ✅ README, PRESENTAZIONE, TODO-cliente |
 
-## Ultime misure (build di produzione, Lighthouse mobile, throttling simulato)
+## Ultime misure (20 ottobre 2026, build di produzione, Lighthouse 13 mobile)
 
-Home 95 · Collezioni 95 · Cerimonia 96 · Punto vendita 95 · Brand 96 · Contatti 96 · Privacy 97. Accessibilità, Best Practices, SEO: 100 ovunque. CLS 0. LCP simulato 2,5–2,9 s; con throttling reale DevTools 1,9–2,0 s.
+Throttling simulato (il valore di riferimento di Lighthouse): Home 94 · Collezioni 94 · Cerimonia 94 · Punto vendita 94 · Brand 96 · Contatti 94 · Privacy 96. Accessibilità, Best Practices, SEO: 100 ovunque. CLS 0. LCP simulato 2,7–3,0 s.
+
+Throttling reale DevTools (rete e CPU limitate davvero): Home 85 · Collezioni 86 · Contatti 92, LCP 2,0–2,1 s. LCP osservato senza limitazioni: ~170 ms.
+
+Il criterio "LCP < 2,5 s" è rispettato con il throttling reale, non con la stima simulata: vedi DECISIONS.md, "Limite residuo dell'LCP simulato".
+
+Altre verifiche dell'ultimo giro: tsc, eslint e build puliti; 0 overflow, 0 errori di console, 0 richieste fallite a 390/768/1440/1920 px (l'unico 404 è quello voluto della pagina inesistente); controlli di accessibilità e motion tutti superati.
 
 ## Aperto
 
-- Revisione indipendente: ultimo rilievo (nodo del filo tagliato a 390 px) corretto nel CSS dopo l'ultima cattura; da riverificare con `node scripts/screenshots.mjs 390`.
 - Dati da confermare col cliente: content/TODO-cliente.md.
+- Prima del dominio di produzione: provare i redirect 301 sul vecchio sito (elenco in README) e configurare l'invio email del modulo (variabili in .env.example).

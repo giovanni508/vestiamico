@@ -192,7 +192,7 @@
     line-height: 0.92;
   }
 
-  /* Archivo condensato: misure, cartellini, numeri del metro */
+  /* Archivo con cifre tabellari: misure, cartellini, numeri del metro */
   .font-misura {
     font-family: var(--font-sans);
     font-feature-settings: 'tnum' 1, 'lnum' 1;

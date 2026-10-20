@@ -8,7 +8,7 @@
 6. **Le cose che vi distinguono, messe in scena.** I 66 anni scorrono da 1960 a oggi; le taglie dalla 38 alla 60 passano su un metro da sarta; la cerimonia ha una sua passerella orizzontale.
 7. **WhatsApp ovunque, con garbo.** Un "cartellino" come quelli appesi ai capi porta a WhatsApp con un messaggio già scritto (anche per la consulenza cerimonia e per ogni capo delle collezioni).
 8. **Orari che si aggiornano da soli.** "Aperto ora / Chiuso" in tempo reale sull'ora di Roma; gli avvisi di ferie spariscono da soli alla scadenza, niente più banner di agosto a ottobre.
-9. **Veloce e accessibile.** Punteggi Google Lighthouse su telefono: 95-97 in velocità, 100 in accessibilità, buone pratiche e SEO. Video alleggeriti da 20 MB a meno di 1,5 MB.
+9. **Veloce e accessibile.** Punteggi Google Lighthouse su telefono: 94-96 in velocità, 100 in accessibilità, buone pratiche e SEO. Video alleggeriti da 20 MB a meno di 1,5 MB.
 10. **Pulito e sicuro.** Corretti tutti gli errori del vecchio sito (link che portavano a Elementor, cookie con {segnaposto}, copyright con i "+", icone social vuote), dati strutturati per Google, redirect dai vecchi indirizzi.
 
 ## Le scelte da raccontare

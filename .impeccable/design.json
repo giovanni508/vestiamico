@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T12:00:00Z",
+  "title": "Design System: Vestiamico",
+  "extensions": {
+    "colorMeta": {
+      "notte": { "role": "primary", "displayName": "Blu notte fodera", "canonical": "oklch(21.1% 0.052 265.7)", "tonalRamp": ["#03091f", "#19233c", "#353f57", "#545e73", "#788092", "#9ea5b3", "#c5cbd7", "#e9effb"] },
+      "notte-2": { "role": "primary", "displayName": "Fodera rialzata", "canonical": "oklch(25.7% 0.058 264.5)", "tonalRamp": ["#030920", "#162340", "#323f5b", "#515e77", "#768096", "#9ca5b7", "#c4cbd9", "#e8effd"] },
+      "notte-3": { "role": "primary", "displayName": "Impuntura su notte", "canonical": "oklch(33.1% 0.071 264.6)", "tonalRamp": ["#020823", "#142243", "#2e3f64", "#4d5d80", "#71809f", "#98a5bf", "#c0cbe0", "#e6efff"] },
+      "oro": { "role": "secondary", "displayName": "Filo d'oro", "canonical": "oklch(79.1% 0.103 85.3)", "tonalRamp": ["#120a00", "#2d2208", "#4d3d1a", "#6f5b2e", "#967d44", "#c0a05c", "#e8c67f", "#ffebad"] },
+      "oro-chiaro": { "role": "secondary", "displayName": "Oro chiaro", "canonical": "oklch(88.1% 0.074 88.4)", "tonalRamp": ["#100a01", "#292315", "#473f2c", "#675d43", "#8d7f5d", "#b4a379", "#ddc996", "#ffedba"] },
+      "oro-scuro": { "role": "secondary", "displayName": "Oro scuro (accento su avorio)", "canonical": "oklch(48.2% 0.092 78.8)", "tonalRamp": ["#180600", "#361e00", "#563900", "#795612", "#9a7a46", "#bca074", "#dfc7a2", "#ffecce"] },
+      "avorio": { "role": "neutral", "displayName": "Avorio camiceria", "canonical": "oklch(95.0% 0.013 86.8)", "tonalRamp": ["#0c0b09", "#252422", "#41403d", "#5f5d5a", "#82807b", "#a7a49e", "#cecac2", "#f2eee5"] },
+      "avorio-2": { "role": "neutral", "displayName": "Avorio in ombra", "canonical": "oklch(91.1% 0.019 86.1)", "tonalRamp": ["#0c0b08", "#252420", "#413f3b", "#605d57", "#838078", "#a9a49a", "#cfcabe", "#f4eee1"] },
+      "ardesia": { "role": "neutral", "displayName": "Ardesia (testo secondario su avorio)", "canonical": "oklch(44.5% 0.035 264.1)", "tonalRamp": ["#060b15", "#1d2432", "#374051", "#545e71", "#778092", "#9da5b5", "#c4cbd8", "#e9eff9"] },
+      "nebbia": { "role": "neutral", "displayName": "Nebbia (testo secondario su notte)", "canonical": "oklch(77.6% 0.027 266.6)", "tonalRamp": ["#090b0f", "#21242a", "#3c4048", "#595e68", "#7a808e", "#9da5b5", "#c3cbdc", "#e8effe"] },
+      "linea-avorio": { "role": "neutral", "displayName": "Linea avorio (--line su avorio)", "canonical": "oklch(82.9% 0.028 85.7)", "tonalRamp": ["#0d0b07", "#26241e", "#433f38", "#625d53", "#868072", "#aba494", "#d3cab7", "#f6eedd"] },
+      "errore": { "role": "error", "displayName": "Errore", "canonical": "oklch(47.2% 0.163 28.7)", "tonalRamp": ["#2a0000", "#510000", "#7a0907", "#a52a21", "#c65b4e", "#e5877a", "#ffb3a7", "#ffdcd1"] },
+      "errore-chiaro": { "role": "error", "displayName": "Errore chiaro (su notte)", "canonical": "oklch(78.5% 0.099 24.9)", "tonalRamp": ["#170505", "#361c1a", "#593431", "#7f4f4b", "#aa6d68", "#d88e88", "#ffb3ac", "#ffdad3"] }
+    },
+    "typographyMeta": {
+      "mega": { "displayName": "Mega", "purpose": "Titoli scena di massima scala (.t-mega con .font-display)." },
+      "display": { "displayName": "Display", "purpose": "Titoli pagina e scena (.t-display)." },
+      "headline": { "displayName": "H2", "purpose": "Titoli di sezione e numeri grandi (.t-h2)." },
+      "title": { "displayName": "H3", "purpose": "Sottotitoli, spesso in corsivo Bodoni caricato dopo il load (.t-h3)." },
+      "lead": { "displayName": "Lead", "purpose": "Paragrafi d'apertura (.t-lead)." },
+      "body": { "displayName": "Corpo", "purpose": "Testo corrente, misura 62ch (.measure)." },
+      "small": { "displayName": "Small", "purpose": "Didascalie e note (.t-small)." },
+      "micro": { "displayName": "Micro", "purpose": "Crediti e note minime (.t-micro)." },
+      "label": { "displayName": "Cartellino", "purpose": "Etichetta delle azioni a cartellino." },
+      "misura": { "displayName": "Misura", "purpose": "Numeri tabellari per orari, taglie, numerazioni (.font-misura)." }
+    },
+    "fabrics": [
+      { "name": "theme-notte", "vars": { "--bg": "var(--color-notte)", "--fg": "var(--color-avorio)", "--fg-muted": "var(--color-nebbia)", "--accent": "var(--color-oro)", "--line": "var(--color-notte-3)", "--focus": "var(--color-oro)" } },
+      { "name": "theme-avorio", "vars": { "--bg": "var(--color-avorio)", "--fg": "var(--color-notte)", "--fg-muted": "var(--color-ardesia)", "--accent": "var(--color-oro-scuro)", "--line": "#cfc6b3", "--focus": "var(--color-oro-scuro)" } }
+    ],
+    "opticalSizes": [
+      { "name": "default", "value": "'opsz' 44", "purpose": ".font-display: titoli." },
+      { "name": "grande", "value": "'opsz' 60", "purpose": "Titolo hero e contatore 1960." },
+      { "name": "metro", "value": "'opsz' 24", "purpose": "Numeri del metro da sarta." }
+    ],
+    "shadows": [
+      { "name": "galleggiante", "value": "0 18px 40px -18px rgb(13 23 48 / 0.6)", "purpose": "Cartellino WhatsApp sticky (variante -22px sui loghi brand a colori)." },
+      { "name": "pannello", "value": "0 30px 70px -28px rgb(13 23 48 / 0.65)", "purpose": "Banner cookie." },
+      { "name": "foto-sovrapposta", "value": "0 30px 60px -30px rgb(0 0 0 / 0.7)", "purpose": "Foto del negozio sovrapposta alla mappa." }
+    ],
+    "motion": [
+      { "name": "ease-sartoria", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default GSAP e CSS: ingressi, hover, transizioni." },
+      { "name": "ease-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "expo.out: sipari, aperture, clip-path." },
+      { "name": "ease-uscita", "value": "cubic-bezier(0.7, 0, 0.84, 0)", "purpose": "Uscite brevi." },
+      { "name": "duration-rapida", "value": "0.4s", "purpose": "Colori, opacità, stati." },
+      { "name": "duration-media", "value": "0.8s", "purpose": "Default GSAP, filo dei link, cartellino." },
+      { "name": "duration-lenta", "value": "1.2s", "purpose": "Zoom foto, ingressi grandi." },
+      { "name": "stagger-elementi", "value": "0.06s", "purpose": "Elementi in sequenza; totale < 0.5s." },
+      { "name": "stagger-righe", "value": "0.08s", "purpose": "Righe di testo rivelate; totale < 0.5s." },
+      { "name": "thread-dash", "value": "8 6 (HomeThread, timeline), 7 6 (Thread)", "purpose": "Tratteggio del filo d'oro." },
+      { "name": "loading", "value": "loadMotion(): dopo load + 450ms o alla prima interazione", "purpose": "GSAP, ScrollTrigger, SplitText, CustomEase e Lenis fuori dal JS iniziale." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "26rem" },
+      { "name": "sm", "value": "40rem" },
+      { "name": "md", "value": "48rem" },
+      { "name": "lg", "value": "64rem" }
+    ],
+    "layout": {
+      "wrapMax": "1680px",
+      "headerHeight": "4.25rem",
+      "grid": "4 colonne, 12 da 48rem"
+    }
+  },
+  "components": [
+    {
+      "name": "Cartellino (TagButton)",
+      "kind": "button",
+      "refersTo": "tag-button-notte",
+      "description": "Azione principale: etichetta appesa al filo d'oro, colori invertiti rispetto al tessuto.",
+      "html": "<div class=\"ds-fabric-notte\"><a href=\"#\" class=\"ds-tag\"><span class=\"ds-tag-string\"></span><span class=\"ds-tag-body\"><span class=\"ds-tag-hole\"></span>Scrivici su WhatsApp</span></a></div>",
+      "css": ".ds-fabric-notte { --bg: #0d1730; --fg: #f2eee5; --accent: #d9b66a; background: var(--bg); color: var(--fg); padding: 2rem; font-family: Archivo, system-ui, sans-serif; } .ds-tag { display: inline-flex; align-items: center; text-decoration: none; } .ds-tag-string { display: block; width: 30px; height: 1px; margin-right: -4px; background-image: linear-gradient(to right, var(--accent) 55%, transparent 0); background-size: 7px 1px; } .ds-tag-body { position: relative; display: inline-flex; align-items: center; min-height: 3.25rem; padding: 0.85rem 1.35rem 0.85rem 2.15rem; background: var(--fg); color: var(--bg); font-weight: 600; font-size: 1rem; white-space: nowrap; clip-path: polygon(15px 0, 100% 0, 100% 100%, 15px 100%, 0 50%); transform-origin: 14px 50%; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); } .ds-tag-body::after { content: ''; position: absolute; inset: 4px 4px 4px 18px; border: 1px dashed currentColor; opacity: 0.32; pointer-events: none; } .ds-tag-hole { position: absolute; left: 12px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--accent); } .ds-tag:hover .ds-tag-body { transform: rotate(-2.5deg); } .ds-tag:active .ds-tag-body { transform: rotate(-1deg) scale(0.98); } .ds-tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }"
+    },
+    {
+      "name": "Cartellino su avorio",
+      "kind": "button",
+      "refersTo": "tag-button-avorio",
+      "description": "Lo stesso cartellino su tessuto avorio: corpo notte, accento oro scuro.",
+      "html": "<div class=\"ds-fabric-avorio\"><a href=\"#\" class=\"ds-tag2\"><span class=\"ds-tag2-string\"></span><span class=\"ds-tag2-body\"><span class=\"ds-tag2-hole\"></span>Vieni in negozio</span></a></div>",
+      "css": ".ds-fabric-avorio { --bg: #f2eee5; --fg: #0d1730; --accent: #7a5713; background: var(--bg); color: var(--fg); padding: 2rem; font-family: Archivo, system-ui, sans-serif; } .ds-tag2 { display: inline-flex; align-items: center; text-decoration: none; } .ds-tag2-string { display: block; width: 30px; height: 1px; margin-right: -4px; background-image: linear-gradient(to right, var(--accent) 55%, transparent 0); background-size: 7px 1px; } .ds-tag2-body { position: relative; display: inline-flex; align-items: center; min-height: 3.25rem; padding: 0.85rem 1.35rem 0.85rem 2.15rem; background: var(--fg); color: var(--bg); font-weight: 600; font-size: 1rem; white-space: nowrap; clip-path: polygon(15px 0, 100% 0, 100% 100%, 15px 100%, 0 50%); transform-origin: 14px 50%; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); } .ds-tag2-body::after { content: ''; position: absolute; inset: 4px 4px 4px 18px; border: 1px dashed currentColor; opacity: 0.32; } .ds-tag2-hole { position: absolute; left: 12px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--accent); } .ds-tag2:hover .ds-tag2-body { transform: rotate(-2.5deg); } .ds-tag2:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }"
+    },
+    {
+      "name": "Link cucito (StitchLink)",
+      "kind": "custom",
+      "refersTo": "stitch-link",
+      "description": "Azione secondaria: cucitura tratteggiata che il filo pieno ricopre in hover e focus.",
+      "html": "<div class=\"ds-fabric-notte2\"><a href=\"#\" class=\"ds-stitch\"><span class=\"ds-stitch-text\">Scopri le collezioni</span></a></div>",
+      "css": ".ds-fabric-notte2 { --accent: #d9b66a; background: #0d1730; color: #f2eee5; padding: 2rem; font-family: Archivo, system-ui, sans-serif; } .ds-stitch { display: inline-block; font-weight: 500; color: inherit; text-decoration: none; } .ds-stitch-text { position: relative; display: inline-block; padding-bottom: 0.32em; } .ds-stitch-text::before, .ds-stitch-text::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; } .ds-stitch-text::before { background-image: linear-gradient(to right, currentColor 55%, transparent 0); background-size: 8px 1px; opacity: 0.55; } .ds-stitch-text::after { background: var(--accent); height: 1.5px; transform: scaleX(0); transform-origin: right; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); } .ds-stitch:hover .ds-stitch-text::after, .ds-stitch:focus-visible .ds-stitch-text::after { transform: scaleX(1); transform-origin: left; } .ds-stitch:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }"
+    },
+    {
+      "name": "Cartellino WhatsApp sticky",
+      "kind": "button",
+      "refersTo": "whatsapp-sticky",
+      "description": "Azione WhatsApp sempre a portata, in basso a destra; oro pieno, unica ombra galleggiante.",
+      "html": "<div class=\"ds-wa-canvas\"><a href=\"#\" class=\"ds-wa\">Scrivici</a></div>",
+      "css": ".ds-wa-canvas { background: #f2eee5; padding: 2rem; font-family: Archivo, system-ui, sans-serif; } .ds-wa { position: relative; display: inline-flex; align-items: center; min-height: 48px; padding: 0.7rem 1.1rem 0.7rem 1.6rem; background: #d9b66a; color: #0d1730; font-weight: 600; text-decoration: none; clip-path: polygon(12px 0, 100% 0, 100% 100%, 12px 100%, 0 50%); box-shadow: 0 18px 40px -18px rgb(13 23 48 / 0.6); transition: background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1); } .ds-wa::before { content: ''; position: absolute; left: 9px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: #0d1730; } .ds-wa:hover { background: #ecd6a0; } .ds-wa:focus-visible { outline: 2px solid #7a5713; outline-offset: 4px; }"
+    },
+    {
+      "name": "Navigazione desktop",
+      "kind": "nav",
+      "refersTo": "header-whatsapp",
+      "description": "Header su notte: link con filo oro che si stende, pagina corrente in oro chiaro, azione WhatsApp oro.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-logo\">VESTIAMICO</span><a href=\"#\" class=\"ds-nav-link\" aria-current=\"page\">Collezioni</a><a href=\"#\" class=\"ds-nav-link\">Cerimonia</a><a href=\"#\" class=\"ds-nav-link\">Punto vendita</a><a href=\"#\" class=\"ds-nav-wa\">WhatsApp</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; height: 4.25rem; padding-inline: 2rem; background: #0d1730; color: #f2eee5; font-family: Archivo, system-ui, sans-serif; } .ds-nav-logo { margin-right: auto; font-family: 'Bodoni Moda', Didot, Georgia, serif; letter-spacing: 0.12em; } .ds-nav-link { position: relative; padding-block: 0.5rem; font-size: 0.95rem; color: inherit; text-decoration: none; } .ds-nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0.15rem; height: 1px; background: #d9b66a; transform: scaleX(0); transform-origin: right; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-link:hover::after, .ds-nav-link[aria-current='page']::after { transform: scaleX(1); transform-origin: left; } .ds-nav-link[aria-current='page'] { color: #ecd6a0; } .ds-nav-link:focus-visible, .ds-nav-wa:focus-visible { outline: 2px solid #d9b66a; outline-offset: 4px; } .ds-nav-wa { padding: 0.55rem 0.95rem; font-size: 0.92rem; font-weight: 600; background: #d9b66a; color: #0d1730; text-decoration: none; transition: background-color 0.4s; } .ds-nav-wa:hover { background: #ecd6a0; }"
+    },
+    {
+      "name": "Etichetta tessuta (WovenLabel)",
+      "kind": "custom",
+      "refersTo": "woven-label",
+      "description": "La firma del sito, come l'etichetta cucita dentro una giacca.",
+      "html": "<span class=\"ds-woven\"><span class=\"ds-woven-stitch\"></span><span class=\"ds-woven-text\"><span class=\"ds-woven-name\">Vestiamico</span><span class=\"ds-woven-sub\">Palermo, dal 1960</span></span><span class=\"ds-woven-stitch\"></span></span>",
+      "css": ".ds-woven { display: inline-flex; align-items: stretch; gap: 0.9rem; padding: 0.6rem 1.5rem; color: #d9b66a; background-color: #15223f; background-image: repeating-linear-gradient(0deg, rgb(242 238 229 / 0.045) 0 1px, transparent 1px 3px); border-block: 1px solid rgb(217 182 106 / 0.45); clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%); } .ds-woven-stitch { width: 1px; background-image: linear-gradient(to bottom, rgb(217 182 106 / 0.8) 55%, transparent 0); background-size: 1px 5px; } .ds-woven-text { display: grid; text-align: center; line-height: 1.15; } .ds-woven-name { font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 500; font-size: 1.2rem; letter-spacing: 0.16em; text-transform: uppercase; } .ds-woven-sub { font-family: Archivo, system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.05em; color: #aeb6c8; }"
+    },
+    {
+      "name": "Cornice impunturata",
+      "kind": "card",
+      "refersTo": "photo-frame",
+      "description": "Riquadro foto 4:5, angoli vivi, impuntura tratteggiata rientrata che si intensifica in hover.",
+      "html": "<a href=\"#\" class=\"ds-frame\"><span class=\"ds-frame-img\"></span></a>",
+      "css": ".ds-frame { position: relative; display: block; width: 220px; aspect-ratio: 4 / 5; overflow: hidden; background: #e7e1d4; } .ds-frame-img { position: absolute; inset: 0; background: linear-gradient(160deg, #23345a, #0d1730); transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-frame::after { content: ''; position: absolute; inset: 6px; border: 1px dashed rgb(242 238 229 / 0.55); opacity: 0.7; pointer-events: none; transition: opacity 0.4s; } .ds-frame:hover::after, .ds-frame:focus-visible::after { opacity: 1; } .ds-frame:hover .ds-frame-img, .ds-frame:focus-visible .ds-frame-img { transform: scale(1.045); } .ds-frame:focus-visible { outline: 2px solid #7a5713; outline-offset: 4px; }"
+    },
+    {
+      "name": "Campo del form",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Campo su avorio, angoli vivi, focus con bordo notte e alone oro scuro.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Nome</span><input class=\"ds-input\" type=\"text\" placeholder=\"Il tuo nome\"></label>",
+      "css": ".ds-field { display: grid; gap: 0.45rem; padding: 2rem; background: #f2eee5; color: #0d1730; font-family: Archivo, system-ui, sans-serif; } .ds-field-label { font-weight: 600; font-size: 0.95rem; } .ds-input { width: 100%; min-height: 52px; padding: 0.85rem 1rem; font: inherit; color: #0d1730; background: #fbf9f5; border: 1px solid #b8ad97; border-radius: 0; transition: border-color 0.4s, box-shadow 0.4s; } .ds-input:focus-visible { outline: none; border-color: #0d1730; box-shadow: 0 0 0 3px rgb(122 87 19 / 0.35); } .ds-input[aria-invalid='true'] { border-color: #a3261e; box-shadow: inset 3px 0 0 #a3261e; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La giacca vista da dentro",
+    "overview": "Il sito è l'interno di una giacca Vestiamico: la fodera blu notte copre i campi dominanti, la camiceria avorio fa da pausa, un filo d'oro tratteggiato attraversa le scene e le cuce. Ogni dettaglio dell'interfaccia viene dal laboratorio di sartoria: le azioni sono cartellini appesi a un filo, i bordi sono impunture, i numeri sono quelli del metro da sarta, la firma è un'etichetta tessuta.\n\nLa densità è editoriale: titoli Bodoni enormi, molta aria, scene a tutto schermo alternate per tessuto. L'asimmetria è controllata e sempre motivata (righe del titolo rientrate, griglie a misure diverse, foto che si sovrappongono alla mappa). Rifiutati in modo esplicito dal contratto di direzione: la boutique-template bianca con caroselli e card prodotto, il cliché nero e oro da gioielleria.",
+    "keyCharacteristics": [
+      "Due tessuti di sezione, notte e avorio, dichiarati da ogni sezione.",
+      "Oro solo come filo e accento, mai come campo esteso tranne le azioni WhatsApp.",
+      "Angoli vivi ovunque; impunture tratteggiate al posto di cornici e bordi.",
+      "Bodoni Moda con asse ottico per i titoli, Archivo per testo, misure e azioni.",
+      "Motion sartoriale, caricato in differita, mai necessario per leggere."
+    ],
+    "rules": [
+      { "name": "The Two Fabrics Rule", "body": "Una sezione nuova sceglie un tessuto con `.theme-notte` o `.theme-avorio` e colora i figli solo con `--bg --fg --fg-muted --accent --line --focus`. Un colore diretto è ammesso solo per gli elementi che restano uguali su entrambi i tessuti (header, azioni WhatsApp, menu).", "section": "colors" },
+      { "name": "The Gold Thread Rule", "body": "L'oro è filo, nodo, accento, focus. Come superficie piena compare solo sulle azioni WhatsApp e sulla barra avvisi. Mai fondi oro di sezione, mai gradienti oro.", "section": "colors" },
+      { "name": "The Right Gold Rule", "body": "Su avorio l'accento è sempre `--color-oro-scuro`: l'oro pieno su avorio non regge il testo.", "section": "colors" },
+      { "name": "The Late Italic Rule", "body": "Il corsivo Bodoni è una famiglia separata che si attiva solo con `html.fonts-late` (dopo il load), per non rubare banda all'LCP; prima il browser inclina il tondo. Un nuovo elemento in corsivo va aggiunto alla lista di selettori in `globals.css`, oppure usa `.italic-display`.", "section": "typography" },
+      { "name": "The Balanced Heading Rule", "body": "`h1–h3` hanno `text-wrap: balance`, i paragrafi `text-wrap: pretty`. Le righe dei titoli si spezzano a mano solo quando l'asimmetria è voluta.", "section": "typography" },
+      { "name": "The Measured Asymmetry Rule", "body": "L'asimmetria è un rientro preciso, non un disordine: la seconda riga del titolo hero rientra di `clamp(1.25rem, 9vw, 11rem)`, le griglie collezioni e galleria alternano misure, la foto del negozio si sovrappone alla mappa (58%, margine −22%). Le pagine restano leggibili in colonna singola su mobile.", "section": "layout" },
+      { "name": "The Flat Fabric Rule", "body": "Sezioni, riquadri e foto in pagina non hanno ombra. Un'ombra è ammessa solo per ciò che si stacca davvero dal tessuto (sticky, pannello, sovrapposizione), sempre morbida e con offset negativo.", "section": "elevation" },
+      { "name": "The Stitch Not Border Rule", "body": "Una cornice si disegna come impuntura tratteggiata rientrata dentro l'oggetto, non come bordo pieno esterno. Le linee piene sottili restano per funzioni precise: divisore del footer, campi del form, metro da sarta, bordi dell'etichetta tessuta.", "section": "shapes" }
+    ],
+    "dos": [
+      "**Do** dichiarare il tessuto di ogni nuova sezione (`.theme-notte` o `.theme-avorio`) e colorare con le variabili semantiche.",
+      "**Do** usare il cartellino (`TagButton`) per l'azione principale di una scena e il link cucito (`StitchLink`) per la secondaria; al massimo un cartellino per gruppo di azioni.",
+      "**Do** incorniciare foto e riquadri con un'impuntura tratteggiata rientrata, non con un bordo esterno.",
+      "**Do** usare Bodoni Moda 500 con `.font-display` per i titoli e Archivo per tutto il resto; `.font-misura` per orari, taglie e numeri.",
+      "**Do** usare i token di motion (`sartoria`, `expo.out`, `uscita`; 0.4 / 0.8 / 1.2s) e passare da `useMotion` / `loadMotion`, con un ramo `prefers-reduced-motion: no-preference`.",
+      "**Do** tenere angoli vivi; il cerchio solo per fori, nodi e pin."
+    ],
+    "donts": [
+      "**Don't** usare l'oro pieno su avorio per testo o accento: lì l'accento è oro scuro.",
+      "**Don't** introdurre card prodotto con ombra, caroselli o fondi bianchi da boutique-template; non usare il nero e oro da gioielleria.",
+      "**Don't** arrotondare angoli o usare forme a pillola.",
+      "**Don't** importare GSAP o Lenis in modo statico in un componente: allunga il JS iniziale.",
+      "**Don't** nascondere con un'animazione un contenuto che il visitatore sta già leggendo, né rendere un contenuto visibile solo dopo un'animazione.",
+      "**Don't** aggiungere sopratitoli in maiuscolo spaziato sopra i titoli: il maiuscolo spaziato appartiene solo all'etichetta tessuta."
+    ]
+  }
+}

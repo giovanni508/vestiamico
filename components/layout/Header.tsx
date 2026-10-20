@@ -3,14 +3,16 @@
 // si nasconde scendendo e ricompare risalendo. Su mobile apre un menu a tutto schermo.
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { WhatsappLogoIcon, PhoneIcon, InstagramLogoIcon, FacebookLogoIcon, XIcon } from '@phosphor-icons/react';
 import { loadMotion, getMotion } from '@/lib/motion';
 import { getLenis } from '@/lib/lenis';
 import { nav, site, whatsappHref } from '@/lib/site';
 import { TLink } from '@/components/motion/PageTransition';
 import { Logo } from '@/components/ui/Logo';
 
-export function Header({ children }: { children?: React.ReactNode }) {
+export type HeaderIcons = { wa: React.ReactNode; waLarge: React.ReactNode; phone: React.ReactNode; instagram: React.ReactNode; facebook: React.ReactNode; close: React.ReactNode };
+
+/** Le icone arrivano già renderizzate dal server: nessun codice icona nel JS del browser. */
+export function Header({ children, icons }: { children?: React.ReactNode; icons: HeaderIcons }) {
   const pathname = usePathname();
   const header = useRef<HTMLElement>(null);
   const menu = useRef<HTMLDivElement>(null);
@@ -130,7 +132,7 @@ export function Header({ children }: { children?: React.ReactNode }) {
             rel="noopener noreferrer"
             data-cursor="Scrivici"
           >
-            <WhatsappLogoIcon size={18} weight="regular" aria-hidden="true" />
+            {icons.wa}
             <span>Scrivici</span>
             <span className="sr-only"> su WhatsApp (si apre in una nuova scheda)</span>
           </a>
@@ -163,7 +165,7 @@ export function Header({ children }: { children?: React.ReactNode }) {
             <Logo className="h-[30px]" title="Vestiamico" />
             <button type="button" className="menu-close" onClick={() => setOpen(false)}>
               <span>Chiudi</span>
-              <XIcon size={20} aria-hidden="true" />
+              {icons.close}
             </button>
           </div>
           <nav aria-label="Menu principale">
@@ -182,20 +184,20 @@ export function Header({ children }: { children?: React.ReactNode }) {
           </nav>
           <div className="menu-extras">
             <a data-menu-extra href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="menu-wa">
-              <WhatsappLogoIcon size={26} aria-hidden="true" />
+              {icons.waLarge}
               <span>
                 <strong>Scrivici su WhatsApp</strong>
                 <span className="block t-small muted">{site.whatsapp.display}</span>
               </span>
             </a>
             <a data-menu-extra href={site.phones[0].href} className="menu-phone">
-              <PhoneIcon size={20} aria-hidden="true" />
+              {icons.phone}
               <span>Chiama il negozio, {site.phones[0].display}</span>
             </a>
             <div data-menu-extra className="menu-social">
               {site.social.map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} (si apre in una nuova scheda)`}>
-                  {s.name === 'Instagram' ? <InstagramLogoIcon size={22} aria-hidden="true" /> : <FacebookLogoIcon size={22} aria-hidden="true" />}
+                  {s.name === 'Instagram' ? icons.instagram : icons.facebook}
                 </a>
               ))}
             </div>

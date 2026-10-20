@@ -35,7 +35,7 @@ Partenza: Performance 76-81, LCP simulato ~5 s su tutte le pagine, anche quelle 
 | Texture "grana" esterna diventata elemento LCP | Texture inline (data URI) | LCP non dipende da una richiesta |
 | CSS inline sperimentale duplicava gli stili nel payload | Opzione rimossa | documento −48 KB |
 
-Arrivo: **Performance 95-97, Accessibilità 100, Best Practices 100, SEO 100, CLS 0** su 7 pagine.
+Arrivo: **Performance 95-97, Accessibilità 100, Best Practices 100, SEO 100, CLS 0** su 7 pagine (ultima misura dopo la revisione finale: 94-96, vedi PROGRESS.md).
 
 ## Ciclo 3 — quattro larghezze, accessibilità e motion
 
@@ -50,6 +50,25 @@ Arrivo: **Performance 95-97, Accessibilità 100, Best Practices 100, SEO 100, CL
 | Tappe della timeline e cornici della galleria si nascondevano di nuovo tornando su | Home | Restano visibili una volta apparse |
 
 Verifiche automatiche superate (`scripts/a11y-motion-check.mjs`): preloader assente e nessun contenuto nascosto con "riduci movimento", scroll nativo, skip link al primo Tab, focus sempre visibile, menu mobile con focus intrappolato ed Esc che lo chiude, posizione ripristinata con "indietro". Nessun overflow orizzontale, nessun errore di console, nessuna richiesta fallita a 390/768/1440/1920 px.
+
+## Ciclo 4 — revisione indipendente (agente di revisione con contesto pulito)
+
+Primo giudizio: **fix**, con 8 correzioni materiali. Dopo tre giri:
+
+| Rilievo | Esito | Cosa abbiamo fatto |
+|---|---|---|
+| Il filo d'oro, firma del concept, non attraversava le scene | Risolto (2° giro) | Un unico filo nel margine sinistro della home, cucito dallo scroll, con un nodo a ogni scena; passa sotto le scene agganciate |
+| Spazi tra le lettere nei titoli ("V ia", "T re") | Risolto | Verificato che il font ridotto è identico all'originale (stesse larghezze); erano i filetti del Bodoni al massimo dimensionamento ottico, quasi invisibili a 1x. Ottica a 44 (titoli) e 60 (hero, contatore) |
+| Sottotitolo sopra al titolo come "occhiello" (Collezioni) | Risolto | Ora è la riga sotto al titolo |
+| WhatsApp sticky sopra testi e campi su telefono | Risolto | Cartellino compatto (solo icona) sotto i 640 px; si ritira su footer, modulo e metro delle taglie |
+| Dati incerti presentati come certi | Risolto | Email e CAP sono scelte motivate (il brief chiedeva di sceglierle e annotare il dubbio), orari della prima domenica non pubblicati; tutto in TODO-cliente |
+| Provenienza delle immagini | Risolto | Origine registrata in ognuno degli 84 raster (tutti dal vecchio sito del cliente, nessuno generato qui) |
+| Galleria cerimonia "nuda" | Risolto | Cornici impunturate e cartellini con categoria reale (Donna, Uomo, "Uomo, in negozio") |
+| Fasce vuote tra scene | Risolto (2° giro) | Klarna chiude la scena Donna/Uomo e apre le taglie; recensioni agganciate al centro, alte quanto il contenuto |
+| Regressioni del 1° giro (loghi troppo piccoli, WhatsApp sul metro) | Risolte | Loghi bilanciati per area visiva a dimensione doppia; sticky nascosto sul metro |
+| Nodo del filo tagliato dal bordo a 390 px | Risolto | Filo rientrato e nodo più piccolo su telefono, verificato con nuova cattura |
+
+Note "da tenere" del revisore: il duotono blu notte e avorio, il Bodoni enorme sui tre video, metro e timeline come momenti d'autore.
 
 ## Cosa resterebbe da migliorare (dipende dal cliente)
 
