@@ -401,6 +401,21 @@ html.menu-open .wa-sticky {
 .wa-sticky:hover {
   background: var(--color-oro-chiaro);
 }
+/* sul telefono: cartellino compatto, solo icona (il nome resta per gli screen reader) */
+@media (max-width: 39.99rem) {
+  .wa-sticky {
+    min-height: 46px;
+    padding: 0.65rem 0.8rem 0.65rem 1.35rem;
+  }
+  .wa-sticky-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
 
 /* ------------------------------------------------------------------ cookie */
 .cookie {

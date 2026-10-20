@@ -8,6 +8,7 @@ import { Ceremony } from '@/components/home/Ceremony';
 import { Brands } from '@/components/home/Brands';
 import { Reviews } from '@/components/home/Reviews';
 import { Visit } from '@/components/home/Visit';
+import { HomeThread } from '@/components/home/HomeThread';
 
 export const metadata: Metadata = {
   title: { absolute: home.meta.title },
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <div className="home">
+      <HomeThread />
       <Hero />
       <Since />
       <Split />
@@ -26,6 +28,6 @@ export default function HomePage() {
       <Brands />
       <Reviews />
       <Visit />
-    </>
+    </div>
   );
 }

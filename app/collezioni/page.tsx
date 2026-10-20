@@ -24,13 +24,13 @@ export default function CollezioniPage() {
         <section key={s.id} id={s.id} className={`collection-section ${idx % 2 ? 'theme-notte grain' : 'theme-avorio'}`} aria-labelledby={`${s.id}-title`}>
           <div className="wrap">
             <div className="collection-intro">
-              <SplitReveal as="h2" id={`${s.id}-title`} className="font-display t-h2 collection-title">
-                {s.title}
-              </SplitReveal>
+              <div className="collection-heading">
+                <SplitReveal as="h2" id={`${s.id}-title`} className="font-display t-h2 collection-title">
+                  {s.title}
+                </SplitReveal>
+                <p className="collection-subtitle font-display">{s.subtitle}</p>
+              </div>
               <FadeUp className="collection-intro-text">
-                <p className="collection-subtitle font-display" data-fade>
-                  {s.subtitle}
-                </p>
                 <p className="collection-quote font-display" data-fade>
                   {s.quote}
                 </p>

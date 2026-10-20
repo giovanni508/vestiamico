@@ -19,7 +19,7 @@ function BrandItem({ b, dup = false }: { b: B; dup?: boolean }) {
       {...(dup ? { 'data-dup': true, 'aria-hidden': true, tabIndex: -1 } : {})}
     >
       <span className="brand-mono" aria-hidden="true">
-        <BrandLogo logo={b.logo} tone="notte" />
+        <BrandLogo logo={b.logo} tone="notte" area={12500} maxWidth={320} />
       </span>
       <span className="brand-color" aria-hidden="true">
         <LazyImage src={tile.src} alt="" width={160} height={160} sizes="160px" quality={75} />

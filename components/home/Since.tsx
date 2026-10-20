@@ -4,6 +4,7 @@ import { CountUp } from '@/components/motion/CountUp';
 import { WordLight } from '@/components/motion/WordLight';
 import { FadeUp } from '@/components/motion/FadeUp';
 import { TimelineFx } from './TimelineFx';
+import { WovenLabel } from '@/components/ui/WovenLabel';
 
 // filo orizzontale ondulato che attraversa la timeline (coordinate: 1000 per tappa)
 function threadPath(n: number) {
@@ -38,10 +39,13 @@ export function Since() {
           start="top 85%"
           end="bottom 35%"
         />
-        <p className="since-caption">
-          <span className="since-years font-misura">{years}</span>
-          <span>{since.caption}</span>
-        </p>
+        <div className="since-side">
+          <p className="since-caption">
+            <span className="since-years font-misura">{years}</span>
+            <span>{since.caption}</span>
+          </p>
+          <WovenLabel lines={['Vestiamico', 'Palermo, dal 1960']} />
+        </div>
       </div>
 
       <div className="wrap since-statement-wrap">

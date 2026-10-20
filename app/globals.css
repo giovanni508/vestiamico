@@ -185,7 +185,8 @@
 
   .font-display {
     font-family: var(--font-display);
-    font-optical-sizing: auto;
+    /* dimensionamento ottico intermedio: contrasto alto ma filetti visibili anche su schermi 1x */
+    font-variation-settings: 'opsz' 44;
     font-weight: 500;
     letter-spacing: -0.025em;
     line-height: 0.92;
@@ -267,9 +268,9 @@
     width: 1px;
   }
 
+  /* niente isolation: le scene agganciate devono poter coprire il filo della home */
   .grain {
     position: relative;
-    isolation: isolate;
   }
   .grain::after {
     content: '';
@@ -279,8 +280,8 @@
     /* texture inline: nessuna richiesta di rete */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 220px 220px;
-    opacity: 0.09;
-    mix-blend-mode: soft-light;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
     z-index: 1;
   }
 

@@ -22,7 +22,8 @@ export function ReviewsFx({ children }: { children: ReactNode }) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: el,
-            start: 'top top',
+            // agganciato al centro: la sezione è alta quanto il suo contenuto, niente fasce vuote
+            start: 'center center',
             end: () => `+=${window.innerHeight * 1.6}`,
             pin: true,
             scrub: 0.6,

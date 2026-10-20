@@ -4,6 +4,7 @@ import { hoursRows } from '@/lib/hours';
 import { TLink } from '@/components/motion/PageTransition';
 import { Logo } from '@/components/ui/Logo';
 import { CookieSettingsButton } from '@/components/layout/CookieBanner';
+import { WovenLabel } from '@/components/ui/WovenLabel';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -14,7 +15,10 @@ export function Footer() {
           <h2 id="footer-title" className="sr-only">
             Vestiamico, informazioni e contatti
           </h2>
-          <Logo className="h-[52px] sm:h-[72px] text-[var(--color-oro)]" title="Vestiamico" />
+          <div className="footer-brand">
+            <Logo className="h-[52px] sm:h-[72px] text-[var(--color-oro)]" title="Vestiamico" />
+            <WovenLabel lines={['Fatto a Palermo', 'dal 1960, tre generazioni']} />
+          </div>
           <p className="t-lead measure muted">
             Abbigliamento uomo e donna a Palermo dal {site.since}: qualità, stile e autenticità, dal capo di tutti i giorni a quello da cerimonia.
           </p>

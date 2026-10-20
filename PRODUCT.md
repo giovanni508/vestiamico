@@ -40,7 +40,7 @@ Una famiglia che veste la Sicilia dal 1960 e tiene insieme due cose che di solit
 - Nessun e-commerce, nessun prezzo pubblicato: non inventare prezzi.
 - Form contatti con destinatario da variabile d'ambiente.
 - Avvisi temporanei (ferie, aperture straordinarie) devono scadere da soli.
-- Undecided: email corretta (.it o .com), CAP (90124 o 90125), orari della prima domenica, esistenza account TikTok/YouTube.
+- Scelte da confermare col cliente (pubblicate come scelta motivata, elencate in content/TODO-cliente.md): email info@vestiamico.it (il vecchio footer diceva .com; il brief chiedeva di scegliere e annotare il dubbio), CAP 90124 (pagina Contatti e OpenStreetMap; il vecchio link Maps diceva 90125). Non pubblicati perché ignoti: orari della prima domenica (si dice solo che è aperta), account TikTok/YouTube.
 
 ## Brand Commitments
 

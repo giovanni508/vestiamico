@@ -68,6 +68,7 @@ html.intro-done .hero-media {
   padding-bottom: clamp(1.75rem, 6vh, 4.5rem);
 }
 .hero-title {
+  font-variation-settings: 'opsz' 60;
   font-size: clamp(2.9rem, 11.3vw, 12rem);
   line-height: 0.9;
   letter-spacing: -0.035em;
@@ -210,6 +211,7 @@ html.js.intro-done .hero-foot {
   gap: 1.25rem;
 }
 .since-counter {
+  font-variation-settings: 'opsz' 60;
   display: block;
   font-size: clamp(6.4rem, 31vw, 29rem);
   line-height: 0.78;
@@ -737,13 +739,12 @@ html.js.intro-done .hero-foot {
   position: relative;
   display: grid;
   place-items: center;
-  width: clamp(150px, 17vw, 240px);
-  height: clamp(96px, 9vw, 130px);
+  min-width: clamp(170px, 18vw, 260px);
+  padding-inline: 0.75rem;
+  height: clamp(110px, 10vw, 150px);
   margin-inline: clamp(1.25rem, 3vw, 3rem);
 }
 .brand-mono {
-  width: 100%;
-  height: 52%;
   display: grid;
   place-items: center;
   transition:
@@ -762,10 +763,7 @@ html.js.intro-done .hero-foot {
     transform var(--duration-media) var(--ease-sartoria);
 }
 .brand-logo {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  max-width: none;
   object-fit: contain;
 }
 .brand-color .lazy-ph {
@@ -812,6 +810,7 @@ html.js.intro-done .hero-foot {
 
 /* ================================================================== RECENSIONI */
 .reviews {
+  --bg: var(--color-avorio-2);
   background: var(--color-avorio-2);
 }
 .reviews-grid {
@@ -872,13 +871,7 @@ html.js.intro-done .hero-foot {
     grid-template-columns: 4fr 8fr;
     gap: 5vw;
   }
-  .reviews-root.is-stacked {
-    height: 100svh;
-    display: flex;
-    align-items: center;
-  }
   .is-stacked .reviews-grid {
-    padding-block: calc(var(--header-h) + 1rem) 2rem;
     width: 100%;
   }
   .is-stacked .reviews-list {
@@ -1093,4 +1086,191 @@ html.js.intro-done .hero-foot {
   .map-pin-pulse {
     animation: none;
   }
+}
+
+/* ================================================================== IL FILO CHE NON SI SPEZZA */
+.home {
+  position: relative;
+}
+.home-thread {
+  position: absolute;
+  z-index: 1;
+  left: calc(var(--spacing-gutter) / 2 - 10px);
+  width: 20px;
+  pointer-events: none;
+}
+.home-thread svg {
+  display: block;
+  width: 20px;
+  height: 100%;
+  overflow: visible;
+}
+.home-thread-path {
+  fill: none;
+  stroke: #b8903f; /* oro medio: leggibile sia sulla fodera blu sia sull'avorio */
+  stroke-width: 1.5;
+  stroke-dasharray: 8 6;
+  stroke-linecap: round;
+}
+.home-thread-knot {
+  position: absolute;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  transform: scale(0) rotate(-90deg);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.home-thread-knot.is-tied {
+  transform: none;
+}
+.home-thread-knot::before,
+.home-thread-knot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  margin: -1px 0 0 -7px;
+  background: #b8903f;
+  transform: rotate(45deg);
+}
+.home-thread-knot::after {
+  transform: rotate(-45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-thread-knot {
+    transform: none;
+  }
+}
+/* le scene agganciate passano sopra al filo (hanno uno sfondo pieno) */
+.timeline.is-pinned,
+.ceremony-root.is-pinned,
+.reviews-root.is-stacked {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+}
+.since > *,
+.split,
+.sizes > *,
+.brands > *,
+.visit > * {
+  position: relative;
+}
+
+/* ================================================================== ETICHETTA TESSUTA */
+.woven-label {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0.9rem;
+  padding: 0.6rem 1.5rem;
+  color: var(--color-oro);
+  background-color: var(--color-notte-2);
+  background-image: repeating-linear-gradient(0deg, rgb(242 238 229 / 0.045) 0 1px, transparent 1px 3px);
+  border-block: 1px solid rgb(217 182 106 / 0.45);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
+}
+.woven-label-stitch {
+  width: 1px;
+  background-image: linear-gradient(to bottom, rgb(217 182 106 / 0.8) 55%, transparent 0);
+  background-size: 1px 5px;
+}
+.woven-label-text {
+  display: grid;
+  text-align: center;
+  line-height: 1.15;
+}
+.woven-label-name {
+  font-size: 1.2rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.woven-label-sub {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--color-nebbia);
+}
+.since-side {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+}
+.footer-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2.5rem;
+}
+
+/* ================================================================== GALLERIA CERIMONIA: cornici e cartellini */
+.ceremony-frame::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  z-index: 2;
+  border: 1px dashed rgb(242 238 229 / 0.6);
+  pointer-events: none;
+}
+.ceremony-item {
+  position: relative;
+}
+.ceremony-tag {
+  position: absolute;
+  z-index: 3;
+  left: -6px;
+  bottom: 14%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem 0.35rem 1.15rem;
+  background: var(--color-avorio);
+  color: var(--color-notte);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  clip-path: polygon(9px 0, 100% 0, 100% 100%, 9px 100%, 0 50%);
+  transform: rotate(-4deg);
+  transform-origin: 9px 50%;
+}
+.ceremony-tag::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: var(--color-notte);
+}
+@media (min-width: 48rem) {
+  .ceremony-tag {
+    bottom: auto;
+    top: calc(100% - 2.2rem);
+  }
+  .c-top .ceremony-tag,
+  .c-center .ceremony-tag,
+  .c-bottom .ceremony-tag {
+    top: auto;
+    bottom: 1.2rem;
+  }
+}
+
+/* ================================================================== RITMO: meno vuoti fra scene contigue */
+.since {
+  padding-top: clamp(4rem, 9vw, 8rem);
+}
+/* Klarna chiude la scena Donna/Uomo e apre le taglie: stesso avorio, nessuna fascia vuota */
+.split-klarna {
+  padding-bottom: 0;
+}
+.sizes {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+.brands {
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+.reviews-grid {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
 }

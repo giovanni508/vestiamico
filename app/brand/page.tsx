@@ -55,7 +55,7 @@ export default function BrandPage() {
                     <p className="brand-row-note t-small muted">{b.note}</p>
                     <span className="brand-row-logo" aria-hidden="true">
                       <span className="brand-mono">
-                        <BrandLogo logo={b.logo} tone={gi % 2 ? 'avorio' : 'notte'} />
+                        <BrandLogo logo={b.logo} tone={gi % 2 ? 'avorio' : 'notte'} area={9000} maxWidth={220} />
                       </span>
                       <span className="brand-color">
                         <LazyImage src={tile.src} alt="" width={180} height={180} sizes="180px" quality={75} />

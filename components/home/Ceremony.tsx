@@ -40,6 +40,9 @@ export function Ceremony() {
                       <LazyImage src={image.src} alt={it.alt} fill sizes="(min-width: 48rem) 30vw, 72vw" quality={75} className="object-cover" observe="section" />
                     </div>
                   </div>
+                  <span className="ceremony-tag" aria-hidden="true">
+                    {it.tag}
+                  </span>
                 </li>
               );
             })}

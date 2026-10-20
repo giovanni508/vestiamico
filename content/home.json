@@ -4,13 +4,26 @@
     "description": "Boutique di abbigliamento uomo e donna a Palermo dal 1960: dall’abito più conveniente al capo firmato, abiti da cerimonia e taglie dalla 38 alla 60. Via dell’Orsa Minore 69."
   },
   "hero": {
-    "titleLines": ["Dalle passerelle", "al tuo armadio"],
+    "titleLines": [
+      "Dalle passerelle",
+      "al tuo armadio"
+    ],
     "subtitle": "Dall’abito più conveniente al capo firmato",
     "body": "Abbigliamento uomo e donna a Palermo, dal 1960.",
-    "videos": ["passerella", "abito-blu", "smoking-blu"],
+    "videos": [
+      "passerella",
+      "abito-blu",
+      "smoking-blu"
+    ],
     "mobileVideo": "passerella",
-    "ctaPrimary": { "label": "Scopri le collezioni", "href": "/collezioni" },
-    "ctaWhatsapp": { "label": "Scrivici su WhatsApp", "message": "Ciao Vestiamico! Vi scrivo dal sito, vorrei qualche informazione." }
+    "ctaPrimary": {
+      "label": "Scopri le collezioni",
+      "href": "/collezioni"
+    },
+    "ctaWhatsapp": {
+      "label": "Scrivici su WhatsApp",
+      "message": "Ciao Vestiamico! Vi scrivo dal sito, vorrei qualche informazione."
+    }
   },
   "since": {
     "from": 1960,
@@ -74,13 +87,41 @@
     "title": "Il giorno più importante, vestito bene",
     "body": "Matrimoni, battesimi, comunioni, cresime, eventi formali: due piani di abiti da cerimonia per lei e per lui, e qualcuno che ti aiuta a scegliere il taglio giusto.",
     "images": [
-      { "key": "abbigliamento-vestiamico-13", "alt": "Abito da cerimonia lungo in tulle azzurro a balze" },
-      { "key": "cerimonia-vestiamico-2", "alt": "Coppia in abiti da cerimonia: abito lungo blu in raso e completo blu" },
-      { "key": "abbigliamento-vestiamico-6", "alt": "Smoking blu notte con revers in raso e papillon" },
-      { "key": "cerimonia-7", "alt": "Abito rosso a balze su manichino in boutique" },
-      { "key": "img-1671", "alt": "Smoking nero con revers a scialle esposto in negozio" },
-      { "key": "abbigliamento-vestiamico-2", "alt": "Abito lungo rosso monospalla" },
-      { "key": "mg-1696", "alt": "Giacca da cerimonia in velluto verde con revers in raso" }
+      {
+        "key": "abbigliamento-vestiamico-13",
+        "alt": "Abito da cerimonia lungo in tulle azzurro a balze",
+        "tag": "Donna"
+      },
+      {
+        "key": "cerimonia-vestiamico-2",
+        "alt": "Coppia in abiti da cerimonia: abito lungo blu in raso e completo blu",
+        "tag": "Donna e uomo"
+      },
+      {
+        "key": "abbigliamento-vestiamico-6",
+        "alt": "Smoking blu notte con revers in raso e papillon",
+        "tag": "Uomo"
+      },
+      {
+        "key": "cerimonia-7",
+        "alt": "Abito rosso a balze su manichino in boutique",
+        "tag": "Donna"
+      },
+      {
+        "key": "img-1671",
+        "alt": "Smoking nero con revers a scialle esposto in negozio",
+        "tag": "Uomo, in negozio"
+      },
+      {
+        "key": "abbigliamento-vestiamico-2",
+        "alt": "Abito lungo rosso monospalla",
+        "tag": "Donna"
+      },
+      {
+        "key": "mg-1696",
+        "alt": "Giacca da cerimonia in velluto verde con revers in raso",
+        "tag": "Uomo, in negozio"
+      }
     ],
     "cta": {
       "label": "Prenota una consulenza",

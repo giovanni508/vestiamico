@@ -17,12 +17,28 @@ export function WhatsAppSticky() {
     sentinel.setAttribute('aria-hidden', 'true');
     sentinel.style.cssText = 'position:absolute;left:0;top:90vh;width:1px;height:1px;pointer-events:none;';
     document.body.appendChild(sentinel);
+    let pastHero = false;
+    // si ritira dove coprirebbe contenuti: footer e modulo contatti (lì i contatti ci sono già) e il metro delle taglie
+    const covering = new Set<Element>();
+    const update = () => {
+      el.dataset.visible = String(pastHero && covering.size === 0);
+    };
     const io = new IntersectionObserver(([entry]) => {
-      el.dataset.visible = String(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+      pastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      update();
     });
     io.observe(sentinel);
+    const avoid = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) covering.add(e.target);
+        else covering.delete(e.target);
+      }
+      update();
+    });
+    document.querySelectorAll('.site-footer, .contact-form, .form-done, .ruler').forEach((n) => avoid.observe(n));
     return () => {
       io.disconnect();
+      avoid.disconnect();
       sentinel.remove();
     };
   }, [pathname]);
