@@ -467,6 +467,9 @@ html.js.intro-done .hero-foot {
   .split-panel:focus-within {
     flex-grow: 1.86;
   }
+  .split-title {
+    font-size: clamp(4rem, 10.5vw, 12.5rem);
+  }
   .split-klarna p {
     max-width: none;
     white-space: nowrap;
@@ -540,6 +543,8 @@ html.js.intro-done .hero-foot {
   opacity: 0.75;
 }
 .ruler-num {
+  /* ottica più bassa: filetti più robusti, numeri leggibili anche in movimento */
+  font-variation-settings: 'opsz' 24;
   position: absolute;
   left: 0.65rem;
   top: 50%;
@@ -763,6 +768,9 @@ html.js.intro-done .hero-foot {
   height: auto;
   object-fit: contain;
 }
+.brand-color .lazy-ph {
+  display: none;
+}
 .brand-color img {
   height: 100%;
   width: auto;
@@ -792,7 +800,13 @@ html.js.intro-done .hero-foot {
   }
   .marquee-track > :first-child {
     flex-wrap: wrap;
+    flex-shrink: 1;
+    min-width: 0;
+    width: 100%;
     justify-content: center;
+  }
+  .marquee [data-dup] {
+    display: none;
   }
 }
 

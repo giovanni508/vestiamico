@@ -8,10 +8,16 @@ import { BrandLogo } from '@/components/ui/BrandLogo';
 
 type B = { name: string; logo: string };
 
-function BrandItem({ b }: { b: B }) {
+function BrandItem({ b, dup = false }: { b: B; dup?: boolean }) {
   const tile = img(b.logo);
   return (
-    <TLink href="/brand" className="brand-item" data-cursor="Scopri" aria-label={`${b.name}, scopri i brand`}>
+    <TLink
+      href="/brand"
+      className="brand-item"
+      data-cursor="Scopri"
+      aria-label={`${b.name}, scopri i brand`}
+      {...(dup ? { 'data-dup': true, 'aria-hidden': true, tabIndex: -1 } : {})}
+    >
       <span className="brand-mono" aria-hidden="true">
         <BrandLogo logo={b.logo} tone="notte" />
       </span>
@@ -35,13 +41,13 @@ export function Brands() {
       <div className="brands-rows">
         <Marquee duration={38} label={`Brand donna: ${donna.brands.map((b) => b.name).join(', ')}`}>
           {[...donna.brands, ...donna.brands].map((b, i) => (
-            <BrandItem key={`${b.logo}-${i}`} b={b} />
+            <BrandItem key={`${b.logo}-${i}`} b={b} dup={i >= donna.brands.length} />
           ))}
         </Marquee>
         <span className="brands-thread stitch-x" aria-hidden="true" />
         <Marquee duration={44} reverse label={`Brand uomo: ${uomo.brands.map((b) => b.name).join(', ')}`}>
           {[...uomo.brands, ...uomo.brands].map((b, i) => (
-            <BrandItem key={`${b.logo}-${i}`} b={b} />
+            <BrandItem key={`${b.logo}-${i}`} b={b} dup={i >= uomo.brands.length} />
           ))}
         </Marquee>
       </div>

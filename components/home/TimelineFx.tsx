@@ -51,13 +51,13 @@ export function TimelineFx({ children }: { children: ReactNode }) {
             duration: 0.8,
             ease: 'sartoria',
             scrollTrigger: visibleAtStart
-              ? { trigger: el, start: 'top 65%', toggleActions: 'play none none reverse' }
-              : { trigger: item, containerAnimation: tl, start: 'left 72%', toggleActions: 'play none none reverse' },
+              ? { trigger: el, start: 'top 65%', toggleActions: 'play none none none' }
+              : { trigger: item, containerAnimation: tl, start: 'left 72%', toggleActions: 'play none none none' },
           });
           gsap.fromTo(
             item.querySelector('[data-tl-knot]'),
             { scale: 0, rotate: -90 },
-            { scale: 1, rotate: 0, duration: 0.6, ease: 'back.out(2)', scrollTrigger: { trigger: item, containerAnimation: tl, start: 'left 56%', toggleActions: 'play none none reverse' } },
+            { scale: 1, rotate: 0, duration: 0.6, ease: 'back.out(2)', scrollTrigger: { trigger: item, containerAnimation: tl, start: 'left 56%', toggleActions: 'play none none none' } },
           );
         });
         return () => el.classList.remove('is-pinned');

@@ -6,6 +6,10 @@ import { usePathname } from 'next/navigation';
 import { loadMotion, getMotion, prefersReducedMotion } from '@/lib/motion';
 import { getLenis, setLenis, scrollToTarget } from '@/lib/lenis';
 
+// navigazione con indietro/avanti: il browser ripristina la posizione, non la forziamo in cima
+let fromHistory = false;
+if (typeof window !== 'undefined') window.addEventListener('popstate', () => (fromHistory = true));
+
 export function SmoothScroll() {
   const pathname = usePathname();
 
@@ -40,9 +44,13 @@ export function SmoothScroll() {
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     const lenis = getLenis();
-    if (!hash) lenis?.scrollTo(0, { immediate: true, force: true });
+    const restoring = fromHistory;
+    fromHistory = false;
+    if (!hash && !restoring) lenis?.scrollTo(0, { immediate: true, force: true });
     const id = window.setTimeout(() => {
       getMotion()?.ScrollTrigger.refresh();
+      // dopo il ricalcolo dei pin, Lenis riparte dalla posizione ripristinata dal browser
+      if (restoring) lenis?.scrollTo(window.scrollY, { immediate: true, force: true });
       if (hash) {
         const el = document.getElementById(decodeURIComponent(hash));
         if (el) scrollToTarget(el, { immediate: true, offset: -72 });

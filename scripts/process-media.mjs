@@ -102,11 +102,9 @@ function videos() {
 }
 
 async function brand() {
-  // logo oro con wordmark e monogramma per header scuro / footer
+  // logo orizzontale bianco (header, usato come maschera colorabile) e logo oro con wordmark (Open Graph, dati strutturati)
+  await sharp(path.join(SRC, '2025_10_logo-va-bia.png')).trim().resize({ height: 120 }).webp({ quality: 92 }).toFile(path.join(OUT_BRAND, 'logo-orizzontale-bianco.webp'));
   await sharp(path.join(SRC, '2025_10_logo-footer.png')).resize({ width: 480 }).png({ compressionLevel: 9 }).toFile(path.join(OUT_BRAND, 'logo-oro.png'));
-  await sharp(path.join(SRC, '2025_10_logo-footer.png')).resize({ width: 480 }).webp({ quality: 90 }).toFile(path.join(OUT_BRAND, 'logo-oro.webp'));
-  await sharp(path.join(SRC, '2025_11_favicon-vestiamico.png')).resize({ width: 600 }).webp({ quality: 90 }).toFile(path.join(OUT_BRAND, 'monogramma-oro.webp'));
-  await sharp(path.join(SRC, '2025_11_favicon-vestiamico.png')).resize({ width: 600 }).png({ compressionLevel: 9 }).toFile(path.join(OUT_BRAND, 'monogramma-oro.png'));
   // icone app
   const fav = path.join(SRC, '2025_11_favicon-vestiamico.png');
   const navy = { r: 14, g: 22, b: 38, alpha: 1 };
@@ -120,8 +118,26 @@ async function brand() {
   };
   await pad(512, path.join(ROOT, 'app/icon.png'));
   await pad(180, path.join(ROOT, 'app/apple-icon.png'));
-  await pad(64, path.join(SRC, 'fav64.png'));
-  // favicon.ico: generato come ICO con PNG incorporati (vedi DECISIONS.md)
+  // favicon.ico: contenitore ICO con PNG incorporati (16, 32, 48 px)
+  const sizes = [16, 32, 48];
+  const pngs = await Promise.all(sizes.map((s) => sharp(path.join(ROOT, 'app/icon.png')).resize(s, s).png().toBuffer()));
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0);
+  header.writeUInt16LE(1, 2);
+  header.writeUInt16LE(sizes.length, 4);
+  let offset = 6 + 16 * sizes.length;
+  const entries = sizes.map((s, i) => {
+    const e = Buffer.alloc(16);
+    e.writeUInt8(s, 0);
+    e.writeUInt8(s, 1);
+    e.writeUInt16LE(1, 4);
+    e.writeUInt16LE(32, 6);
+    e.writeUInt32LE(pngs[i].length, 8);
+    e.writeUInt32LE(offset, 12);
+    offset += pngs[i].length;
+    return e;
+  });
+  fs.writeFileSync(path.join(ROOT, 'app/favicon.ico'), Buffer.concat([header, ...entries, ...pngs]));
   console.log('brand: ok');
 }
 

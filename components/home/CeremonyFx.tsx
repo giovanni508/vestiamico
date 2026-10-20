@@ -39,7 +39,7 @@ export function CeremonyFx({ children }: { children: ReactNode }) {
             clipPath: 'inset(100% 0% 0% 0%)',
             duration: 1.1,
             ease: 'expo.out',
-            scrollTrigger: { trigger: item, containerAnimation: pan, start: 'left 92%', toggleActions: 'play none none reverse' },
+            scrollTrigger: { trigger: item, containerAnimation: pan, start: 'left 92%', toggleActions: 'play none none none' },
           });
         });
         return () => el.classList.remove('is-pinned');

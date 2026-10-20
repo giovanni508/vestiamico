@@ -10,7 +10,8 @@ Elenco di tutto ciò che manca o va confermato. Il sito funziona già senza ques
 - [ ] **Orari della prima domenica del mese**: il vecchio sito dice solo "aperti tutte le prime domeniche del mese", senza orari. L'indicatore "Aperto ora" in quelle domeniche dice "Oggi siamo aperti" senza fascia oraria.
 - [ ] **Domeniche di dicembre**: confermare che anche nel 2026 siete aperti tutte le domeniche 10:00–13:00 / 16:00–20:00 (l'avviso compare dal 25 novembre, file `content/announcements.json`).
 - [ ] **Chiusure e ferie 2026/2027**: comunicarle per aggiornare `site.json > hours.closures` e gli avvisi.
-- [ ] **Indirizzo email del modulo contatti**: a quale casella devono arrivare i messaggi del form (variabile `CONTACT_TO_EMAIL`) e quale servizio di invio usare (vedi README).
+- [ ] **Indirizzo email del modulo contatti**: a quale casella devono arrivare i messaggi del form (variabile `CONTACT_TO_EMAIL`). Serve anche un servizio di invio: consigliato [Resend](https://resend.com) con il dominio vestiamico.it verificato (record DNS) per il mittente (`CONTACT_FROM_EMAIL`). Vedi README.
+- [ ] **Consulenza cerimonia**: confermare i 3 passi scritti per la pagina Abiti da cerimonia (scrivi o chiama → fissiamo giorno e orario → prova e accessori). Serve prenotare o si può passare senza appuntamento?
 
 ## Storia di famiglia (per la timeline "Dal 1960")
 
