@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { home, img, site } from '@/lib/content';
 import { TLink } from '@/components/motion/PageTransition';
 import { SplitFx } from './SplitFx';
@@ -21,16 +21,7 @@ export function Split() {
             return (
               <article key={p.title} className="split-panel theme-notte" data-split-panel>
                 <div className="split-media" data-split-media>
-                  <Image
-                    src={image.src}
-                    alt=""
-                    fill
-                    sizes="(min-width: 48rem) 65vw, 100vw"
-                    placeholder="blur"
-                    blurDataURL={image.blur}
-                    quality={75}
-                    className="object-cover"
-                  />
+                  <LazyImage src={image.src} alt="" fill sizes="(min-width: 48rem) 65vw, 100vw" quality={75} className="object-cover" />
                 </div>
                 <div className="split-veil" aria-hidden="true" />
                 <div className="split-copy">

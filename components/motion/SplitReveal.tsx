@@ -1,9 +1,8 @@
 'use client';
 // Rivela un testo riga per riga da una maschera (le righe salgono dal "rovescio" del tessuto).
-// Il testo resta visibile senza JS e con prefers-reduced-motion.
+// Il testo resta visibile senza JS, con prefers-reduced-motion e se è già sullo schermo.
 import { useRef, type ElementType, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap, SplitText, DUR, STAGGER } from '@/lib/gsap';
+import { useMotion, inView, DUR, STAGGER } from '@/lib/motion';
 import { onIntroDone } from '@/lib/intro';
 
 type Props = {
@@ -20,10 +19,10 @@ type Props = {
 export function SplitReveal({ as: Tag = 'div', children, className, id, trigger = 'scroll', delay = 0, start = 'top 85%' }: Props) {
   const ref = useRef<HTMLElement>(null);
 
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap, SplitText }) => {
       const el = ref.current;
-      if (!el) return;
+      if (!el || (trigger === 'scroll' && inView(el))) return;
       const mm = gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         let cancelIntro: (() => void) | undefined;

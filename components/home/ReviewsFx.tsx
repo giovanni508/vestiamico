@@ -2,13 +2,12 @@
 // Desktop: la sezione si ferma e le citazioni si avvicendano (riga per riga) con lo scroll.
 // Mobile e reduced motion: le recensioni sono una sotto l'altra.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function ReviewsFx({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = root.current;
       if (!el) return;
       const items = gsap.utils.toArray<HTMLElement>('[data-rv-item]', el);

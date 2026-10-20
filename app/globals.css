@@ -111,7 +111,6 @@
     line-height: 1.6;
     background: var(--color-notte);
     color: var(--color-avorio);
-    font-variation-settings: 'wdth' 100;
     overflow-x: clip;
   }
 
@@ -195,9 +194,25 @@
   /* Archivo condensato: misure, cartellini, numeri del metro */
   .font-misura {
     font-family: var(--font-sans);
-    font-variation-settings: 'wdth' 72;
     font-feature-settings: 'tnum' 1, 'lnum' 1;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.015em;
+  }
+
+  /* il corsivo del Bodoni è una famiglia a parte: si attiva dopo il caricamento della pagina
+     (classe fonts-late), così non ruba banda all'LCP; prima il browser inclina il tondo */
+  .page-hero-sub,
+  .split-heading,
+  .review-quote,
+  .collection-subtitle,
+  .chapter-subtitle,
+  .goal-label,
+  .brand-group-sub,
+  .italic-display {
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+  html.fonts-late :is(.page-hero-sub, .split-heading, .review-quote, .collection-subtitle, .chapter-subtitle, .goal-label, .brand-group-sub, .italic-display) {
+    font-family: var(--font-bodoni-italic), var(--font-display);
   }
 
   .t-mega {
@@ -261,7 +276,8 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background-image: url('/media/grana.svg');
+    /* texture inline: nessuna richiesta di rete */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 220px 220px;
     opacity: 0.09;
     mix-blend-mode: soft-light;
@@ -295,6 +311,16 @@
   }
 
   /* maschera per le righe rivelate (SplitText) */
+  /* segnaposto delle immagini caricate quando si avvicinano */
+  .lazy-ph {
+    display: block;
+    background: color-mix(in oklab, var(--fg, #0d1730) 8%, var(--bg, #f2eee5));
+  }
+  .lazy-ph--fill {
+    position: absolute;
+    inset: 0;
+  }
+
   .line-mask {
     overflow: clip;
     padding-bottom: 0.08em;

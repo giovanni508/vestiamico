@@ -2,13 +2,12 @@
 // Il metro scorre all'infinito: una deriva lenta più la velocità dello scroll.
 // La taglia che passa sotto l'ago si accende d'oro. Fermo con prefers-reduced-motion.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function RulerFx({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap, ScrollTrigger }) => {
       const el = root.current;
       const track = el?.querySelector<HTMLElement>('[data-ruler-track]');
       if (!el || !track) return;

@@ -1,10 +1,9 @@
 'use client';
-// Lenis sincronizzato con GSAP ScrollTrigger su un unico ticker.
+// Lenis sincronizzato con GSAP ScrollTrigger su un unico ticker, caricati in differita.
 // Disattivato con prefers-reduced-motion (scroll nativo).
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import Lenis from 'lenis';
-import { gsap, ScrollTrigger, prefersReducedMotion } from '@/lib/gsap';
+import { loadMotion, getMotion, prefersReducedMotion } from '@/lib/motion';
 import { getLenis, setLenis, scrollToTarget } from '@/lib/lenis';
 
 export function SmoothScroll() {
@@ -12,17 +11,28 @@ export function SmoothScroll() {
 
   useEffect(() => {
     if (prefersReducedMotion()) return;
-    const lenis = new Lenis({ lerp: 0.11, smoothWheel: true, wheelMultiplier: 0.95, anchors: { offset: -80 } });
-    setLenis(lenis);
-    lenis.on('scroll', ScrollTrigger.update);
-    const tick = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
-    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    let cancelled = false;
+    let teardown: (() => void) | undefined;
+    loadMotion()
+      .then((m) => Promise.all([m, import('lenis')]))
+      .then(([{ gsap, ScrollTrigger }, { default: Lenis }]) => {
+      if (cancelled) return;
+      const lenis = new Lenis({ lerp: 0.11, smoothWheel: true, wheelMultiplier: 0.95, anchors: { offset: -80 } });
+      setLenis(lenis);
+      lenis.on('scroll', ScrollTrigger.update);
+      const tick = (time: number) => lenis.raf(time * 1000);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
+      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+      teardown = () => {
+        gsap.ticker.remove(tick);
+        lenis.destroy();
+        setLenis(null);
+      };
+    });
     return () => {
-      gsap.ticker.remove(tick);
-      lenis.destroy();
-      setLenis(null);
+      cancelled = true;
+      teardown?.();
     };
   }, []);
 
@@ -32,7 +42,7 @@ export function SmoothScroll() {
     const lenis = getLenis();
     if (!hash) lenis?.scrollTo(0, { immediate: true, force: true });
     const id = window.setTimeout(() => {
-      ScrollTrigger.refresh();
+      getMotion()?.ScrollTrigger.refresh();
       if (hash) {
         const el = document.getElementById(decodeURIComponent(hash));
         if (el) scrollToTarget(el, { immediate: true, offset: -72 });

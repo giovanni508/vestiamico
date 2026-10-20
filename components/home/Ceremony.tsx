@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { WhatsappLogoIcon } from '@phosphor-icons/react/dist/ssr';
 import { home, img, whatsappHref } from '@/lib/content';
 import { TagButton } from '@/components/ui/TagButton';
@@ -37,16 +37,7 @@ export function Ceremony() {
                 <li key={it.key} className={`ceremony-item ${LAYOUT[i % LAYOUT.length]}`} data-cer-item data-cursor="Guarda">
                   <div className="ceremony-frame">
                     <div className="ceremony-inner" data-cer-inner>
-                      <Image
-                        src={image.src}
-                        alt={it.alt}
-                        fill
-                        sizes="(min-width: 48rem) 30vw, 72vw"
-                        placeholder="blur"
-                        blurDataURL={image.blur}
-                        quality={75}
-                        className="object-cover"
-                      />
+                      <LazyImage src={image.src} alt={it.alt} fill sizes="(min-width: 48rem) 30vw, 72vw" quality={75} className="object-cover" observe="section" />
                     </div>
                   </div>
                 </li>

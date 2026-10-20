@@ -1,9 +1,10 @@
-import Image from 'next/image';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { brand, home, img } from '@/lib/content';
 import { Marquee } from '@/components/motion/Marquee';
 import { SplitReveal } from '@/components/motion/SplitReveal';
 import { StitchLink } from '@/components/ui/StitchLink';
 import { TLink } from '@/components/motion/PageTransition';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 type B = { name: string; logo: string };
 
@@ -11,13 +12,11 @@ function BrandItem({ b }: { b: B }) {
   const tile = img(b.logo);
   return (
     <TLink href="/brand" className="brand-item" data-cursor="Scopri" aria-label={`${b.name}, scopri i brand`}>
-      <span
-        className="brand-mono"
-        aria-hidden="true"
-        style={{ WebkitMaskImage: `url(/brand/loghi/${b.logo}.png)`, maskImage: `url(/brand/loghi/${b.logo}.png)` }}
-      />
+      <span className="brand-mono" aria-hidden="true">
+        <BrandLogo logo={b.logo} tone="notte" />
+      </span>
       <span className="brand-color" aria-hidden="true">
-        <Image src={tile.src} alt="" width={160} height={160} sizes="160px" quality={75} loading="lazy" />
+        <LazyImage src={tile.src} alt="" width={160} height={160} sizes="160px" quality={75} />
       </span>
     </TLink>
   );

@@ -1,8 +1,7 @@
 'use client';
 // Numero che conta da `from` a `to` legato allo scroll (il tempo che passa mentre scorri).
 import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 type Props = {
   from: number;
@@ -16,8 +15,8 @@ type Props = {
 
 export function CountUp({ from, to, className, start = 'top 75%', end = 'top 20%', label }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = ref.current;
       if (!el) return;
       const mm = gsap.matchMedia();

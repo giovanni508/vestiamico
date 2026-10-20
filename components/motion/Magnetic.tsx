@@ -1,13 +1,12 @@
 'use client';
 // Attrazione magnetica leggera verso il puntatore (solo dispositivi con hover e puntatore fine).
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function Magnetic({ children, strength = 0.28, className = '' }: { children: ReactNode; strength?: number; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = ref.current;
       if (!el) return;
       const mm = gsap.matchMedia();

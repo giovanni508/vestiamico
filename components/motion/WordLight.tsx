@@ -1,20 +1,20 @@
 'use client';
 // Frase le cui parole si "accendono" una dopo l'altra mentre scorri.
 import { useRef, type ElementType } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function WordLight({ text, as: Tag = 'p', className = '', id }: { text: string; as?: ElementType; className?: string; id?: string }) {
   const ref = useRef<HTMLElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = ref.current;
       if (!el) return;
       const mm = gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         gsap.fromTo(
           el.querySelectorAll('[data-word]'),
-          { opacity: 0.16 },
+          // 0.5 mantiene il contrasto minimo dei testi grandi (3:1) anche prima di accendersi
+          { opacity: 0.5 },
           { opacity: 1, stagger: 0.12, ease: 'none', scrollTrigger: { trigger: el, start: 'top 82%', end: 'bottom 45%', scrub: 0.5 } },
         );
       });
@@ -24,9 +24,9 @@ export function WordLight({ text, as: Tag = 'p', className = '', id }: { text: s
   );
   const words = text.split(' ');
   return (
-    <Tag ref={ref} className={className} id={id} aria-label={text}>
+    <Tag ref={ref} className={className} id={id}>
       {words.map((w, i) => (
-        <span key={i} data-word aria-hidden="true" className="inline-block">
+        <span key={i} data-word className="inline-block">
           {w}
           {i < words.length - 1 ? ' ' : ''}
         </span>

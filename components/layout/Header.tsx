@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { WhatsappLogoIcon, PhoneIcon, InstagramLogoIcon, FacebookLogoIcon, XIcon } from '@phosphor-icons/react';
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { loadMotion, getMotion } from '@/lib/motion';
 import { getLenis } from '@/lib/lenis';
 import { nav, site, whatsappHref } from '@/lib/site';
 import { TLink } from '@/components/motion/PageTransition';
@@ -24,21 +24,30 @@ export function Header({ children }: { children?: React.ReactNode }) {
     if (open) setOpen(false);
   }
 
-  // stato solido / nascosto in base allo scroll
+  // stato solido / nascosto in base allo scroll (ScrollTrigger arriva in differita)
   useEffect(() => {
     const el = header.current;
     if (!el) return;
-    const st = ScrollTrigger.create({
-      start: 0,
-      end: 'max',
-      onUpdate: (self) => {
-        const y = self.scroll();
-        el.dataset.solid = String(y > 24);
-        el.dataset.hidden = String(y > 240 && self.direction === 1);
-      },
-    });
     el.dataset.solid = String(window.scrollY > 24);
-    return () => st.kill();
+    let kill: (() => void) | undefined;
+    let cancelled = false;
+    loadMotion().then(({ ScrollTrigger }) => {
+      if (cancelled) return;
+      const st = ScrollTrigger.create({
+        start: 0,
+        end: 'max',
+        onUpdate: (self) => {
+          const y = self.scroll();
+          el.dataset.solid = String(y > 24);
+          el.dataset.hidden = String(y > 240 && self.direction === 1);
+        },
+      });
+      kill = () => st.kill();
+    });
+    return () => {
+      cancelled = true;
+      kill?.();
+    };
   }, [pathname]);
 
   // menu: blocco scroll, Esc, focus intrappolato, animazione a maschera
@@ -47,6 +56,7 @@ export function Header({ children }: { children?: React.ReactNode }) {
     if (!panel) return;
     const lenis = getLenis();
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motion = getMotion();
     if (!open) {
       lenis?.start();
       document.documentElement.classList.remove('menu-open');
@@ -56,8 +66,9 @@ export function Header({ children }: { children?: React.ReactNode }) {
     document.documentElement.classList.add('menu-open');
     const items = panel.querySelectorAll('[data-menu-item]');
     const extras = panel.querySelectorAll('[data-menu-extra]');
-    const ctx = gsap.context(() => {
+    const ctx = motion?.gsap.context(() => {
       if (reduce) return;
+      const { gsap } = motion;
       gsap.fromTo(panel, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.8, ease: 'expo.out' });
       gsap.fromTo(items, { yPercent: 110 }, { yPercent: 0, duration: 0.9, ease: 'sartoria', stagger: 0.06, delay: 0.15 });
       gsap.fromTo(extras, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.06, delay: 0.45 });
@@ -85,7 +96,7 @@ export function Header({ children }: { children?: React.ReactNode }) {
     window.addEventListener('keydown', onKey);
     return () => {
       window.removeEventListener('keydown', onKey);
-      ctx.revert();
+      ctx?.revert();
     };
   }, [open]);
 

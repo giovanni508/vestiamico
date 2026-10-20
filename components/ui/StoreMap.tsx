@@ -3,26 +3,18 @@ import { StoreMapFx } from './StoreMapFx';
 
 /**
  * Mappa stilizzata del quartiere (dati OpenStreetMap, generata da scripts/build-map.mjs):
- * strade nei toni della fodera, Via dell'Orsa Minore cucita in oro, pin col monogramma.
- * Nessun servizio esterno, nessun cookie.
+ * strade nei toni della fodera (SVG statico caricato in lazy), Via dell'Orsa Minore cucita in oro,
+ * pin col monogramma. Nessun servizio esterno, nessun cookie.
  */
 export function StoreMap({ className = '' }: { className?: string }) {
   const { pin } = map;
   return (
     <figure className={`store-map ${className}`}>
       <StoreMapFx>
+        {/* eslint-disable-next-line @next/next/no-img-element -- SVG vettoriale statico: l'ottimizzatore di immagini non serve */}
+        <img src={map.roadsImage} alt="" className="store-map-roads" loading="lazy" decoding="async" width={1000} height={1000} data-map-roads />
         <svg viewBox={map.viewBox} className="store-map-svg" role="img" aria-labelledby="map-title" preserveAspectRatio="xMidYMid slice">
           <title id="map-title">Mappa del quartiere con Via dell&apos;Orsa Minore e la posizione del negozio Vestiamico</title>
-          <g className="map-minor">
-            {map.roads.minor.map((d, i) => (
-              <path key={i} d={d} />
-            ))}
-          </g>
-          <g className="map-major">
-            {map.roads.major.map((d, i) => (
-              <path key={i} d={d} />
-            ))}
-          </g>
           <g className="map-street" data-map-street>
             {map.highlight.map((d, i) => (
               <path key={i} d={d} pathLength={1000} />

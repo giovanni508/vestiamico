@@ -1,13 +1,12 @@
 'use client';
 // La via del negozio si cuce in oro quando la mappa entra nello schermo, poi il pin si appoggia.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function StoreMapFx({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = root.current;
       if (!el) return;
       const mm = gsap.matchMedia();
@@ -17,7 +16,7 @@ export function StoreMapFx({ children }: { children: ReactNode }) {
         gsap.set(street, { strokeDasharray: 1000, strokeDashoffset: 1000 });
         gsap
           .timeline({ scrollTrigger: { trigger: el, start: 'top 75%', once: true } })
-          .from(el.querySelectorAll('.map-major path, .map-minor path'), { opacity: 0, duration: 1, stagger: 0.002, ease: 'none' })
+          .from(el.querySelector('[data-map-roads]'), { opacity: 0, scale: 1.04, duration: 1.2, ease: 'sartoria' })
           .to(street, { strokeDashoffset: 0, duration: 1.4, ease: 'sartoria', stagger: 0.1 }, 0.3)
           .from(pin, { scale: 0, transformOrigin: '50% 50%', duration: 0.7, ease: 'back.out(2.2)' }, 1.1);
       });

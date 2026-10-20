@@ -2,11 +2,14 @@
 // Video muto in loop: si carica solo quando entra nello schermo, si ferma quando esce,
 // ha un pulsante di pausa e non parte da solo con prefers-reduced-motion o risparmio dati.
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import type { VideoAsset } from '@/lib/content';
 
-type Props = { video: VideoAsset; label: string; className?: string; sizes?: string };
+type Props = { video: VideoAsset; label: string; className?: string; sizes?: string; priority?: boolean };
 
-export function LoopVideo({ video, label, className = '' }: Props) {
+// il poster è un'immagine ottimizzata sotto al video: a bassa priorità, tranne quando apre la pagina
+
+export function LoopVideo({ video, label, className = '', sizes = '(min-width: 64rem) 34vw, 90vw', priority = false }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(false);
@@ -56,7 +59,17 @@ export function LoopVideo({ video, label, className = '' }: Props) {
 
   return (
     <div className={`loop-video ${className}`}>
-      <video ref={ref} muted loop playsInline preload="none" poster={video.poster} aria-label={label} className="loop-video-el">
+      <Image src={video.poster} alt="" fill sizes={sizes} quality={60} priority={priority} fetchPriority={priority ? 'high' : 'low'} className="loop-video-poster" />
+      <video
+        ref={ref}
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-label={label}
+        className="loop-video-el"
+        onPlaying={(e) => e.currentTarget.classList.add('is-playing')}
+      >
         <source src={video.webm} type="video/webm" />
         <source src={video.mp4} type="video/mp4" />
       </video>

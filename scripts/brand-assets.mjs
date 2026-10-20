@@ -9,6 +9,7 @@ const OUT = path.join(ROOT, 'public/brand/loghi');
 fs.mkdirSync(OUT, { recursive: true });
 const brand = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/brand.json'), 'utf8'));
 const keys = brand.groups.flatMap((g) => g.brands.map((b) => b.logo));
+const sizes = {};
 
 for (const key of keys) {
   const src = path.join(ROOT, 'public/media/img', `${key}.jpg`);
@@ -28,9 +29,24 @@ for (const key of keys) {
     .trim({ threshold: 10 })
     .png()
     .toBuffer();
-  const out = await sharp(trimmed).resize({ height: 140, width: 520, fit: 'inside' }).png({ compressionLevel: 9 }).toFile(path.join(OUT, `${key}.png`));
-  console.log(key, light ? 'chiaro' : 'scuro', `${out.width}x${out.height}`);
+  const sized = await sharp(trimmed).resize({ height: 120, width: 460, fit: 'inside' }).raw().toBuffer({ resolveWithObject: true });
+  // due versioni già colorate: blu notte (su avorio) e avorio (su notte)
+  for (const [name, [r, g, b]] of Object.entries({ notte: [13, 23, 48], avorio: [242, 238, 229] })) {
+    const px = Buffer.from(sized.data);
+    for (let i = 0; i < px.length; i += 4) {
+      px[i] = r;
+      px[i + 1] = g;
+      px[i + 2] = b;
+    }
+    await sharp(px, { raw: { width: sized.info.width, height: sized.info.height, channels: 4 } })
+      .png({ palette: true, colours: 32, compressionLevel: 9 })
+      .toFile(path.join(OUT, `${key}-${name}.png`));
+  }
+  sizes[key] = { width: sized.info.width, height: sized.info.height };
+  console.log(key, light ? 'chiaro' : 'scuro', `${sized.info.width}x${sized.info.height}`);
 }
+
+fs.writeFileSync(path.join(ROOT, 'content/brand-logos.json'), JSON.stringify(sizes, null, 1) + '\n');
 
 // Open Graph: facciata reale del negozio, velo blu notte, logo oro
 const og = path.join(ROOT, 'public/og.jpg');

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { brand, img } from '@/lib/content';
 import { PageHero } from '@/components/ui/PageHero';
 import { SplitReveal } from '@/components/motion/SplitReveal';
 import { FadeUp } from '@/components/motion/FadeUp';
 import { StitchLink } from '@/components/ui/StitchLink';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
@@ -53,9 +54,11 @@ export default function BrandPage() {
                     <h3 className="brand-row-name font-display">{b.name}</h3>
                     <p className="brand-row-note t-small muted">{b.note}</p>
                     <span className="brand-row-logo" aria-hidden="true">
-                      <span className="brand-mono" style={{ WebkitMaskImage: `url(/brand/loghi/${b.logo}.png)`, maskImage: `url(/brand/loghi/${b.logo}.png)` }} />
+                      <span className="brand-mono">
+                        <BrandLogo logo={b.logo} tone={gi % 2 ? 'avorio' : 'notte'} />
+                      </span>
                       <span className="brand-color">
-                        <Image src={tile.src} alt="" width={180} height={180} sizes="180px" quality={75} />
+                        <LazyImage src={tile.src} alt="" width={180} height={180} sizes="180px" quality={75} />
                       </span>
                     </span>
                   </li>

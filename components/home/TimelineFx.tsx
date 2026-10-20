@@ -2,14 +2,13 @@
 // Timeline di famiglia. Desktop: pin + scorrimento orizzontale, il filo d'oro si cuce
 // e ogni tappa si "annoda" quando il filo la raggiunge. Mobile: verticale, filo verticale.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function TimelineFx({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = root.current;
       if (!el) return;
       const track = el.querySelector<HTMLElement>('[data-tl-track]');

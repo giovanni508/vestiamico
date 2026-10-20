@@ -26,7 +26,7 @@ export function Hero() {
                   sizes="(min-width: 768px) 34vw, 100vw"
                   priority={i === 0}
                   fetchPriority={i === 0 ? 'high' : 'low'}
-                  loading={i === 0 ? undefined : 'eager'}
+                  loading={i === 0 ? undefined : 'lazy'}
                   quality={60}
                   className="hero-poster"
                 />
@@ -49,9 +49,10 @@ export function Hero() {
 
           <div className="hero-content wrap" data-hero-content>
             <h1 id="hero-title" className="hero-title font-display">
-              {hero.titleLines.map((l) => (
-                <span key={l} className="hero-line">
-                  <span>{l}</span>
+              {hero.titleLines.map((l, i) => (
+                <span key={l} className={`hero-line hero-line--${i}`}>
+                  {i > 0 && <br />}
+                  <span className="hero-line-text">{l}</span>
                 </span>
               ))}
             </h1>

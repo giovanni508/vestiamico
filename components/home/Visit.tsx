@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { MapPinIcon, PhoneIcon, EnvelopeSimpleIcon } from '@phosphor-icons/react/dist/ssr';
 import { home, img, site, fullAddress } from '@/lib/content';
 import { hoursRows } from '@/lib/hours';
@@ -68,7 +68,7 @@ export function Visit() {
         <div className="visit-visual">
           <StoreMap className="visit-map" />
           <div className="visit-photo">
-            <Image src={photo.src} alt="La facciata del negozio Vestiamico in Via dell’Orsa Minore, con le vetrine illuminate" fill sizes="(min-width: 64rem) 22vw, 50vw" placeholder="blur" blurDataURL={photo.blur} quality={75} className="object-cover" />
+            <LazyImage src={photo.src} alt="La facciata del negozio Vestiamico in Via dell’Orsa Minore, con le vetrine illuminate" fill sizes="(min-width: 64rem) 22vw, 50vw" quality={75} className="object-cover" />
           </div>
         </div>
       </div>

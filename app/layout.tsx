@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Bodoni_Moda, Archivo } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { home, site } from '@/lib/content';
 import { INTRO_SCRIPT } from '@/lib/intro';
@@ -14,20 +14,30 @@ import { WhatsAppSticky } from '@/components/layout/WhatsAppSticky';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 import { StoreJsonLd } from '@/components/seo/JsonLd';
 
-// Font self-hosted (next/font scarica e serve i file dal dominio del sito)
-const bodoni = Bodoni_Moda({
-  subsets: ['latin', 'latin-ext'],
-  style: ['normal', 'italic'],
-  axes: ['opsz'],
+// Font self-hosted e ridotti ai soli caratteri del sito (scripts/subset-fonts.mjs, licenza SIL OFL):
+// Bodoni Moda (asse ottico, peso 500) per i titoli, come il wordmark Didone del logo; Archivo per il testo.
+// Il corsivo non è precaricato: si attiva dopo il load (classe fonts-late, vedi lib/intro.ts).
+const bodoni = localFont({
+  src: [{ path: './fonts/bodoni-moda.woff2', weight: '500', style: 'normal' }],
   variable: '--font-bodoni',
   display: 'swap',
   fallback: ['Didot', 'Georgia', 'serif'],
+  adjustFontFallback: 'Times New Roman',
 });
-const archivo = Archivo({
-  subsets: ['latin', 'latin-ext'],
-  axes: ['wdth'],
+const bodoniItalic = localFont({
+  src: [{ path: './fonts/bodoni-moda-italic.woff2', weight: '500', style: 'italic' }],
+  variable: '--font-bodoni-italic',
+  display: 'swap',
+  preload: false,
+  fallback: ['Didot', 'Georgia', 'serif'],
+  adjustFontFallback: 'Times New Roman',
+});
+const archivo = localFont({
+  src: [{ path: './fonts/archivo.woff2', weight: '400 700', style: 'normal' }],
   variable: '--font-archivo',
   display: 'swap',
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+  adjustFontFallback: 'Arial',
 });
 
 // gli avvisi a scadenza e l'anno nel footer si aggiornano almeno ogni ora
@@ -64,7 +74,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${bodoni.variable} ${archivo.variable}`} suppressHydrationWarning>
+    <html lang="it" className={`${bodoni.variable} ${bodoniItalic.variable} ${archivo.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
       </head>

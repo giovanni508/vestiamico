@@ -41,7 +41,7 @@ export function PageHero({ title, subtitle, lead, body, videoKey, videoLabel, im
           <div className="page-hero-media">
             <div className="page-hero-frame">
               {videoKey ? (
-                <LoopVideo video={video(videoKey)} label={videoLabel ?? ''} />
+                <LoopVideo video={video(videoKey)} label={videoLabel ?? ''} priority />
               ) : (
                 image && (
                   <Image src={image.src} alt={imageAlt ?? ''} fill priority sizes="(min-width: 64rem) 34vw, 90vw" placeholder="blur" blurDataURL={image.blur} quality={75} className="object-cover" />

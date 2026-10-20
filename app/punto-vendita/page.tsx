@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { puntoVendita, img, video, site, fullAddress } from '@/lib/content';
 import { hoursRows } from '@/lib/hours';
 import { PageHero } from '@/components/ui/PageHero';
@@ -45,7 +45,7 @@ export default function PuntoVenditaPage() {
                     <p className="measure muted">{f.text}</p>
                   </div>
                   <div className="floor-media">
-                    <Image src={image.src} alt="" fill sizes="(min-width: 48rem) 40vw, 100vw" placeholder="blur" blurDataURL={image.blur} quality={75} className="object-cover" />
+                    <LazyImage src={image.src} alt="" fill sizes="(min-width: 48rem) 40vw, 100vw" quality={75} className="object-cover" />
                   </div>
                 </li>
               );
@@ -113,7 +113,7 @@ export default function PuntoVenditaPage() {
           <div className="directions-media">
             <StoreMap />
             <div className="directions-video">
-              <LoopVideo video={video(directions.video)} label="La facciata del negozio Vestiamico vista dalla strada" />
+              <LoopVideo video={video(directions.video)} label="La facciata del negozio Vestiamico vista dalla strada" sizes="(min-width: 64rem) 16vw, 46vw" />
             </div>
           </div>
         </div>

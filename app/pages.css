@@ -1,25 +1,24 @@
 /* Pagine interne. Mobile first. */
 
 /* ------------------------------------------------------------------ rivelazione a maschera (CSS) */
+/* il titolo è dipinto subito (conta per l'LCP) e "si assesta" come un tessuto appoggiato */
 .mask-rise {
   display: block;
-  overflow: clip;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
 }
 .mask-rise > span {
   display: block;
-  animation: mask-rise 1.25s var(--ease-sartoria) 0.05s both;
+  animation: mask-rise 1.3s var(--ease-sartoria) 0.05s both;
 }
 html.js:not(.intro-done) .mask-rise > span,
 html.js:not(.intro-done) .page-hero-text,
 html.js:not(.intro-done) .page-hero-sub,
-html.js:not(.intro-done) .page-hero-frame {
+html.js:not(.intro-done) .page-hero-frame::before {
   animation-play-state: paused;
 }
 @keyframes mask-rise {
   from {
-    transform: translateY(106%);
+    transform: translateY(0.28em);
+    color: var(--color-oro-chiaro);
   }
 }
 @keyframes fade-rise {
@@ -28,9 +27,9 @@ html.js:not(.intro-done) .page-hero-frame {
     transform: translateY(18px);
   }
 }
-@keyframes frame-open {
-  from {
-    clip-path: inset(100% 0 0 0);
+@keyframes frame-curtain {
+  to {
+    transform: scaleY(0);
   }
 }
 
@@ -80,7 +79,17 @@ html.js:not(.intro-done) .page-hero-frame {
   margin-inline: auto;
   overflow: hidden;
   background: var(--color-notte-2);
-  animation: frame-open 1.4s var(--ease-expo) 0.2s both;
+}
+/* sipario sopra la foto: l'immagine è già dipinta (conta per l'LCP), il pannello si ritira verso l'alto */
+.page-hero-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: var(--color-notte);
+  transform-origin: top;
+  animation: frame-curtain 1.3s var(--ease-expo) 0.15s both;
+  pointer-events: none;
 }
 .page-hero-frame::after {
   content: '';
@@ -105,10 +114,20 @@ html.js:not(.intro-done) .page-hero-frame {
   position: absolute;
   inset: 0;
 }
+.loop-video-poster {
+  object-fit: cover;
+}
 .loop-video-el {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-sartoria);
+}
+.loop-video-el.is-playing {
+  opacity: 1;
 }
 .loop-video-btn {
   position: absolute;
@@ -746,7 +765,6 @@ html.js:not(.intro-done) .page-hero-frame {
 .brand-row-logo .brand-mono {
   width: 100%;
   height: 60%;
-  background: currentColor;
 }
 .brand-row:hover .brand-mono {
   opacity: 0;

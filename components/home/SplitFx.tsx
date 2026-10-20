@@ -2,13 +2,12 @@
 // Mobile: ogni pannello si apre dal centro (clip-path) mentre entra nello schermo.
 // Desktop: l'espansione è CSS (hover e focus), qui solo una leggera deriva della foto.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function SplitFx({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = root.current;
       if (!el) return;
       const panels = gsap.utils.toArray<HTMLElement>('[data-split-panel]', el);

@@ -2,8 +2,7 @@
 // Il filo d'oro: una cucitura tratteggiata che si "cuce" seguendo lo scroll.
 // Tecnica: un tracciato pieno animato (stroke-dashoffset) fa da maschera a un tracciato tratteggiato.
 import { useId, useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 type Props = {
   d: string;
@@ -38,8 +37,8 @@ export function Thread({
   const ref = useRef<SVGSVGElement>(null);
   const id = useId().replace(/:/g, '');
 
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const svg = ref.current;
       if (!svg) return;
       const reveal = svg.querySelector<SVGPathElement>('[data-reveal]');

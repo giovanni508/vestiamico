@@ -2,13 +2,12 @@
 // Desktop: la sezione si ferma e la passerella di abiti scorre di lato; dentro ogni cornice
 // la foto si muove in controfase. Mobile e reduced motion: scorrimento orizzontale nativo.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 export function CeremonyFx({ children }: { children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = root.current;
       const track = el?.querySelector<HTMLElement>('[data-cer-track]');
       if (!el || !track) return;

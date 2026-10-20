@@ -34,6 +34,11 @@ html.intro-done .hero-media {
   height: 100%;
   object-fit: cover;
 }
+/* zoom iniziale identico allo stato di partenza dell'animazione di scroll: nessuno scatto quando arriva GSAP */
+.hero-poster,
+.hero-video {
+  transform: scale(1.12);
+}
 .hero-video {
   opacity: 0;
   transition: opacity 1.2s var(--ease-sartoria);
@@ -68,26 +73,24 @@ html.intro-done .hero-media {
   letter-spacing: -0.035em;
   font-weight: 500;
 }
-.hero-line {
-  display: block;
-  overflow: clip;
-  padding-bottom: 0.06em;
-}
-.hero-line:nth-child(2) {
-  padding-left: clamp(1.25rem, 9vw, 11rem);
-}
-.hero-line > span {
+/* il titolo è un unico blocco di testo (righe inline): è dipinto subito sotto il sipario e conta
+   per l'LCP; all'apertura si assesta e passa dall'oro all'avorio */
+.hero-title {
   display: block;
 }
-html.js .hero-line > span {
-  transform: translateY(106%);
-  transition: transform 1.25s var(--ease-sartoria);
+.hero-line--1 .hero-line-text {
+  margin-left: clamp(1.25rem, 9vw, 11rem);
 }
-html.js.intro-done .hero-line > span {
+html.js .hero-title {
+  transform: translateY(0.3em);
+  color: var(--color-oro-chiaro);
+  transition:
+    transform 1.4s var(--ease-sartoria),
+    color 1.6s var(--ease-sartoria);
+}
+html.js.intro-done .hero-title {
   transform: none;
-}
-html.js.intro-done .hero-line:nth-child(2) > span {
-  transition-delay: 0.1s;
+  color: var(--color-avorio);
 }
 .hero-foot {
   display: grid;
@@ -736,13 +739,8 @@ html.js.intro-done .hero-foot {
 .brand-mono {
   width: 100%;
   height: 52%;
-  background: var(--color-notte);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  display: grid;
+  place-items: center;
   transition:
     opacity var(--duration-rapida),
     transform var(--duration-media) var(--ease-sartoria);
@@ -757,6 +755,13 @@ html.js.intro-done .hero-foot {
   transition:
     opacity var(--duration-rapida),
     transform var(--duration-media) var(--ease-sartoria);
+}
+.brand-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 .brand-color img {
   height: 100%;
@@ -964,10 +969,14 @@ html.js.intro-done .hero-foot {
   border: 1px dashed rgb(217 182 106 / 0.45);
   pointer-events: none;
 }
+.store-map-roads,
 .store-map-svg {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .map-minor path {
   fill: none;

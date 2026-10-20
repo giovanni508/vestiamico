@@ -2,8 +2,8 @@
 // Immagine con parallasse interna: la cornice resta ferma, la foto scorre al suo interno.
 import { useRef } from 'react';
 import Image from 'next/image';
-import { useGSAP } from '@gsap/react';
-import { gsap } from '@/lib/gsap';
+import { LazyImage } from '@/components/ui/LazyImage';
+import { useMotion } from '@/lib/motion';
 import type { ImageAsset } from '@/lib/content';
 
 type Props = {
@@ -23,8 +23,8 @@ export function ParallaxImage({ image, alt, sizes, className = '', amount = 12, 
   const frame = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       if (!frame.current || !inner.current || axis === 'x') return;
       const mm = gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)', () => {
@@ -52,17 +52,11 @@ export function ParallaxImage({ image, alt, sizes, className = '', amount = 12, 
         className="absolute"
         style={axis === 'y' ? { inset: `-${pad} 0` } : { inset: `0 -${pad}` }}
       >
-        <Image
-          src={image.src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          placeholder="blur"
-          blurDataURL={image.blur}
-          quality={75}
-          className={`object-cover ${imgClassName}`}
-        />
+        {priority ? (
+          <Image src={image.src} alt={alt} fill sizes={sizes} priority quality={75} className={`object-cover ${imgClassName}`} />
+        ) : (
+          <LazyImage src={image.src} alt={alt} fill sizes={sizes} quality={75} className={`object-cover ${imgClassName}`} />
+        )}
       </div>
     </div>
   );

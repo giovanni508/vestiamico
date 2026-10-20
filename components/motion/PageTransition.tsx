@@ -4,7 +4,7 @@
 import NextLink from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createContext, useCallback, useContext, useEffect, useRef, type ComponentProps, type MouseEvent } from 'react';
-import { gsap, prefersReducedMotion } from '@/lib/gsap';
+import { getMotion, prefersReducedMotion } from '@/lib/motion';
 
 type Ctx = { navigate: (href: string) => void };
 const TransitionContext = createContext<Ctx | null>(null);
@@ -54,10 +54,12 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
         return;
       }
       const el = curtain.current;
-      if (!el) {
+      const motion = getMotion();
+      if (!el || !motion) {
         router.push(href);
         return;
       }
+      const { gsap } = motion;
       const panels = el.querySelectorAll('[data-panel]');
       gsap
         .timeline()
@@ -90,8 +92,14 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
 type LinkProps = ComponentProps<typeof NextLink> & { href: string };
 
 /** Link interno con transizione a sipario. I link esterni, tel: e mailto: restano normali. */
-export function TLink({ href, onClick, ...rest }: LinkProps) {
+export function TLink({ href, onClick, onMouseEnter, onFocus, onTouchStart, ...rest }: LinkProps) {
   const ctx = useContext(TransitionContext);
+  const router = useRouter();
+  // nessun prefetch automatico al caricamento (non ruba banda alla prima schermata):
+  // la pagina si scarica quando il visitatore mostra l'intenzione di aprirla
+  const intent = () => {
+    if (href.startsWith('/')) router.prefetch(href);
+  };
   const handle = (e: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(e);
     if (e.defaultPrevented || !ctx) return;
@@ -101,5 +109,24 @@ export function TLink({ href, onClick, ...rest }: LinkProps) {
     e.preventDefault();
     ctx.navigate(href);
   };
-  return <NextLink href={href} onClick={handle} {...rest} />;
+  return (
+    <NextLink
+      href={href}
+      prefetch={false}
+      onClick={handle}
+      onMouseEnter={(e) => {
+        intent();
+        onMouseEnter?.(e);
+      }}
+      onFocus={(e) => {
+        intent();
+        onFocus?.(e);
+      }}
+      onTouchStart={(e) => {
+        intent();
+        onTouchStart?.(e);
+      }}
+      {...rest}
+    />
+  );
 }

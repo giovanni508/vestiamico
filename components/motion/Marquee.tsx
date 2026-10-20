@@ -2,8 +2,7 @@
 // Nastro che scorre all'infinito. Rallenta al passaggio del mouse e quando riceve il focus,
 // si ferma fuori schermo. Con prefers-reduced-motion resta fermo e va a capo.
 import { useRef, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useMotion } from '@/lib/motion';
 
 type Props = {
   children: ReactNode;
@@ -18,8 +17,8 @@ export function Marquee({ children, duration = 40, reverse = false, className = 
   const root = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap, ScrollTrigger }) => {
       const el = track.current;
       const wrap = root.current;
       if (!el || !wrap) return;

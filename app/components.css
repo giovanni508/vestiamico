@@ -736,7 +736,7 @@ html[data-intro='seen'] .preloader,
   overflow: hidden;
   font-size: clamp(1.4rem, 4vw, 2rem);
   color: var(--color-avorio);
-  font-style: italic;
+  letter-spacing: 0.04em;
   line-height: 1.2;
 }
 .preloader-since span {

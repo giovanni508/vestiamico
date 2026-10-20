@@ -43,6 +43,9 @@ for (const d of highlight) {
     if (dist < best) [best, px, py] = [dist, x, y];
   }
 }
-const out = { viewBox: `0 0 ${SIZE} ${SIZE}`, roads, highlight, pin: { x: r(px), y: r(py) }, attribution: '© OpenStreetMap contributors' };
+// strade del quartiere come SVG statico (caricato in lazy): fuori dall'HTML e dal payload RSC
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${SIZE} ${SIZE}" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><g stroke="#283a63" stroke-width="2.4">${roads.minor.map((d) => `<path d="${d}"/>`).join('')}</g><g stroke="#3a5084" stroke-width="6">${roads.major.map((d) => `<path d="${d}"/>`).join('')}</g></g></svg>`;
+fs.writeFileSync(path.join(ROOT, 'public/media/mappa-quartiere.svg'), svg);
+const out = { viewBox: `0 0 ${SIZE} ${SIZE}`, roadsImage: '/media/mappa-quartiere.svg', highlight, pin: { x: r(px), y: r(py) }, attribution: '© OpenStreetMap contributors' };
 fs.writeFileSync(path.join(ROOT, 'content/map.json'), JSON.stringify(out) + '\n');
 console.log(`mappa: ${roads.major.length} principali, ${roads.minor.length} secondarie, ${highlight.length} evidenziate, ${(JSON.stringify(out).length / 1024).toFixed(1)} KB`);

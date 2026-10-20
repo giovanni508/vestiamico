@@ -1,9 +1,8 @@
 'use client';
 // Ingresso morbido dal basso per blocchi secondari (paragrafi, liste, azioni).
-// I figli diretti con [data-fade] entrano in sequenza.
+// I figli diretti con [data-fade] entrano in sequenza. Ciò che è già sullo schermo resta fermo.
 import { useRef, type ElementType, type ReactNode } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap, DUR, STAGGER } from '@/lib/gsap';
+import { useMotion, inView, DUR, STAGGER } from '@/lib/motion';
 
 type Props = {
   as?: ElementType;
@@ -17,10 +16,10 @@ type Props = {
 
 export function FadeUp({ as: Tag = 'div', children, className, delay = 0, y = 28, start = 'top 88%', id }: Props) {
   const ref = useRef<HTMLElement>(null);
-  useGSAP(
-    () => {
+  useMotion(
+    ({ gsap }) => {
       const el = ref.current;
-      if (!el) return;
+      if (!el || inView(el)) return;
       const mm = gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         const items = el.querySelectorAll<HTMLElement>('[data-fade]');
