@@ -21,6 +21,11 @@
   --color-oro-scuro: #7a5713; /* filo d'oro su avorio (testo AA) */
   --color-ardesia: #4a5468; /* testo secondario su avorio */
   --color-nebbia: #aeb6c8; /* testo secondario su notte */
+  --color-oro-medio: #b8903f; /* filo decorativo della home: unico tono tra fodera e avorio */
+  --color-campo: #fbf9f5; /* fondo dei campi del modulo */
+  --color-campo-bordo: #b8ad97;
+  --color-strada: #283a63; /* mappa: vie secondarie su notte */
+  --color-strada-principale: #3a5084;
   --color-errore: #a3261e;
   --color-errore-chiaro: #f2a099;
 

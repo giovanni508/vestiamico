@@ -81,11 +81,14 @@ Senza queste variabili, in sviluppo il messaggio viene scritto nella console del
 ```bash
 npm run build && npm start -- -p 3210                         # server di produzione
 BASE_URL=http://localhost:3210 node scripts/screenshots.mjs    # screenshot a 390/768/1440/1920 in .shots/
+BROWSER=webkit node scripts/screenshots.mjs 390,1440           # stesso giro col motore di Safari (telefono touch sotto i 1024 px)
 node scripts/contact-sheet.mjs                                 # provini in .shots/sheets/
 BASE_URL=http://localhost:3210 node scripts/a11y-motion-check.mjs   # reduced motion, tastiera, tasto indietro
 CHROME_PATH="C:\Program Files\Google\Chrome\Application\chrome.exe" node scripts/lighthouse.mjs   # Lighthouse mobile
 THROTTLING=devtools node scripts/lighthouse.mjs                # con limitazione reale della rete
 ```
+
+I browser di Playwright si installano con `npx playwright install chromium webkit`. Se ne è già installata una build di un'altra versione, `BROWSER_PATH` indica l'eseguibile da usare.
 
 ## Crediti
 

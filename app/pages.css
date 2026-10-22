@@ -95,7 +95,7 @@ html.js:not(.intro-done) .page-hero-frame::before {
   content: '';
   position: absolute;
   inset: 8px;
-  border: 1px dashed rgb(217 182 106 / 0.55);
+  border: 1px dashed color-mix(in srgb, var(--color-oro) 55%, transparent);
   pointer-events: none;
   z-index: 2;
 }
@@ -139,8 +139,8 @@ html.js:not(.intro-done) .page-hero-frame::before {
   width: 44px;
   height: 44px;
   color: var(--color-avorio);
-  background: rgb(13 23 48 / 0.6);
-  border: 1px dashed rgb(242 238 229 / 0.5);
+  background: color-mix(in srgb, var(--color-notte) 60%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--color-avorio) 50%, transparent);
 }
 .loop-video-btn [data-paused='true'] {
   border: 0;
@@ -275,7 +275,7 @@ html.js:not(.intro-done) .page-hero-frame::before {
   content: '';
   position: absolute;
   inset: 6px;
-  border: 1px dashed rgb(242 238 229 / 0.55);
+  border: 1px dashed color-mix(in srgb, var(--color-avorio) 55%, transparent);
   pointer-events: none;
   opacity: 0.7;
   transition: opacity var(--duration-rapida);
@@ -940,8 +940,8 @@ html.js:not(.intro-done) .page-hero-frame::before {
   padding: 0.85rem 1rem;
   font: inherit;
   color: var(--color-notte);
-  background: #fbf9f5;
-  border: 1px solid #b8ad97;
+  background: var(--color-campo);
+  border: 1px solid var(--color-campo-bordo);
   border-radius: 0;
   transition:
     border-color var(--duration-rapida),
@@ -955,7 +955,7 @@ html.js:not(.intro-done) .page-hero-frame::before {
 .field textarea:focus-visible {
   outline: none;
   border-color: var(--color-notte);
-  box-shadow: 0 0 0 3px rgb(122 87 19 / 0.35);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-oro-scuro) 35%, transparent);
 }
 .field [aria-invalid='true'] {
   border-color: var(--color-errore);

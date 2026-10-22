@@ -70,6 +70,18 @@ Primo giudizio: **fix**, con 8 correzioni materiali. Dopo tre giri:
 
 Note "da tenere" del revisore: il duotono blu notte e avorio, il Bodoni enorme sui tre video, metro e timeline come momenti d'autore.
 
+## Ciclo 5 — Safari (WebKit) e pulizia del sistema
+
+Stesso giro di screenshot col motore di Safari (WebKit di Playwright), a 390 px come telefono touch e a 1440 px.
+
+| Problema | Dove | Correzione |
+|---|---|---|
+| L'evento `load` non arrivava mai: la pagina restava "in caricamento", il motion layer partiva solo al primo tocco e il corsivo non arrivava | Collezioni, Cerimonia, Punto vendita (WebKit) | I `<video>` avevano le `<source>` già nel markup: WebKit trattiene il load anche con `preload="none"`. Ora le sorgenti si aggiungono quando il video deve partire, a pagina caricata, come già faceva la hero. Anche in Chrome i video non competono più col caricamento |
+| Colori scritti a mano nei fogli dei componenti (filo della home, campi del modulo, strade della mappa, 26 trasparenze) | CSS | Cinque nuovi token in `@theme` e trasparenze con `color-mix` sui token: un'unica fonte per la palette |
+| Testi tecnici non veri ("Archivo condensato", "filo leggibile su entrambi i tessuti") | styleguide, CSS, brief | Corretti: Archivo usa cifre tabellari, il filo è decorativo (6:1 su notte, 2,55:1 su avorio) |
+
+Esito: 0 overflow e 0 errori su tutte le pagine anche in WebKit; resa uguale a Chrome (provini in `.shots/sheets/*-webkit-*`). Firefox non è stato provato: la build installata non si avvia su questa macchina (Windows blocca l'eseguibile).
+
 ## Cosa resterebbe da migliorare (dipende dal cliente)
 
 - Le foto di collezione hanno spesso una resa da stock/generata e risoluzione bassa: un servizio fotografico vero alzerebbe l'intero sito più di qualsiasi ritocco grafico.

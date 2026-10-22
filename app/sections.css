@@ -51,12 +51,12 @@ html.intro-done .hero-media {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(to top, rgb(13 23 48 / 0.94) 0%, rgb(13 23 48 / 0.62) 34%, rgb(13 23 48 / 0.12) 66%, rgb(13 23 48 / 0.45) 100%);
+    linear-gradient(to top, color-mix(in srgb, var(--color-notte) 94%, transparent) 0%, color-mix(in srgb, var(--color-notte) 62%, transparent) 34%, color-mix(in srgb, var(--color-notte) 12%, transparent) 66%, color-mix(in srgb, var(--color-notte) 45%, transparent) 100%);
 }
 .hero-frame {
   position: absolute;
   inset: calc(14% - 10px) calc(6% - 10px) calc(20% - 10px);
-  border: 1px dashed rgb(217 182 106 / 0.85);
+  border: 1px dashed color-mix(in srgb, var(--color-oro) 85%, transparent);
   pointer-events: none;
   opacity: 0;
   z-index: 1;
@@ -136,8 +136,8 @@ html.js.intro-done .hero-foot {
   padding: 0.5rem 0.75rem;
   color: var(--color-avorio);
   font-size: 0.85rem;
-  background: rgb(13 23 48 / 0.45);
-  border: 1px dashed rgb(242 238 229 / 0.4);
+  background: color-mix(in srgb, var(--color-notte) 45%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--color-avorio) 40%, transparent);
   transition: border-color var(--duration-rapida);
 }
 .hero-pause:hover {
@@ -177,7 +177,7 @@ html.js.intro-done .hero-foot {
     top: 0;
     bottom: 0;
     width: 1px;
-    background-image: linear-gradient(to bottom, rgb(217 182 106 / 0.7) 55%, transparent 0);
+    background-image: linear-gradient(to bottom, color-mix(in srgb, var(--color-oro) 70%, transparent) 55%, transparent 0);
     background-size: 1px 10px;
   }
   .hero-frame {
@@ -392,7 +392,7 @@ html.js.intro-done .hero-foot {
 .split-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgb(13 23 48 / 0.9) 0%, rgb(13 23 48 / 0.45) 40%, rgb(13 23 48 / 0) 70%);
+  background: linear-gradient(to top, color-mix(in srgb, var(--color-notte) 90%, transparent) 0%, color-mix(in srgb, var(--color-notte) 45%, transparent) 40%, transparent 70%);
   pointer-events: none;
 }
 .split-copy {
@@ -772,7 +772,7 @@ html.js.intro-done .hero-foot {
 .brand-color img {
   height: 100%;
   width: auto;
-  box-shadow: 0 18px 40px -22px rgb(13 23 48 / 0.6);
+  box-shadow: 0 18px 40px -22px color-mix(in srgb, var(--color-notte) 60%, transparent);
 }
 .brand-item:hover .brand-mono,
 .brand-item:focus-visible .brand-mono {
@@ -973,7 +973,7 @@ html.js.intro-done .hero-foot {
   content: '';
   position: absolute;
   inset: 10px;
-  border: 1px dashed rgb(217 182 106 / 0.45);
+  border: 1px dashed color-mix(in srgb, var(--color-oro) 45%, transparent);
   pointer-events: none;
 }
 .store-map-roads,
@@ -987,14 +987,14 @@ html.js.intro-done .hero-foot {
 }
 .map-minor path {
   fill: none;
-  stroke: #283a63;
+  stroke: var(--color-strada);
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 .map-major path {
   fill: none;
-  stroke: #3a5084;
+  stroke: var(--color-strada-principale);
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1007,7 +1007,7 @@ html.js.intro-done .hero-foot {
   stroke-linejoin: round;
 }
 .map-pin-pulse {
-  fill: rgb(217 182 106 / 0.2);
+  fill: color-mix(in srgb, var(--color-oro) 20%, transparent);
   transform-box: fill-box;
   transform-origin: center;
   animation: map-pulse 2.6s var(--ease-sartoria) infinite;
@@ -1040,7 +1040,7 @@ html.js.intro-done .hero-foot {
   z-index: 2;
   padding: 0.2rem 0.5rem;
   color: var(--color-nebbia);
-  background: rgb(13 23 48 / 0.8);
+  background: color-mix(in srgb, var(--color-notte) 80%, transparent);
 }
 .store-map-credit a {
   text-decoration: underline;
@@ -1107,7 +1107,7 @@ html.js.intro-done .hero-foot {
 }
 .home-thread-path {
   fill: none;
-  stroke: #b8903f; /* oro medio, decorativo: visibile sulla fodera blu e, più tenue, sull'avorio */
+  stroke: var(--color-oro-medio); /* decorativo: visibile sulla fodera blu e, più tenue, sull'avorio */
   stroke-width: 1.5;
   stroke-dasharray: 8 6;
   stroke-linecap: round;
@@ -1144,7 +1144,7 @@ html.js.intro-done .hero-foot {
   width: 14px;
   height: 2px;
   margin: -1px 0 0 -7px;
-  background: #b8903f;
+  background: var(--color-oro-medio);
   transform: rotate(45deg);
 }
 .home-thread-knot::after {
@@ -1179,13 +1179,13 @@ html.js.intro-done .hero-foot {
   padding: 0.6rem 1.5rem;
   color: var(--color-oro);
   background-color: var(--color-notte-2);
-  background-image: repeating-linear-gradient(0deg, rgb(242 238 229 / 0.045) 0 1px, transparent 1px 3px);
-  border-block: 1px solid rgb(217 182 106 / 0.45);
+  background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--color-avorio) 4.5%, transparent) 0 1px, transparent 1px 3px);
+  border-block: 1px solid color-mix(in srgb, var(--color-oro) 45%, transparent);
   clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
 }
 .woven-label-stitch {
   width: 1px;
-  background-image: linear-gradient(to bottom, rgb(217 182 106 / 0.8) 55%, transparent 0);
+  background-image: linear-gradient(to bottom, color-mix(in srgb, var(--color-oro) 80%, transparent) 55%, transparent 0);
   background-size: 1px 5px;
 }
 .woven-label-text {
@@ -1221,7 +1221,7 @@ html.js.intro-done .hero-foot {
   position: absolute;
   inset: 7px;
   z-index: 2;
-  border: 1px dashed rgb(242 238 229 / 0.6);
+  border: 1px dashed color-mix(in srgb, var(--color-avorio) 60%, transparent);
   pointer-events: none;
 }
 .ceremony-item {

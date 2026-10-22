@@ -15,6 +15,11 @@ colors:
   errore: "#a3261e"
   errore-chiaro: "#f2a099"
   linea-avorio: "#cfc6b3"
+  oro-medio: "#b8903f"
+  campo: "#fbf9f5"
+  campo-bordo: "#b8ad97"
+  strada: "#283a63"
+  strada-principale: "#3a5084"
 typography:
   mega:
     fontFamily: "Bodoni Moda, Bodoni 72, Didot, Georgia, serif"
@@ -164,6 +169,11 @@ Palette "committed": il blu notte domina, l'avorio respira, l'oro cuce.
 - **Nebbia** (`--color-nebbia`): testo secondario su notte (8.73:1), crediti, didascalie.
 - **Linea avorio** (`linea-avorio`, valore letterale in `.theme-avorio --line`): linee e impunture sui tessuti avorio.
 - **Errore** (`--color-errore`) / **Errore chiaro** (`--color-errore-chiaro`): messaggi e campi non validi, rispettivamente su avorio e su notte.
+- **Oro medio** (`--color-oro-medio`): solo il filo continuo della home e i suoi nodi. È decorativo: si legge bene sulla fodera (6.00:1) e resta tenue sull'avorio (2.55:1), dove non porta informazioni.
+- **Campo** (`--color-campo`) / **Bordo campo** (`--color-campo-bordo`): fondo e bordo dei campi del modulo contatti.
+- **Strada** (`--color-strada`) / **Strada principale** (`--color-strada-principale`): vie della mappa OSM nei toni della fodera.
+
+Le trasparenze si ottengono dai token con `color-mix(in srgb, var(--color-…) N%, transparent)`, mai con valori rgb scritti a mano.
 
 ### I due tessuti
 Ogni sezione dichiara il proprio tessuto con `.theme-notte` o `.theme-avorio`. Il tessuto imposta sei variabili semantiche, che i componenti usano al posto dei colori diretti:
@@ -290,7 +300,7 @@ Foto in riquadro 4:5 con impuntura tratteggiata rientrata (6–8px): oro al 55% 
 - **Mobile:** pulsante "Menu" a due linee; pannello a tutto schermo notte con voci in Bodoni `clamp(2.5rem, 11vw, 4.4rem)` numerate in oro, WhatsApp oro, telefono, social in quadrati di 44px con impuntura notte-3. Scroll bloccato, focus intrappolato, Esc chiude e riporta il focus al pulsante.
 
 ### Campi del form
-Fondo `#fbf9f5`, bordo pieno 1px `#b8ad97`, angoli vivi, altezza minima 52px. Focus: bordo notte e alone 3px oro scuro al 35%. Errore: bordo `--color-errore` e banda interna di 3px a sinistra, messaggio in errore 0.9rem 500.
+Fondo `--color-campo`, bordo pieno 1px `--color-campo-bordo`, angoli vivi, altezza minima 52px. Focus: bordo notte e alone 3px oro scuro al 35%. Errore: bordo `--color-errore` e banda interna di 3px a sinistra, messaggio in errore 0.9rem 500.
 
 ### Cursore custom
 Punto oro che diventa anello sui link e disco con etichetta sugli elementi con `data-cursor`. Solo con `hover: hover`, puntatore fine e senza reduced motion; altrimenti cursore di sistema.
@@ -329,6 +339,8 @@ Token in `@theme` e `lib/motion.ts` (`DUR`, `STAGGER`), easing registrati in `li
 - **Do** tenere angoli vivi; il cerchio solo per fori, nodi e pin.
 
 ### Don't:
+- **Don't** scrivere colori esadecimali o rgb nei fogli dei componenti: ogni colore nasce da un token di `@theme` (anche le trasparenze, con `color-mix`).
+- **Don't** mettere `<source>` dentro un `<video>` nel markup iniziale: le sorgenti si aggiungono quando il video deve partire, a pagina caricata (WebKit trattiene l'evento load anche con `preload="none"`).
 - **Don't** usare l'oro pieno su avorio per testo o accento: lì l'accento è oro scuro.
 - **Don't** introdurre card prodotto con ombra, caroselli o fondi bianchi da boutique-template; non usare il nero e oro da gioielleria.
 - **Don't** arrotondare angoli o usare forme a pillola.

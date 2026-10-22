@@ -1,66 +1,404 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-20T12:00:00Z",
+  "generatedAt": "2026-10-22T16:20:07.094Z",
   "title": "Design System: Vestiamico",
   "extensions": {
     "colorMeta": {
-      "notte": { "role": "primary", "displayName": "Blu notte fodera", "canonical": "oklch(21.1% 0.052 265.7)", "tonalRamp": ["#03091f", "#19233c", "#353f57", "#545e73", "#788092", "#9ea5b3", "#c5cbd7", "#e9effb"] },
-      "notte-2": { "role": "primary", "displayName": "Fodera rialzata", "canonical": "oklch(25.7% 0.058 264.5)", "tonalRamp": ["#030920", "#162340", "#323f5b", "#515e77", "#768096", "#9ca5b7", "#c4cbd9", "#e8effd"] },
-      "notte-3": { "role": "primary", "displayName": "Impuntura su notte", "canonical": "oklch(33.1% 0.071 264.6)", "tonalRamp": ["#020823", "#142243", "#2e3f64", "#4d5d80", "#71809f", "#98a5bf", "#c0cbe0", "#e6efff"] },
-      "oro": { "role": "secondary", "displayName": "Filo d'oro", "canonical": "oklch(79.1% 0.103 85.3)", "tonalRamp": ["#120a00", "#2d2208", "#4d3d1a", "#6f5b2e", "#967d44", "#c0a05c", "#e8c67f", "#ffebad"] },
-      "oro-chiaro": { "role": "secondary", "displayName": "Oro chiaro", "canonical": "oklch(88.1% 0.074 88.4)", "tonalRamp": ["#100a01", "#292315", "#473f2c", "#675d43", "#8d7f5d", "#b4a379", "#ddc996", "#ffedba"] },
-      "oro-scuro": { "role": "secondary", "displayName": "Oro scuro (accento su avorio)", "canonical": "oklch(48.2% 0.092 78.8)", "tonalRamp": ["#180600", "#361e00", "#563900", "#795612", "#9a7a46", "#bca074", "#dfc7a2", "#ffecce"] },
-      "avorio": { "role": "neutral", "displayName": "Avorio camiceria", "canonical": "oklch(95.0% 0.013 86.8)", "tonalRamp": ["#0c0b09", "#252422", "#41403d", "#5f5d5a", "#82807b", "#a7a49e", "#cecac2", "#f2eee5"] },
-      "avorio-2": { "role": "neutral", "displayName": "Avorio in ombra", "canonical": "oklch(91.1% 0.019 86.1)", "tonalRamp": ["#0c0b08", "#252420", "#413f3b", "#605d57", "#838078", "#a9a49a", "#cfcabe", "#f4eee1"] },
-      "ardesia": { "role": "neutral", "displayName": "Ardesia (testo secondario su avorio)", "canonical": "oklch(44.5% 0.035 264.1)", "tonalRamp": ["#060b15", "#1d2432", "#374051", "#545e71", "#778092", "#9da5b5", "#c4cbd8", "#e9eff9"] },
-      "nebbia": { "role": "neutral", "displayName": "Nebbia (testo secondario su notte)", "canonical": "oklch(77.6% 0.027 266.6)", "tonalRamp": ["#090b0f", "#21242a", "#3c4048", "#595e68", "#7a808e", "#9da5b5", "#c3cbdc", "#e8effe"] },
-      "linea-avorio": { "role": "neutral", "displayName": "Linea avorio (--line su avorio)", "canonical": "oklch(82.9% 0.028 85.7)", "tonalRamp": ["#0d0b07", "#26241e", "#433f38", "#625d53", "#868072", "#aba494", "#d3cab7", "#f6eedd"] },
-      "errore": { "role": "error", "displayName": "Errore", "canonical": "oklch(47.2% 0.163 28.7)", "tonalRamp": ["#2a0000", "#510000", "#7a0907", "#a52a21", "#c65b4e", "#e5877a", "#ffb3a7", "#ffdcd1"] },
-      "errore-chiaro": { "role": "error", "displayName": "Errore chiaro (su notte)", "canonical": "oklch(78.5% 0.099 24.9)", "tonalRamp": ["#170505", "#361c1a", "#593431", "#7f4f4b", "#aa6d68", "#d88e88", "#ffb3ac", "#ffdad3"] }
+      "notte": {
+        "role": "primary",
+        "displayName": "Blu notte fodera",
+        "canonical": "oklch(21.1% 0.052 265.7)",
+        "tonalRamp": [
+          "#03091f",
+          "#19233c",
+          "#353f57",
+          "#545e73",
+          "#788092",
+          "#9ea5b3",
+          "#c5cbd7",
+          "#e9effb"
+        ]
+      },
+      "notte-2": {
+        "role": "primary",
+        "displayName": "Fodera rialzata",
+        "canonical": "oklch(25.7% 0.058 264.5)",
+        "tonalRamp": [
+          "#030920",
+          "#162340",
+          "#323f5b",
+          "#515e77",
+          "#768096",
+          "#9ca5b7",
+          "#c4cbd9",
+          "#e8effd"
+        ]
+      },
+      "notte-3": {
+        "role": "primary",
+        "displayName": "Impuntura su notte",
+        "canonical": "oklch(33.1% 0.071 264.6)",
+        "tonalRamp": [
+          "#020823",
+          "#142243",
+          "#2e3f64",
+          "#4d5d80",
+          "#71809f",
+          "#98a5bf",
+          "#c0cbe0",
+          "#e6efff"
+        ]
+      },
+      "oro": {
+        "role": "secondary",
+        "displayName": "Filo d'oro",
+        "canonical": "oklch(79.1% 0.103 85.3)",
+        "tonalRamp": [
+          "#120a00",
+          "#2d2208",
+          "#4d3d1a",
+          "#6f5b2e",
+          "#967d44",
+          "#c0a05c",
+          "#e8c67f",
+          "#ffebad"
+        ]
+      },
+      "oro-chiaro": {
+        "role": "secondary",
+        "displayName": "Oro chiaro",
+        "canonical": "oklch(88.1% 0.074 88.4)",
+        "tonalRamp": [
+          "#100a01",
+          "#292315",
+          "#473f2c",
+          "#675d43",
+          "#8d7f5d",
+          "#b4a379",
+          "#ddc996",
+          "#ffedba"
+        ]
+      },
+      "oro-scuro": {
+        "role": "secondary",
+        "displayName": "Oro scuro (accento su avorio)",
+        "canonical": "oklch(48.2% 0.092 78.8)",
+        "tonalRamp": [
+          "#180600",
+          "#361e00",
+          "#563900",
+          "#795612",
+          "#9a7a46",
+          "#bca074",
+          "#dfc7a2",
+          "#ffecce"
+        ]
+      },
+      "avorio": {
+        "role": "neutral",
+        "displayName": "Avorio camiceria",
+        "canonical": "oklch(95.0% 0.013 86.8)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#41403d",
+          "#5f5d5a",
+          "#82807b",
+          "#a7a49e",
+          "#cecac2",
+          "#f2eee5"
+        ]
+      },
+      "avorio-2": {
+        "role": "neutral",
+        "displayName": "Avorio in ombra",
+        "canonical": "oklch(91.1% 0.019 86.1)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#252420",
+          "#413f3b",
+          "#605d57",
+          "#838078",
+          "#a9a49a",
+          "#cfcabe",
+          "#f4eee1"
+        ]
+      },
+      "ardesia": {
+        "role": "neutral",
+        "displayName": "Ardesia (testo secondario su avorio)",
+        "canonical": "oklch(44.5% 0.035 264.1)",
+        "tonalRamp": [
+          "#060b15",
+          "#1d2432",
+          "#374051",
+          "#545e71",
+          "#778092",
+          "#9da5b5",
+          "#c4cbd8",
+          "#e9eff9"
+        ]
+      },
+      "nebbia": {
+        "role": "neutral",
+        "displayName": "Nebbia (testo secondario su notte)",
+        "canonical": "oklch(77.6% 0.027 266.6)",
+        "tonalRamp": [
+          "#090b0f",
+          "#21242a",
+          "#3c4048",
+          "#595e68",
+          "#7a808e",
+          "#9da5b5",
+          "#c3cbdc",
+          "#e8effe"
+        ]
+      },
+      "linea-avorio": {
+        "role": "neutral",
+        "displayName": "Linea avorio (--line su avorio)",
+        "canonical": "oklch(82.9% 0.028 85.7)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#26241e",
+          "#433f38",
+          "#625d53",
+          "#868072",
+          "#aba494",
+          "#d3cab7",
+          "#f6eedd"
+        ]
+      },
+      "errore": {
+        "role": "error",
+        "displayName": "Errore",
+        "canonical": "oklch(47.2% 0.163 28.7)",
+        "tonalRamp": [
+          "#2a0000",
+          "#510000",
+          "#7a0907",
+          "#a52a21",
+          "#c65b4e",
+          "#e5877a",
+          "#ffb3a7",
+          "#ffdcd1"
+        ]
+      },
+      "errore-chiaro": {
+        "role": "error",
+        "displayName": "Errore chiaro (su notte)",
+        "canonical": "oklch(78.5% 0.099 24.9)",
+        "tonalRamp": [
+          "#170505",
+          "#361c1a",
+          "#593431",
+          "#7f4f4b",
+          "#aa6d68",
+          "#d88e88",
+          "#ffb3ac",
+          "#ffdad3"
+        ]
+      },
+      "oro-medio": {
+        "role": "secondary",
+        "displayName": "Oro medio del filo",
+        "note": "Solo il filo continuo della home e i suoi nodi; decorativo.",
+        "canonical": "oklch(67.5% 0.110 82.5)"
+      },
+      "campo": {
+        "role": "neutral",
+        "displayName": "Fondo campo",
+        "note": "Fondo dei campi del modulo.",
+        "canonical": "oklch(98.3% 0.006 84.6)"
+      },
+      "campo-bordo": {
+        "role": "neutral",
+        "displayName": "Bordo campo",
+        "note": "Bordo dei campi del modulo.",
+        "canonical": "oklch(75.1% 0.033 84.6)"
+      },
+      "strada": {
+        "role": "neutral",
+        "displayName": "Strada",
+        "note": "Vie secondarie della mappa OSM.",
+        "canonical": "oklch(35.5% 0.075 264.9)"
+      },
+      "strada-principale": {
+        "role": "neutral",
+        "displayName": "Strada principale",
+        "note": "Vie principali della mappa OSM.",
+        "canonical": "oklch(43.9% 0.090 265.5)"
+      }
     },
     "typographyMeta": {
-      "mega": { "displayName": "Mega", "purpose": "Titoli scena di massima scala (.t-mega con .font-display)." },
-      "display": { "displayName": "Display", "purpose": "Titoli pagina e scena (.t-display)." },
-      "headline": { "displayName": "H2", "purpose": "Titoli di sezione e numeri grandi (.t-h2)." },
-      "title": { "displayName": "H3", "purpose": "Sottotitoli, spesso in corsivo Bodoni caricato dopo il load (.t-h3)." },
-      "lead": { "displayName": "Lead", "purpose": "Paragrafi d'apertura (.t-lead)." },
-      "body": { "displayName": "Corpo", "purpose": "Testo corrente, misura 62ch (.measure)." },
-      "small": { "displayName": "Small", "purpose": "Didascalie e note (.t-small)." },
-      "micro": { "displayName": "Micro", "purpose": "Crediti e note minime (.t-micro)." },
-      "label": { "displayName": "Cartellino", "purpose": "Etichetta delle azioni a cartellino." },
-      "misura": { "displayName": "Misura", "purpose": "Numeri tabellari per orari, taglie, numerazioni (.font-misura)." }
+      "mega": {
+        "displayName": "Mega",
+        "purpose": "Titoli scena di massima scala (.t-mega con .font-display)."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titoli pagina e scena (.t-display)."
+      },
+      "headline": {
+        "displayName": "H2",
+        "purpose": "Titoli di sezione e numeri grandi (.t-h2)."
+      },
+      "title": {
+        "displayName": "H3",
+        "purpose": "Sottotitoli, spesso in corsivo Bodoni caricato dopo il load (.t-h3)."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Paragrafi d'apertura (.t-lead)."
+      },
+      "body": {
+        "displayName": "Corpo",
+        "purpose": "Testo corrente, misura 62ch (.measure)."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Didascalie e note (.t-small)."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Crediti e note minime (.t-micro)."
+      },
+      "label": {
+        "displayName": "Cartellino",
+        "purpose": "Etichetta delle azioni a cartellino."
+      },
+      "misura": {
+        "displayName": "Misura",
+        "purpose": "Numeri tabellari per orari, taglie, numerazioni (.font-misura)."
+      }
     },
     "fabrics": [
-      { "name": "theme-notte", "vars": { "--bg": "var(--color-notte)", "--fg": "var(--color-avorio)", "--fg-muted": "var(--color-nebbia)", "--accent": "var(--color-oro)", "--line": "var(--color-notte-3)", "--focus": "var(--color-oro)" } },
-      { "name": "theme-avorio", "vars": { "--bg": "var(--color-avorio)", "--fg": "var(--color-notte)", "--fg-muted": "var(--color-ardesia)", "--accent": "var(--color-oro-scuro)", "--line": "#cfc6b3", "--focus": "var(--color-oro-scuro)" } }
+      {
+        "name": "theme-notte",
+        "vars": {
+          "--bg": "var(--color-notte)",
+          "--fg": "var(--color-avorio)",
+          "--fg-muted": "var(--color-nebbia)",
+          "--accent": "var(--color-oro)",
+          "--line": "var(--color-notte-3)",
+          "--focus": "var(--color-oro)"
+        }
+      },
+      {
+        "name": "theme-avorio",
+        "vars": {
+          "--bg": "var(--color-avorio)",
+          "--fg": "var(--color-notte)",
+          "--fg-muted": "var(--color-ardesia)",
+          "--accent": "var(--color-oro-scuro)",
+          "--line": "#cfc6b3",
+          "--focus": "var(--color-oro-scuro)"
+        }
+      }
     ],
     "opticalSizes": [
-      { "name": "default", "value": "'opsz' 44", "purpose": ".font-display: titoli." },
-      { "name": "grande", "value": "'opsz' 60", "purpose": "Titolo hero e contatore 1960." },
-      { "name": "metro", "value": "'opsz' 24", "purpose": "Numeri del metro da sarta." }
+      {
+        "name": "default",
+        "value": "'opsz' 44",
+        "purpose": ".font-display: titoli."
+      },
+      {
+        "name": "grande",
+        "value": "'opsz' 60",
+        "purpose": "Titolo hero e contatore 1960."
+      },
+      {
+        "name": "metro",
+        "value": "'opsz' 24",
+        "purpose": "Numeri del metro da sarta."
+      }
     ],
     "shadows": [
-      { "name": "galleggiante", "value": "0 18px 40px -18px rgb(13 23 48 / 0.6)", "purpose": "Cartellino WhatsApp sticky (variante -22px sui loghi brand a colori)." },
-      { "name": "pannello", "value": "0 30px 70px -28px rgb(13 23 48 / 0.65)", "purpose": "Banner cookie." },
-      { "name": "foto-sovrapposta", "value": "0 30px 60px -30px rgb(0 0 0 / 0.7)", "purpose": "Foto del negozio sovrapposta alla mappa." }
+      {
+        "name": "galleggiante",
+        "value": "0 18px 40px -18px rgb(13 23 48 / 0.6)",
+        "purpose": "Cartellino WhatsApp sticky (variante -22px sui loghi brand a colori)."
+      },
+      {
+        "name": "pannello",
+        "value": "0 30px 70px -28px rgb(13 23 48 / 0.65)",
+        "purpose": "Banner cookie."
+      },
+      {
+        "name": "foto-sovrapposta",
+        "value": "0 30px 60px -30px rgb(0 0 0 / 0.7)",
+        "purpose": "Foto del negozio sovrapposta alla mappa."
+      }
     ],
     "motion": [
-      { "name": "ease-sartoria", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default GSAP e CSS: ingressi, hover, transizioni." },
-      { "name": "ease-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "expo.out: sipari, aperture, clip-path." },
-      { "name": "ease-uscita", "value": "cubic-bezier(0.7, 0, 0.84, 0)", "purpose": "Uscite brevi." },
-      { "name": "duration-rapida", "value": "0.4s", "purpose": "Colori, opacità, stati." },
-      { "name": "duration-media", "value": "0.8s", "purpose": "Default GSAP, filo dei link, cartellino." },
-      { "name": "duration-lenta", "value": "1.2s", "purpose": "Zoom foto, ingressi grandi." },
-      { "name": "stagger-elementi", "value": "0.06s", "purpose": "Elementi in sequenza; totale < 0.5s." },
-      { "name": "stagger-righe", "value": "0.08s", "purpose": "Righe di testo rivelate; totale < 0.5s." },
-      { "name": "thread-dash", "value": "8 6 (HomeThread, timeline), 7 6 (Thread)", "purpose": "Tratteggio del filo d'oro." },
-      { "name": "loading", "value": "loadMotion(): dopo load + 450ms o alla prima interazione", "purpose": "GSAP, ScrollTrigger, SplitText, CustomEase e Lenis fuori dal JS iniziale." }
+      {
+        "name": "ease-sartoria",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default GSAP e CSS: ingressi, hover, transizioni."
+      },
+      {
+        "name": "ease-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "expo.out: sipari, aperture, clip-path."
+      },
+      {
+        "name": "ease-uscita",
+        "value": "cubic-bezier(0.7, 0, 0.84, 0)",
+        "purpose": "Uscite brevi."
+      },
+      {
+        "name": "duration-rapida",
+        "value": "0.4s",
+        "purpose": "Colori, opacità, stati."
+      },
+      {
+        "name": "duration-media",
+        "value": "0.8s",
+        "purpose": "Default GSAP, filo dei link, cartellino."
+      },
+      {
+        "name": "duration-lenta",
+        "value": "1.2s",
+        "purpose": "Zoom foto, ingressi grandi."
+      },
+      {
+        "name": "stagger-elementi",
+        "value": "0.06s",
+        "purpose": "Elementi in sequenza; totale < 0.5s."
+      },
+      {
+        "name": "stagger-righe",
+        "value": "0.08s",
+        "purpose": "Righe di testo rivelate; totale < 0.5s."
+      },
+      {
+        "name": "thread-dash",
+        "value": "8 6 (HomeThread, timeline), 7 6 (Thread)",
+        "purpose": "Tratteggio del filo d'oro."
+      },
+      {
+        "name": "loading",
+        "value": "loadMotion(): dopo load + 450ms o alla prima interazione",
+        "purpose": "GSAP, ScrollTrigger, SplitText, CustomEase e Lenis fuori dal JS iniziale."
+      }
     ],
     "breakpoints": [
-      { "name": "xs", "value": "26rem" },
-      { "name": "sm", "value": "40rem" },
-      { "name": "md", "value": "48rem" },
-      { "name": "lg", "value": "64rem" }
+      {
+        "name": "xs",
+        "value": "26rem"
+      },
+      {
+        "name": "sm",
+        "value": "40rem"
+      },
+      {
+        "name": "md",
+        "value": "48rem"
+      },
+      {
+        "name": "lg",
+        "value": "64rem"
+      }
     ],
     "layout": {
       "wrapMax": "1680px",
@@ -145,14 +483,46 @@
       "Motion sartoriale, caricato in differita, mai necessario per leggere."
     ],
     "rules": [
-      { "name": "The Two Fabrics Rule", "body": "Una sezione nuova sceglie un tessuto con `.theme-notte` o `.theme-avorio` e colora i figli solo con `--bg --fg --fg-muted --accent --line --focus`. Un colore diretto è ammesso solo per gli elementi che restano uguali su entrambi i tessuti (header, azioni WhatsApp, menu).", "section": "colors" },
-      { "name": "The Gold Thread Rule", "body": "L'oro è filo, nodo, accento, focus. Come superficie piena compare solo sulle azioni WhatsApp e sulla barra avvisi. Mai fondi oro di sezione, mai gradienti oro.", "section": "colors" },
-      { "name": "The Right Gold Rule", "body": "Su avorio l'accento è sempre `--color-oro-scuro`: l'oro pieno su avorio non regge il testo.", "section": "colors" },
-      { "name": "The Late Italic Rule", "body": "Il corsivo Bodoni è una famiglia separata che si attiva solo con `html.fonts-late` (dopo il load), per non rubare banda all'LCP; prima il browser inclina il tondo. Un nuovo elemento in corsivo va aggiunto alla lista di selettori in `globals.css`, oppure usa `.italic-display`.", "section": "typography" },
-      { "name": "The Balanced Heading Rule", "body": "`h1–h3` hanno `text-wrap: balance`, i paragrafi `text-wrap: pretty`. Le righe dei titoli si spezzano a mano solo quando l'asimmetria è voluta.", "section": "typography" },
-      { "name": "The Measured Asymmetry Rule", "body": "L'asimmetria è un rientro preciso, non un disordine: la seconda riga del titolo hero rientra di `clamp(1.25rem, 9vw, 11rem)`, le griglie collezioni e galleria alternano misure, la foto del negozio si sovrappone alla mappa (58%, margine −22%). Le pagine restano leggibili in colonna singola su mobile.", "section": "layout" },
-      { "name": "The Flat Fabric Rule", "body": "Sezioni, riquadri e foto in pagina non hanno ombra. Un'ombra è ammessa solo per ciò che si stacca davvero dal tessuto (sticky, pannello, sovrapposizione), sempre morbida e con offset negativo.", "section": "elevation" },
-      { "name": "The Stitch Not Border Rule", "body": "Una cornice si disegna come impuntura tratteggiata rientrata dentro l'oggetto, non come bordo pieno esterno. Le linee piene sottili restano per funzioni precise: divisore del footer, campi del form, metro da sarta, bordi dell'etichetta tessuta.", "section": "shapes" }
+      {
+        "name": "The Two Fabrics Rule",
+        "body": "Una sezione nuova sceglie un tessuto con `.theme-notte` o `.theme-avorio` e colora i figli solo con `--bg --fg --fg-muted --accent --line --focus`. Un colore diretto è ammesso solo per gli elementi che restano uguali su entrambi i tessuti (header, azioni WhatsApp, menu).",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold Thread Rule",
+        "body": "L'oro è filo, nodo, accento, focus. Come superficie piena compare solo sulle azioni WhatsApp e sulla barra avvisi. Mai fondi oro di sezione, mai gradienti oro.",
+        "section": "colors"
+      },
+      {
+        "name": "The Right Gold Rule",
+        "body": "Su avorio l'accento è sempre `--color-oro-scuro`: l'oro pieno su avorio non regge il testo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Late Italic Rule",
+        "body": "Il corsivo Bodoni è una famiglia separata che si attiva solo con `html.fonts-late` (dopo il load), per non rubare banda all'LCP; prima il browser inclina il tondo. Un nuovo elemento in corsivo va aggiunto alla lista di selettori in `globals.css`, oppure usa `.italic-display`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balanced Heading Rule",
+        "body": "`h1–h3` hanno `text-wrap: balance`, i paragrafi `text-wrap: pretty`. Le righe dei titoli si spezzano a mano solo quando l'asimmetria è voluta.",
+        "section": "typography"
+      },
+      {
+        "name": "The Measured Asymmetry Rule",
+        "body": "L'asimmetria è un rientro preciso, non un disordine: la seconda riga del titolo hero rientra di `clamp(1.25rem, 9vw, 11rem)`, le griglie collezioni e galleria alternano misure, la foto del negozio si sovrappone alla mappa (58%, margine −22%). Le pagine restano leggibili in colonna singola su mobile.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Fabric Rule",
+        "body": "Sezioni, riquadri e foto in pagina non hanno ombra. Un'ombra è ammessa solo per ciò che si stacca davvero dal tessuto (sticky, pannello, sovrapposizione), sempre morbida e con offset negativo.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Stitch Not Border Rule",
+        "body": "Una cornice si disegna come impuntura tratteggiata rientrata dentro l'oggetto, non come bordo pieno esterno. Le linee piene sottili restano per funzioni precise: divisore del footer, campi del form, metro da sarta, bordi dell'etichetta tessuta.",
+        "section": "shapes"
+      }
     ],
     "dos": [
       "**Do** dichiarare il tessuto di ogni nuova sezione (`.theme-notte` o `.theme-avorio`) e colorare con le variabili semantiche.",

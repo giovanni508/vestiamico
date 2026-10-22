@@ -9,6 +9,19 @@ type Props = { video: VideoAsset; label: string; className?: string; sizes?: str
 
 // il poster è un'immagine ottimizzata sotto al video: a bassa priorità, tranne quando apre la pagina
 
+// Le sorgenti si aggiungono solo quando il video deve partire (come nella hero): un <video> con <source>
+// già nel markup può trattenere l'evento load della pagina (WebKit lo trattiene anche con preload="none").
+function attachSources(v: HTMLVideoElement, video: VideoAsset) {
+  if (v.querySelector('source')) return;
+  const webm = document.createElement('source');
+  webm.src = video.webm;
+  webm.type = 'video/webm';
+  const mp4 = document.createElement('source');
+  mp4.src = video.mp4;
+  mp4.type = 'video/mp4';
+  v.append(webm, mp4);
+}
+
 export function LoopVideo({ video, label, className = '', sizes = '(min-width: 64rem) 34vw, 90vw', priority = false }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(false);
@@ -24,25 +37,38 @@ export function LoopVideo({ video, label, className = '', sizes = '(min-width: 6
       const id = window.setTimeout(() => setPaused(true), 0);
       return () => window.clearTimeout(id);
     }
+    // il primo caricamento parte solo a pagina caricata, per non rubare banda né ritardare il motion layer
     let loaded = false;
+    let visible = false;
+    let pageLoaded = document.readyState === 'complete';
+    const start = () => {
+      if (loaded || !visible || !pageLoaded) return;
+      loaded = true;
+      attachSources(v, video);
+      v.preload = 'auto';
+      v.load();
+      if (!pausedRef.current) v.play().catch(() => {});
+    };
+    const onLoad = () => {
+      pageLoaded = true;
+      start();
+    };
+    if (!pageLoaded) window.addEventListener('load', onLoad, { once: true });
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          if (!loaded) {
-            loaded = true;
-            v.preload = 'auto';
-            v.load();
-          }
-          if (!pausedRef.current) v.play().catch(() => {});
-        } else {
-          v.pause();
-        }
+        visible = entry.isIntersecting;
+        if (!visible) v.pause();
+        else if (!loaded) start();
+        else if (!pausedRef.current) v.play().catch(() => {});
       },
       { rootMargin: '200px 0px' },
     );
     io.observe(v);
-    return () => io.disconnect();
-  }, []);
+    return () => {
+      io.disconnect();
+      window.removeEventListener('load', onLoad);
+    };
+  }, [video]);
 
   const toggle = () => {
     const v = ref.current;
@@ -52,7 +78,10 @@ export function LoopVideo({ video, label, className = '', sizes = '(min-width: 6
     setPaused(next);
     if (next) v.pause();
     else {
-      if (v.readyState === 0) v.load();
+      if (v.readyState === 0) {
+        attachSources(v, video);
+        v.load();
+      }
       v.play().catch(() => {});
     }
   };
@@ -69,10 +98,7 @@ export function LoopVideo({ video, label, className = '', sizes = '(min-width: 6
         aria-label={label}
         className="loop-video-el"
         onPlaying={(e) => e.currentTarget.classList.add('is-playing')}
-      >
-        <source src={video.webm} type="video/webm" />
-        <source src={video.mp4} type="video/mp4" />
-      </video>
+      />
       <button type="button" className="loop-video-btn" onClick={toggle} aria-pressed={paused}>
         <span className="hero-pause-icon" aria-hidden="true" data-paused={paused} />
         <span className="sr-only">{paused ? 'Riproduci il video' : 'Metti in pausa il video'}</span>
