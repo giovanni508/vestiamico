@@ -25,6 +25,7 @@ Altre verifiche dell'ultimo giro: tsc, eslint e build puliti; 0 overflow, 0 erro
 
 ## Aperto
 
+- Deploy su Hostinger dal repository GitHub (main): build passata a webpack dopo il panic di Turbopack, impostazioni nel README ("Deploy su Hostinger"). Da confermare con il prossimo deploy.
 - Dati da confermare col cliente: content/TODO-cliente.md.
 - In anteprima, su un iPhone vero: controllare che i video partano (il WebKit di prova su Windows non riproduce video).
 - Prima del dominio di produzione: provare i redirect 301 sul vecchio sito (elenco in README) e configurare l'invio email del modulo (variabili in .env.example).

@@ -74,3 +74,10 @@ Registro delle scelte importanti, in ordine cronologico, con il perché.
 - **Sorgenti dei video aggiunte a pagina caricata** (`LoopVideo`, come `HeroFx`): un `<video>` con `<source>` nel markup trattiene l'evento load in WebKit anche con `preload="none"`, e da lì dipendono motion layer e corsivo. Il poster resta l'immagine visibile finché il video non parte.
 - **Colori solo da token**: anche le trasparenze (`color-mix(in srgb, var(--color-…) N%, transparent)`). Unica eccezione l'ombra nera della foto sopra la mappa.
 - **Verifica su Safari** con il WebKit di Playwright (`BROWSER=webkit`). Limite noto: su Windows quel WebKit non riproduce i video, quindi la riproduzione su iPhone va controllata a mano in anteprima.
+
+## Pubblicazione su Hostinger
+
+- **Build di produzione con webpack** (`next build --webpack`) invece di Turbopack: su Hostinger la build Turbopack si fermava con un panic ("An unexpected Turbopack error occurred"). La stessa build da un clone pulito funziona su Windows, quindi il problema è dell'ambiente (hosting condiviso con limiti su processi e memoria). Verificato che con webpack il sito è identico: stesso ordine delle regole CSS, provini pixel per pixel uguali sulle pagine statiche, 0 overflow ed errori a 390/1440, punteggi Lighthouse 93-95 con il comportamento Linux dei font.
+- **Al massimo 2 worker di build** (`experimental.cpus: 2`): Next.js ne avvia uno per core meno uno, e su un server condiviso i core possono essere decine. Per 17 pagine statiche due bastano.
+- **Limite noto solo su Windows**: il plugin webpack di Next.js 16.4 cerca `/next-font-loader/` con le barre di Linux, quindi su Windows la build webpack non precarica i font (primo disegno 1,4 s invece di 0,9 s in Lighthouse). Su Linux il preload c'è: verificato su una copia con il percorso normalizzato. Per misure locali su Windows c'è `npm run build:turbopack`.
+- **`engines.node >= 20.9`** in package.json: è il minimo di Next.js 16, così l'hosting sceglie una versione compatibile.

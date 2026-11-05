@@ -5,7 +5,7 @@
   "description": "Vestiamico — boutique di abbigliamento uomo e donna a Palermo, dal 1960. Sito Next.js.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -13,7 +13,8 @@
     "media": "node scripts/process-media.mjs",
     "shots": "node scripts/screenshots.mjs",
     "fonts": "node scripts/subset-fonts.mjs",
-    "lighthouse": "node scripts/lighthouse.mjs"
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "build:turbopack": "next build"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -36,5 +37,8 @@
     "subset-font": "^2.9.0",
     "tailwindcss": "4.3.3",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }

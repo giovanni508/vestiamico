@@ -15,6 +15,9 @@ const WP_PAGE_IDS: Record<string, string> = {
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // hosting condiviso (Hostinger): il numero di worker della build segue i core del server, che possono
+  // essere decine con limiti stretti su processi e memoria. Due bastano per 17 pagine statiche.
+  experimental: { cpus: 2 },
   images: {
     formats: ['image/avif', 'image/webp'],
     qualities: [60, 75, 85],

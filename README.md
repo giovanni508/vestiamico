@@ -70,6 +70,22 @@ Senza queste variabili, in sviluppo il messaggio viene scritto nella console del
 3. Ogni push genera un **URL di anteprima** (`*.vercel.app`): è quello da mostrare al cliente.
 4. **Non collegare il dominio vestiamico.it** finché il cliente non ha approvato l'anteprima e non sono stati verificati i redirect (vedi sotto).
 
+## Deploy su Hostinger (Node.js)
+
+Repository: [github.com/giovanni508/vestiamico](https://github.com/giovanni508/vestiamico), ramo `main`.
+
+| Impostazione | Valore |
+|---|---|
+| Versione Node | 20, 22 o 24 (minimo 20.9, vedi `engines` in package.json) |
+| Installazione | `npm ci` (oppure `npm install`) |
+| Build | `npm run build` |
+| Avvio | `npm start` (Next.js ascolta sulla porta indicata dalla variabile `PORT`) |
+| Variabili | quelle della tabella sopra |
+
+La build di produzione usa **webpack** (`next build --webpack`) e al massimo **2 worker** (`experimental.cpus` in `next.config.ts`): sull'hosting condiviso di Hostinger la build con Turbopack si fermava con "An unexpected Turbopack error occurred", tipico di ambienti con limiti stretti su processi e memoria. In sviluppo (`npm run dev`) resta Turbopack.
+
+Nota per le misure in locale su Windows: con webpack, Next.js 16.4 non riconosce i percorsi Windows dei font e non scrive i `<link rel="preload">` dei font (su Linux sì). Per confrontare le prestazioni su Windows usare `npm run build:turbopack`.
+
 ### Passaggio al dominio definitivo
 
 - I vecchi indirizzi WordPress sono reindirizzati con **301** in `next.config.ts` (`/home`, `/cerimonia`, `?page_id=…`, `/feed`, ecc.). Gli URL principali restano identici (`/collezioni/`, `/abiti-da-cerimonia/`, `/punto-vendita/`, `/brand/`, `/contatti/`, `/privacy-policy/`, `/cookie-policy-ue/`); la barra finale viene tolta con un redirect permanente automatico di Next.js.
@@ -79,7 +95,7 @@ Senza queste variabili, in sviluppo il messaggio viene scritto nella console del
 ## Verifiche
 
 ```bash
-npm run build && npm start -- -p 3210                         # server di produzione
+npm run build && npm start -- -p 3210                         # server di produzione (build webpack)
 BASE_URL=http://localhost:3210 node scripts/screenshots.mjs    # screenshot a 390/768/1440/1920 in .shots/
 BROWSER=webkit node scripts/screenshots.mjs 390,1440           # stesso giro col motore di Safari (telefono touch sotto i 1024 px)
 node scripts/contact-sheet.mjs                                 # provini in .shots/sheets/
