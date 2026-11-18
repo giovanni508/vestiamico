@@ -450,7 +450,9 @@ html.js.intro-done .hero-foot {
   color: var(--accent);
   opacity: 0.6;
 }
-.split-klarna p {
+.split-klarna-copy {
+  display: grid;
+  gap: 0.35rem;
   max-width: 32ch;
 }
 @media (min-width: 48rem) {
@@ -472,7 +474,7 @@ html.js.intro-done .hero-foot {
   .split-title {
     font-size: clamp(4rem, 10.5vw, 12.5rem);
   }
-  .split-klarna p {
+  .split-klarna-copy {
     max-width: none;
     white-space: nowrap;
   }

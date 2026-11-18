@@ -23,6 +23,14 @@ Il criterio "LCP < 2,5 s" è rispettato con il throttling reale, non con la stim
 
 Altre verifiche dell'ultimo giro: tsc, eslint e build puliti; 0 overflow, 0 errori di console, 0 richieste fallite a 390/768/1440/1920 px in Chrome e a 390/1440 px in Safari (WebKit); l'unico 404 è quello voluto della pagina inesistente. Controlli di accessibilità e motion: 14 su 14.
 
+## Modifiche richieste dal cliente (18 novembre 2026)
+
+- Home, pannello Donna: nuova foto fornita dal cliente.
+- Taglie dalla 38 alla 56 (metro, testi, descrizioni per Google).
+- Piani del negozio: la donna al piano superiore, uomo e alta cerimonia al piano inferiore (home, Punto vendita, Abiti da cerimonia).
+- Klarna: "Paga in 3 rate con Klarna, senza interessi a vostro carico." e sotto, in piccolo, "Con una spesa minima di €300 puoi pagare con Klarna."
+- Next.js 16.4.6 per un avviso di sicurezza della 16.4.2.
+
 ## Aperto
 
 - Deploy su Hostinger dal repository GitHub (main): build passata a webpack dopo il panic di Turbopack, impostazioni nel README ("Deploy su Hostinger"). Da confermare con il prossimo deploy.

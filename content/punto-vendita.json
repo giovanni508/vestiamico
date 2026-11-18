@@ -1,30 +1,30 @@
 {
   "meta": {
     "title": "Il punto vendita a Palermo",
-    "description": "Il punto vendita Vestiamico in Via dell’Orsa Minore 69 a Palermo: due piani di abbigliamento, donna al piano terra e uomo al primo piano. Orari e indicazioni."
+    "description": "Il punto vendita Vestiamico in Via dell’Orsa Minore 69 a Palermo: due piani di abbigliamento, donna al piano superiore, uomo e alta cerimonia al piano inferiore. Orari e indicazioni."
   },
   "intro": {
     "title": "Il punto vendita",
     "subtitle": "Benvenuti da Vestiamico",
     "heading": "Il vostro stile, in due piani di eleganza",
     "lead": "Un punto vendita pensato per chi ama vestirsi con personalità e cerca un abbigliamento uomo e donna che unisce eleganza, qualità e convenienza.",
-    "body": "Su due piani (il piano terra dedicato alla donna, il primo piano all’uomo) abbiamo creato uno spazio in cui la luce, i volumi e l’arredo dialogano con i capi, per offrirvi non solo una scelta di moda, ma un’esperienza di stile.",
+    "body": "Su due piani (il piano superiore dedicato alla donna, quello inferiore all’uomo e all’alta cerimonia) abbiamo creato uno spazio in cui la luce, i volumi e l’arredo dialogano con i capi, per offrirvi non solo una scelta di moda, ma un’esperienza di stile.",
     "video": "negozio-ingresso",
     "image": "mg-1800"
   },
   "floors": [
     {
-      "id": "piano-terra",
-      "label": "Piano terra",
+      "id": "piano-superiore",
+      "label": "Piano superiore",
       "title": "Donna",
       "text": "Una selezione curata di capi d’abbigliamento donna: dalla proposta quotidiana alle occasioni speciali.",
       "image": "punto-vendita-interni"
     },
     {
-      "id": "primo-piano",
-      "label": "Primo piano",
-      "title": "Uomo",
-      "text": "Una proposta maschile di tendenza: abiti, giacche e accessori per un look completo e raffinato.",
+      "id": "piano-inferiore",
+      "label": "Piano inferiore",
+      "title": "Uomo e cerimonia",
+      "text": "Una proposta maschile di tendenza: abiti, giacche e accessori per un look completo e raffinato. Sullo stesso piano, il reparto di alta cerimonia.",
       "image": "img-1667"
     },
     {
@@ -37,7 +37,7 @@
   ],
   "gallery": [
     { "key": "mg-1773", "alt": "La reception del negozio con il monogramma Vestiamico in oro" },
-    { "key": "mg-1777", "alt": "La scala sospesa che porta al primo piano" },
+    { "key": "mg-1777", "alt": "La scala sospesa che collega i due piani" },
     { "key": "mg-1775", "alt": "Parete verde con piante e luci sospese all’ingresso" },
     { "key": "foto1", "alt": "Vetrine con accessori e manichini affacciati sulla strada" },
     { "key": "mg-1784", "alt": "Manichino con cappotto blu nel reparto uomo" },

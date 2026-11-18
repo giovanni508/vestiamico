@@ -41,7 +41,10 @@ export function Split() {
       </SplitFx>
       <div className="wrap split-klarna">
         <span className="stitch-x split-klarna-line" aria-hidden="true" />
-        <p className="t-small">{site.payments.klarna}</p>
+        <div className="split-klarna-copy">
+          <p className="t-small">{site.payments.klarna}</p>
+          <p className="t-micro split-klarna-note">{site.payments.klarnaNote}</p>
+        </div>
         <span className="stitch-x split-klarna-line" aria-hidden="true" />
       </div>
     </section>
