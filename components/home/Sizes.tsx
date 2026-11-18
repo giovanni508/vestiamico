@@ -3,7 +3,7 @@ import { SplitReveal } from '@/components/motion/SplitReveal';
 import { FadeUp } from '@/components/motion/FadeUp';
 import { RulerFx } from './RulerFx';
 
-/** Scena 4. Dalla 38 alla 60: il metro da sarta scorre al ritmo dello scroll. */
+/** Scena 4. Dalla 38 alla 56: il metro da sarta scorre al ritmo dello scroll. */
 export function Sizes() {
   const { sizes } = home;
   const values: number[] = [];

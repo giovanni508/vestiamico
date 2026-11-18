@@ -12,6 +12,7 @@ Elenco di tutto ciò che manca o va confermato. Il sito funziona già senza ques
 - [ ] **Chiusure e ferie 2026/2027**: comunicarle per aggiornare `site.json > hours.closures` e gli avvisi.
 - [ ] **Indirizzo email del modulo contatti**: a quale casella devono arrivare i messaggi del form (variabile `CONTACT_TO_EMAIL`). Serve anche un servizio di invio: consigliato [Resend](https://resend.com) con il dominio vestiamico.it verificato (record DNS) per il mittente (`CONTACT_FROM_EMAIL`). Vedi README.
 - [ ] **Consulenza cerimonia**: confermare i 3 passi scritti per la pagina Abiti da cerimonia (scrivi o chiama → fissiamo giorno e orario → prova e accessori). Serve prenotare o si può passare senza appuntamento?
+- [ ] **Taglie**: aggiornate a **38–56** come richiesto (novembre 2026) in home, collezioni e descrizioni per Google. Resta la frase del vecchio sito "per la cerimonia arriviamo fino alla 7XL" (anche nella pagina Abiti da cerimonia): confermare che vale ancora o va tolta.
 
 ## Storia di famiglia (per la timeline "Dal 1960")
 

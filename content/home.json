@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Vestiamico | Abbigliamento uomo e donna a Palermo dal 1960",
-    "description": "Boutique di abbigliamento uomo e donna a Palermo dal 1960: dall’abito più conveniente al capo firmato, abiti da cerimonia e taglie dalla 38 alla 60. Via dell’Orsa Minore 69."
+    "description": "Boutique di abbigliamento uomo e donna a Palermo dal 1960: dall’abito più conveniente al capo firmato, abiti da cerimonia e taglie dalla 38 alla 56. Via dell’Orsa Minore 69."
   },
   "hero": {
     "titleLines": [
@@ -64,7 +64,7 @@
       "title": "Donna",
       "heading": "Eleganza al femminile",
       "text": "Linee raffinate, tessuti ricercati e dettagli che fanno la differenza: capi contemporanei e versatili, per accompagnarti in ogni momento della giornata con naturalezza e personalità.",
-      "image": "casual-donna-3",
+      "image": "donna-giacca-pelle-palermo",
       "href": "/collezioni#donna",
       "cta": "Collezione donna"
     },
@@ -79,9 +79,9 @@
   },
   "sizes": {
     "from": 38,
-    "to": 60,
+    "to": 56,
     "statement": "Ogni silhouette ha il suo capo",
-    "body": "Dalla 38 alla 60, per valorizzare ogni stile e ogni fisicità. E per la cerimonia arriviamo fino alla 7XL, anche per taglie comode e conformate."
+    "body": "Dalla 38 alla 56, per valorizzare ogni stile e ogni fisicità. E per la cerimonia arriviamo fino alla 7XL, anche per taglie comode e conformate."
   },
   "cerimonia": {
     "title": "Il giorno più importante, vestito bene",
