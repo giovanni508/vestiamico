@@ -26,7 +26,7 @@ Altre verifiche dell'ultimo giro: tsc, eslint e build puliti; 0 overflow, 0 erro
 ## Modifiche richieste dal cliente (18 novembre 2026)
 
 - Home, pannello Donna: nuova foto fornita dal cliente.
-- Taglie in due fasce: donna dalla 38 alla 56, uomo dalla 44 alla 70 (metro dalla 38 alla 70, testi, descrizioni per Google).
+- Taglie in due fasce: donna dalla 38 alla 56, uomo dalla 44 alla 70 (metro dalla 38 alla 70, testi, descrizioni per Google), con una foto uomo fornita dal cliente accanto alla fascia 44–70.
 - Piani del negozio: la donna al piano superiore, uomo e alta cerimonia al piano inferiore (home, Punto vendita, Abiti da cerimonia).
 - Klarna: "Paga in 3 rate con Klarna, senza interessi a vostro carico." e sotto, in piccolo, "Con una spesa minima di €300 puoi pagare con Klarna."
 - Next.js 16.4.6 per un avviso di sicurezza della 16.4.2.

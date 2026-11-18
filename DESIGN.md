@@ -287,7 +287,7 @@ A riposo una cucitura tratteggiata (passo 8px, opacità 0.55) sotto il testo; in
 La firma del sito (footer, storia, 404). Fondo notte-2 con trama orizzontale, bordi in oro al 45%, impunture verticali ai lati, estremità ripiegate. Nome in Bodoni maiuscolo spaziato 0.16em, come il wordmark ricamato; riga sotto in Archivo 0.72rem nebbia. Decorativa (`aria-hidden`).
 
 ### Metro da sarta (taglie)
-Segmenti con tacche a gradiente e numeri Bodoni `opsz 24`, taglie dalla 38 alla 70 (donna 38–56, uomo 44–70, indicate sotto il metro). Il segmento attivo diventa notte con numero oro chiaro; l'ago è notte con testa in oro scuro. Lo scorrimento è legato alla velocità di scroll.
+Segmenti con tacche a gradiente e numeri Bodoni `opsz 24`, taglie dalla 38 alla 70 (donna 38–56, uomo 44–70, indicate sotto il metro). Il segmento attivo diventa notte con numero oro chiaro; l'ago è notte con testa in oro scuro. Lo scorrimento è legato alla velocità di scroll. Sotto il metro, le due fasce (etichetta oro scuro, cifre Bodoni `opsz 24`) e la foto uomo in cornice impunturata con cartellino notte "Uomo, dalla 44 alla 70"; da 64rem la foto va in colonna a destra.
 
 ### Mappa OSM (`StoreMap`)
 SVG statico da dati OpenStreetMap (nessun servizio esterno, nessun cookie): strade nei toni della fodera, Via dell'Orsa Minore cucita in oro, pin oro col monogramma VA e un impulso lento (2.6s). Impuntura interna in oro al 45%, credito OSM obbligatorio in basso a destra.

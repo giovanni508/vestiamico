@@ -83,6 +83,11 @@
       { "label": "Donna", "from": 38, "to": 56 },
       { "label": "Uomo", "from": 44, "to": 70 }
     ],
+    "photo": {
+      "image": "uomo-maglione-blu-negozio",
+      "alt": "Uomo in maglione blu con zip e jeans nel negozio Vestiamico, davanti al monogramma dorato",
+      "range": "Uomo"
+    },
     "body": "Per la donna, proponiamo taglie dalla 38 alla 56, per valorizzare ogni stile e ogni fisicità. Per l’uomo, una vestibilità ancora più ampia, dalla 44 alla 70, per offrire a tutti la possibilità di trovare il proprio stile."
   },
   "cerimonia": {

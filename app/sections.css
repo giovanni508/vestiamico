@@ -583,7 +583,64 @@ html.js.intro-done .hero-foot {
 }
 .sizes-foot {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.75rem;
+  grid-template-areas: 'ranges' 'photo' 'body';
+}
+.sizes-ranges {
+  grid-area: ranges;
+}
+.sizes-body {
+  grid-area: body;
+}
+/* foto della fascia uomo: stessa cornice impunturata e cartellino della galleria cerimonia,
+   ma cartellino notte perché il tessuto qui è avorio */
+.sizes-photo {
+  grid-area: photo;
+  position: relative;
+  width: min(85%, 26rem);
+  margin-left: 6px;
+}
+.sizes-photo-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--color-avorio-2);
+}
+.sizes-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  z-index: 2;
+  border: 1px dashed color-mix(in srgb, var(--color-avorio) 60%, transparent);
+  pointer-events: none;
+}
+.sizes-photo-tag {
+  position: absolute;
+  z-index: 3;
+  left: -6px;
+  bottom: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem 0.35rem 1.15rem;
+  background: var(--color-notte);
+  color: var(--color-avorio);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  clip-path: polygon(9px 0, 100% 0, 100% 100%, 9px 100%, 0 50%);
+  transform: rotate(-4deg);
+  transform-origin: 9px 50%;
+}
+.sizes-photo-tag::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: var(--color-avorio);
 }
 .sizes-ranges {
   display: grid;
@@ -603,11 +660,23 @@ html.js.intro-done .hero-foot {
   /* come i numeri del metro: a ottica 44 il filetto del 4 quasi sparisce */
   font-variation-settings: 'opsz' 24;
 }
-@media (min-width: 48rem) {
+/* due colonne solo da 64rem: sotto, la foto schiaccerebbe titoli e testo */
+@media (min-width: 64rem) {
   .sizes-foot {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 26rem);
+    grid-template-areas: 'ranges photo' 'body photo';
     align-items: end;
-    gap: 3rem;
+    gap: 2.5rem clamp(3rem, 8vw, 9rem);
+  }
+  .sizes-ranges {
+    align-self: end;
+  }
+  .sizes-body {
+    align-self: start;
+  }
+  .sizes-photo {
+    width: 100%;
+    margin-left: 0;
   }
 }
 

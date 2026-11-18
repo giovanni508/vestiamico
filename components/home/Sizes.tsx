@@ -1,4 +1,5 @@
-import { home } from '@/lib/content';
+import { home, img } from '@/lib/content';
+import { LazyImage } from '@/components/ui/LazyImage';
 import { SplitReveal } from '@/components/motion/SplitReveal';
 import { FadeUp } from '@/components/motion/FadeUp';
 import { RulerFx } from './RulerFx';
@@ -10,6 +11,9 @@ export function Sizes() {
   const from = Math.min(...sizes.ranges.map((r) => r.from));
   const to = Math.max(...sizes.ranges.map((r) => r.to));
   for (let s = from; s <= to; s += 2) values.push(s);
+  // la foto accompagna la sua fascia di taglie: il cartellino ripete etichetta e numeri
+  const photo = img(sizes.photo.image);
+  const photoRange = sizes.ranges.find((r) => r.label === sizes.photo.range);
   const segment = (
     <div className="ruler-seq">
       {values.map((v) => (
@@ -50,7 +54,17 @@ export function Sizes() {
             </p>
           ))}
         </div>
-        <p className="t-lead measure muted" data-fade>
+        <div className="sizes-photo" data-fade>
+          <div className="sizes-photo-frame">
+            <LazyImage src={photo.src} alt={sizes.photo.alt} fill sizes="(min-width: 48rem) 26rem, 85vw" quality={75} className="object-cover" />
+          </div>
+          {photoRange && (
+            <span className="sizes-photo-tag" aria-hidden="true">
+              {photoRange.label}, dalla {photoRange.from} alla {photoRange.to}
+            </span>
+          )}
+        </div>
+        <p className="t-lead measure muted sizes-body" data-fade>
           {sizes.body}
         </p>
       </FadeUp>
