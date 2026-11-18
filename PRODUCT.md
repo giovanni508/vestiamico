@@ -26,7 +26,7 @@ Boutique di abbigliamento uomo e donna a Palermo, dal 1960, tre generazioni. Il 
 
 ## Positioning
 
-Una famiglia che veste la Sicilia dal 1960 e tiene insieme due cose che di solito si escludono: capi firmati e capi economici ("prezzi piccoli piccoli"), con taglie dalla 38 alla 56 (fino alla 7XL in cerimonia) e consulenza personale. Elegante, mai snob.
+Una famiglia che veste la Sicilia dal 1960 e tiene insieme due cose che di solito si escludono: capi firmati e capi economici ("prezzi piccoli piccoli"), con taglie donna dalla 38 alla 56 e uomo dalla 44 alla 70 e consulenza personale. Elegante, mai snob.
 
 ## Operating Context
 
@@ -65,4 +65,4 @@ Una famiglia che veste la Sicilia dal 1960 e tiene insieme due cose che di solit
 
 ## Accessibility & Inclusion
 
-WCAG 2.2 AA; prefers-reduced-motion rispettato ovunque; nulla dipende solo dall'hover; video muti con controllo pausa. L'inclusività delle taglie (38–56, fino alla 7XL) è un messaggio di prodotto, non solo una nota.
+WCAG 2.2 AA; prefers-reduced-motion rispettato ovunque; nulla dipende solo dall'hover; video muti con controllo pausa. L'inclusività delle taglie (donna 38–56, uomo 44–70) è un messaggio di prodotto, non solo una nota.

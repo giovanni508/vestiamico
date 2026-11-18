@@ -585,9 +585,23 @@ html.js.intro-done .hero-foot {
   display: grid;
   gap: 1.25rem;
 }
+.sizes-ranges {
+  display: grid;
+  gap: 1.5rem;
+}
 .sizes-range {
+  display: grid;
+  gap: 0.4rem;
+}
+.sizes-range-label {
+  color: var(--accent);
+  font-size: 1rem;
+}
+.sizes-range-value {
   font-size: var(--text-h2);
   line-height: 1;
+  /* come i numeri del metro: a ottica 44 il filetto del 4 quasi sparisce */
+  font-variation-settings: 'opsz' 24;
 }
 @media (min-width: 48rem) {
   .sizes-foot {
